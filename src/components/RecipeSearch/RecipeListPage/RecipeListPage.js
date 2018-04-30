@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
 import { Link } from 'react-router-dom';
-import '../Kitchen.css'
+import '../RecipeSearch.css';
 
-class AddFoodForm extends Component {
+class RecipesListPage extends Component {
 
     componentDidMount() {
         this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
@@ -22,21 +22,15 @@ class AddFoodForm extends Component {
         // this.props.history.push('home');
     }
 
-    alert = () => {
-        alert('Food Added!')
-    }
 
 
     render() {
         return (
-        <div className="kitchenDiv">
+        <div className="recipeDiv">
             <button className="logout" onClick={this.logout}>Log Out</button>
-            <h1>Add Food Form</h1>
-            <button onClick={this.alert}>Add</button>
-            <br/>
+            <h1>We Found Recipes!</h1>
+            <button><Link to="/searchparams">Edit Search</Link></button>
             <button><Link to="/kitchen">Back to Kitchen</Link></button>
-            <button><Link to="/itemselect">Find Recipe</Link></button>
-            
         </div>
         )
     }
@@ -47,4 +41,4 @@ const mapStateToProps = state => ({
   });
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(AddFoodForm);
+export default connect(mapStateToProps)(RecipesListPage);
