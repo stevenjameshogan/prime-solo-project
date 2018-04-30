@@ -14,6 +14,9 @@ import './Kitchen.css';
 class Kitchen extends Component {
   componentDidMount() {
     this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
+    this.props.dispatch({
+      type: 'GET_ITEMS'
+    })
   }
 
   componentDidUpdate() {
@@ -25,6 +28,11 @@ class Kitchen extends Component {
   logout = () => {
     this.props.dispatch(triggerLogout());
     // this.props.history.push('home');
+  }
+
+  checkRedux = () => {
+    console.log(this.props.state.foodReducer);
+    
   }
 
   render() {
@@ -61,6 +69,8 @@ class Kitchen extends Component {
         </div>
         <button><Link to="/addfood">Add Food</Link></button>
         <button><Link to="/itemselect">Find Recipe</Link></button>
+        <button onClick={this.checkRedux}>Test</button>
+        <pre>{JSON.stringify(this.props.state.foodReducer)}</pre>
       </div>
     );
   }
@@ -68,6 +78,7 @@ class Kitchen extends Component {
 
 const mapStateToProps = state => ({
     user: state.user,
+    state
   });
 
 // this allows us to use <App /> in index.js
