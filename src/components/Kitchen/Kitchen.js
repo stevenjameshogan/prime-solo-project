@@ -36,18 +36,18 @@ class Kitchen extends Component {
         <div>
           <ExpansionPanel>
               <ExpansionPanelSummary>
-                  <Typography>Fridge</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                  <Fridge />
-              </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel>
-              <ExpansionPanelSummary>
                   <Typography>Freezer</Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                   <Freezer />
+              </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel>
+              <ExpansionPanelSummary>
+                  <Typography>Fridge</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                  <Fridge />
               </ExpansionPanelDetails>
           </ExpansionPanel>
           <ExpansionPanel>
