@@ -34,10 +34,9 @@ function * postFoodItem(action) {
     withCredentials: true,
   }
   try{
-    const items = yield call(axios.post, '/api/food', action.payload, config )
+    yield call(axios.post, '/api/food', action.payload, config )
     yield put({
-      type: 'SET_ITEMS',
-      payload: items.data
+      type: 'GET_ITEMS',
     })
   }
   catch(error){
@@ -50,10 +49,9 @@ function * deleteFoodItem(action) {
     withCredentials: true,
   }
   try{
-    const items = yield call(axios.delete, `/api/food/${action.payload.id}`, config )
+    yield call(axios.delete, `/api/food/${action.payload.id}`, config )
     yield put({
-      type: 'SET_ITEMS',
-      payload: items.data
+      type: 'GET_ITEMS',
     })
   }
   catch(error){
@@ -66,10 +64,9 @@ function * updateFoodItem(action) {
     withCredentials: true,
   }
   try{
-    const items = yield call(axios.put,`/api/food/${action.payload.id}`, action.payload, config )
+    yield call(axios.put,`/api/food/${action.payload.id}`, action.payload, config )
     yield put({
-      type: 'SET_ITEMS',
-      payload: items.data
+      type: 'GET_ITEMS',
     })
   }
   catch(error){

@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import FreezerItem from './FreezerItem/FreezerItem';
 
 class Freezer extends Component {
-    // constructor(props){
-    //     super(props);
-    // }
+
 
     render() {
         let allItems = this.props.reduxState.foodReducer;

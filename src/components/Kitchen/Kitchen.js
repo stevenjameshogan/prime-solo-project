@@ -30,11 +30,6 @@ class Kitchen extends Component {
     // this.props.history.push('home');
   }
 
-  checkRedux = () => {
-    console.log(this.props.reduxState.foodReducer);
-    
-  }
-
   render() {
 
     return (
@@ -69,7 +64,6 @@ class Kitchen extends Component {
         </div>
         <button><Link to="/addfood">Add Food</Link></button>
         <button><Link to="/itemselect">Find Recipe</Link></button>
-        <button onClick={this.checkRedux}>Test</button>
       </div>
     );
   }

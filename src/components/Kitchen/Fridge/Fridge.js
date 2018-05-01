@@ -7,6 +7,8 @@ class Fridge extends Component {
 
     render() {
         let allItems = this.props.reduxState.foodReducer;
+        // console.log(allItems);
+        
         let fridgeList = allItems.filter(food => food.location === 'Fridge');
         let fridgeItems = fridgeList.map((item) => {
             return(<FridgeItem key={item.id} item={item} />)
