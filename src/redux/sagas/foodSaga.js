@@ -5,6 +5,7 @@ import axios from 'axios';
 function * FoodSaga() {
   yield takeEvery('GET_ITEMS', getFoodItems)
   yield takeEvery('POST_ITEM', postFoodItem)
+  yield takeEvery('DELETE_ITEM', deleteFoodItem)
 }
 
 // Axios request for all food items in current user's Kitchen
@@ -26,22 +27,38 @@ function * getFoodItems(){
     }
   }
   
-  function * postFoodItem(action) {
-    const config ={
-      headers: {'Content-Type': 'application/json'},
-      withCredentials: true,
-    }
-    try{
-      const items = yield call(axios.post, '/api/food', action.payload, config )
-      yield put({
-        type: 'SET_ITEMS',
-        payload: items.data
-      })
-    }
-    catch(error){
-    }
+function * postFoodItem(action) {
+  const config ={
+    headers: {'Content-Type': 'application/json'},
+    withCredentials: true,
   }
+  try{
+    const items = yield call(axios.post, '/api/food', action.payload, config )
+    yield put({
+      type: 'SET_ITEMS',
+      payload: items.data
+    })
+  }
+  catch(error){
+  }
+}
+
+function * deleteFoodItem(action) {
+  const config ={
+    headers: {'Content-Type': 'application/json'},
+    withCredentials: true,
+  }
+  try{
+    const items = yield call(axios.delete, `/api/food/${action.payload.id}`, config )
+    yield put({
+      type: 'SET_ITEMS',
+      payload: items.data
+    })
+  }
+  catch(error){
+  }
+}
 
 
 
-  export default FoodSaga;
+export default FoodSaga;

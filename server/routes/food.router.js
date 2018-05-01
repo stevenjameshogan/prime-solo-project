@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
     if(req.isAuthenticated()){
         const queryText = 'SELECT * FROM food_items WHERE user_id = $1;';
         pool.query(queryText, [req.user.id]).then((result) => {
-            console.log(result.rows);
             res.send(result.rows);
         })
         .catch((error) => {
@@ -46,7 +45,6 @@ router.delete('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    console.log(req.user, req.body, req.params.id, req.isAuthenticated());
     const updatedFood = req.body;
     if (req.isAuthenticated()) {
         const queryText = `UPDATE food_items SET name = $1, quantity = $2, category = $3, location = $4, notes = $5 WHERE id = $6`;
