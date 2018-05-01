@@ -6,6 +6,18 @@ import { Link } from 'react-router-dom';
 import '../Kitchen.css'
 
 class AddFoodForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = ({
+            newFood: {
+                name: '',
+                quantity: '',
+                category: '',
+                location: '',
+                notes: ''
+            }
+        })
+    }
 
     componentDidMount() {
         this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
@@ -22,16 +34,59 @@ class AddFoodForm extends Component {
         // this.props.history.push('home');
     }
 
-    alert = () => {
-        alert('Food Added!')
+    addFood = (event) => {
+        event.preventDefault();
+        console.log('state', this.state.newFood);
+        this.props.dispatch({
+            type: 'POST_ITEM',
+            payload: this.state.newFood
+        })
+        this.setState({
+            newFood: {
+                name: '',
+                quantity: '',
+                category: '',
+                location: '',
+                notes: ''
+            }
+        })
+        
     }
 
+    handleInput = (propertyName) => {
+        return (event) => {          
+            this.setState({
+                newFood: {
+                    ...this.state.newFood,
+                    [propertyName]: event.target.value,
+                }
+            })
+        }
+    }
 
     render() {
         return (
         <div className="kitchenDiv">
             <button className="logout" onClick={this.logout}>Log Out</button>
             <h1>Add Food Form</h1>
+            <form onSubmit={this.addFood}>
+                <input placeholder="Name" onChange={this.handleInput("name")}></input>
+                <input placeholder="Quantity/Servings" onChange={this.handleInput("quantity")}></input><br/>
+                <select onChange={this.handleInput("category")}>
+                    <option defaultValue="" selected disabled hidden>Category</option>
+                    <option>Vegetables</option>
+                    <option>Meat</option>
+                    <option>Dairy</option>
+                </select>
+                <select onChange={this.handleInput("location")}>
+                    <option value="" selected disabled hidden>Choose Location</option>
+                    <option>Fridge</option>
+                    <option>Freezer</option>
+                    <option>Pantry</option>
+                </select>
+                <input placeholder="Notes" onChange={this.handleInput("notes")}></input>
+                <button type = "submit">Submit</button>
+            </form>
             <button onClick={this.alert}>Add</button>
             <br/>
             <button><Link to="/kitchen">Back to Kitchen</Link></button>
@@ -42,9 +97,10 @@ class AddFoodForm extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    user: state.user,
+const mapReduxStateToProps = reduxState => ({
+    user: reduxState.user,
+    reduxState
   });
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(AddFoodForm);
+export default connect(mapReduxStateToProps)(AddFoodForm);

@@ -31,7 +31,7 @@ class Kitchen extends Component {
   }
 
   checkRedux = () => {
-    console.log(this.props.state.foodReducer);
+    console.log(this.props.reduxState.foodReducer);
     
   }
 
@@ -70,17 +70,17 @@ class Kitchen extends Component {
         <button><Link to="/addfood">Add Food</Link></button>
         <button><Link to="/itemselect">Find Recipe</Link></button>
         <button onClick={this.checkRedux}>Test</button>
-        <pre>{JSON.stringify(this.props.state.foodReducer)}</pre>
+        <pre>{JSON.stringify(this.props.reduxState.foodReducer)}</pre>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-    user: state.user,
-    state
+const mapReduxStateToProps = reduxState => ({
+    user: reduxState.user,
+    reduxState
   });
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(Kitchen);
+export default connect(mapReduxStateToProps)(Kitchen);
 
