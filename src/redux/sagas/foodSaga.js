@@ -9,7 +9,6 @@ function * FoodSaga() {
 
 // Axios request for all food items in current user's Kitchen
 function * getFoodItems(){
-    console.log('get food items called');
     // Send cookie and session data along with axios request
     const config ={
       headers: {'Content-Type': 'application/json'},
@@ -28,7 +27,6 @@ function * getFoodItems(){
   }
   
   function * postFoodItem(action) {
-    console.log('in POST food item', action.payload);
     const config ={
       headers: {'Content-Type': 'application/json'},
       withCredentials: true,

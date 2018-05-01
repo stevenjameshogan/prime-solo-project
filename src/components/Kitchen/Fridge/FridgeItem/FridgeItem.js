@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Dialog, {DialogActions, DialogContent, DialogContentText, DialogTitle} from 'material-ui/Dialog';
+import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
+// import Dialog, {DialogActions, DialogContent, DialogContentText, DialogTitle} from 'material-ui/Dialog';
 import moment from 'moment';
   
 
@@ -48,9 +49,9 @@ class FridgeItem extends Component {
     updateItem = (event) => {
         event.preventDefault();
         this.setState({ 
-            open: false
+            open: false,
+            editMode: false
         });
-        
     }
     
     render() {
@@ -78,7 +79,7 @@ class FridgeItem extends Component {
                 <div>
                     <p onClick={this.handleClickOpen}>{this.props.item.name}</p>
                     <Dialog open={this.state.open} onClose={this.handleClose}>
-                        <DialogTitle>{this.props.item.name}</DialogTitle>
+                        {/* <DialogTitle>{this.props.item.name}</DialogTitle> */}
                         <DialogContent>
                             <form>
                                 <input value={this.state.foodItem.name} placeholder={this.props.item.name} onChange={this.handleInput("name")}></input>
