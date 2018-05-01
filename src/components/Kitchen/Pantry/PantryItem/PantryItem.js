@@ -53,6 +53,13 @@ class PantryItem extends Component {
             editMode: false
         });
     }
+
+    deleteItem = () => {
+        this.props.dispatch({
+            type: 'DELETE_ITEM',
+            payload: this.props.item
+        })
+    }
     
     render() {
         let expDate = moment(this.props.item.exp_date).format('MMM Do YYYY');
@@ -69,7 +76,7 @@ class PantryItem extends Component {
                                 <p>Location: {this.props.item.location}</p>
                                 <p>Notes: {this.props.item.notes}</p>
                                 <button onClick={this.toggleEditClick}>Edit</button>
-                                <button>Remove</button>
+                                <button onClick={this.deleteItem}>Remove</button>
                         </DialogContent>
                     </Dialog>
                 </div>
