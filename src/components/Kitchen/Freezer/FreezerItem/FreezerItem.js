@@ -11,6 +11,7 @@ class FreezerItem extends Component {
             open: false,
             editMode: false,
             foodItem: {
+                id: this.props.item.id,
                 name: this.props.item.name,
                 quantity: this.props.item.quantity,
                 category: this.props.item.category,
@@ -47,6 +48,10 @@ class FreezerItem extends Component {
 
     updateItem = (event) => {
         event.preventDefault();
+        this.props.dispatch({
+            type: 'UPDATE_ITEM',
+            payload: this.state.foodItem
+        })
         this.setState({ 
             open: false,
             editMode: false

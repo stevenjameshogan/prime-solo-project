@@ -6,6 +6,7 @@ function * FoodSaga() {
   yield takeEvery('GET_ITEMS', getFoodItems)
   yield takeEvery('POST_ITEM', postFoodItem)
   yield takeEvery('DELETE_ITEM', deleteFoodItem)
+  yield takeEvery('UPDATE_ITEM', updateFoodItem)
 }
 
 // Axios request for all food items in current user's Kitchen
@@ -58,6 +59,23 @@ function * deleteFoodItem(action) {
   catch(error){
   }
 }
+
+function * updateFoodItem(action) {
+  const config ={
+    headers: {'Content-Type': 'application/json'},
+    withCredentials: true,
+  }
+  try{
+    const items = yield call(axios.put,`/api/food/${action.payload.id}`, action.payload, config )
+    yield put({
+      type: 'SET_ITEMS',
+      payload: items.data
+    })
+  }
+  catch(error){
+  }
+}
+
 
 
 
