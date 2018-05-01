@@ -36,7 +36,6 @@ class AddFoodForm extends Component {
 
     addFood = (event) => {
         event.preventDefault();
-        console.log('state', this.state.newFood);
         this.props.dispatch({
             type: 'POST_ITEM',
             payload: this.state.newFood
@@ -70,21 +69,22 @@ class AddFoodForm extends Component {
             <button className="logout" onClick={this.logout}>Log Out</button>
             <h1>Add Food Form</h1>
             <form onSubmit={this.addFood}>
-                <input placeholder="Name" onChange={this.handleInput("name")}></input>
-                <input placeholder="Quantity/Servings" onChange={this.handleInput("quantity")}></input><br/>
-                <select onChange={this.handleInput("category")}>
-                    <option defaultValue="" selected disabled hidden>Category</option>
+                <input value={this.state.newFood.name} placeholder="Name" onChange={this.handleInput("name")}></input>
+                <input value={this.state.newFood.quantity}  placeholder="Quantity/Servings" 
+                       onChange={this.handleInput("quantity")}></input>
+                <select value={this.state.newFood.category} onChange={this.handleInput("category")}>
+                    <option value="" selected disabled hidden>Category</option>
                     <option>Vegetables</option>
                     <option>Meat</option>
                     <option>Dairy</option>
                 </select>
-                <select onChange={this.handleInput("location")}>
+                <select value={this.state.newFood.location} onChange={this.handleInput("location")}>
                     <option value="" selected disabled hidden>Choose Location</option>
                     <option>Fridge</option>
                     <option>Freezer</option>
                     <option>Pantry</option>
                 </select>
-                <input placeholder="Notes" onChange={this.handleInput("notes")}></input>
+                <input value={this.state.newFood.notes} placeholder="Notes" onChange={this.handleInput("notes")}></input>
                 <button type = "submit">Submit</button>
             </form>
             <button onClick={this.alert}>Add</button>
