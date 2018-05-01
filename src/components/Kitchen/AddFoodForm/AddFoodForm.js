@@ -85,7 +85,7 @@ class AddFoodForm extends Component {
                     <option>Pantry</option>
                 </select>
                 <input value={this.state.newFood.notes} placeholder="Notes" onChange={this.handleInput("notes")}></input>
-                <button type = "submit">Submit</button>
+                <button type="submit">Submit</button>
             </form>
             <button onClick={this.alert}>Add</button>
             <br/>
