@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import FreezerItem from './FreezerItem/FreezerItem';
 
 class Freezer extends Component {
+
     render() {
+        let allItems = this.props.reduxState.foodReducer;
+        let freezerList = allItems.filter(food => food.location === 'Freezer');
+        let freezerItems = freezerList.map((item) => {
+            return(<FreezerItem key={item.id} item={item} />)
+        })
+
         return(
             <div>
-                <div>Pizza</div>
-                <div>Ice Cream</div>
-                <div>Frozen Corn</div>
-                <div>Ground Beef</div>
+                {freezerItems}
             </div>
         )
     }
 }
 
-export default Freezer;
+const mapReduxStateToProps = reduxState => ({
+    user: reduxState.user,
+    reduxState
+});
+
+export default connect(mapReduxStateToProps)(Freezer);

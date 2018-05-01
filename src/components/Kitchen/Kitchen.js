@@ -70,7 +70,6 @@ class Kitchen extends Component {
         <button><Link to="/addfood">Add Food</Link></button>
         <button><Link to="/itemselect">Find Recipe</Link></button>
         <button onClick={this.checkRedux}>Test</button>
-        <pre>{JSON.stringify(this.props.reduxState.foodReducer)}</pre>
       </div>
     );
   }
