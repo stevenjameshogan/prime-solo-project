@@ -26,10 +26,6 @@ class FoodList extends Component {
         // this.props.history.push('home');
     }
 
-    selectItem = (item) => {
-        console.log(item.name);
-    }
-    
     render() {
         let allFoods = this.props.reduxState.foodReducer;
         let foodItems = allFoods.map((item) => {
