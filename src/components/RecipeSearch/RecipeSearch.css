@@ -5,3 +5,7 @@
 .foodItem {
     outline: .25px solid black;
 }
+
+.foodItem:hover {
+    background-color: beige;
+}

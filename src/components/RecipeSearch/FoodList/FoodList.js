@@ -3,7 +3,7 @@ import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import '../RecipeSearch.css';
+import '../../RecipeSearch/RecipeSearch.css'
 import FoodItem from './FoodItem/FoodItem';
 
 class FoodList extends Component {
@@ -25,11 +25,15 @@ class FoodList extends Component {
         this.props.dispatch(triggerLogout());
         // this.props.history.push('home');
     }
+
+    selectItem = (item) => {
+        console.log(item.name);
+    }
     
     render() {
         let allFoods = this.props.reduxState.foodReducer;
         let foodItems = allFoods.map((item) => {
-            return(<FoodItem key={item.id} item={item} />)
+            return(<FoodItem key={item.id} item={item} selectItem={this.selectItem} />)
         })
         return (
         <div className="recipeDiv">

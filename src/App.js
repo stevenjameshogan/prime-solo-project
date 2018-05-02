@@ -5,7 +5,8 @@ import RegisterPage from './components/RegisterPage/RegisterPage';
 import Kitchen from './components/Kitchen/Kitchen';
 import AddFoodForm from './components/Kitchen/AddFoodForm/AddFoodForm';
 import FoodList from './components/RecipeSearch/FoodList/FoodList';
-
+import SearchParamsPage from './components/RecipeSearch/SearchParamsPage/SearchParamsPage'
+;
 import './styles/main.css';
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
         <Route path="/kitchen" component={Kitchen} />
         <Route path="/addfood" component={AddFoodForm} />
         <Route path="/itemselect" component={FoodList} />
+        <Route path="/searchparams" component={SearchParamsPage} />
 
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />

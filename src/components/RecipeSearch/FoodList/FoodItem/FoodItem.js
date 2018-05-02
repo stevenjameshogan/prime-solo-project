@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import '../../RecipeListPage/RecipeListPage.css'
+import '../../../RecipeSearch/RecipeSearch.css';
 
 class FoodItem extends Component {
+    constructor(props){
+        super(props)
+    }
+
+    handleSelectItem = () => {
+        console.log(this.props.item);
+        this.props.selectItem(this.props.item)
+    }
+
     render() {
         return(
         
-        <div>
-            <div className="foodItem">{this.props.item.name}</div>
+        <div onClick={this.handleSelectItem} className="foodItem">
+            <p>{this.props.item.name}</p>
         </div>
         
         )

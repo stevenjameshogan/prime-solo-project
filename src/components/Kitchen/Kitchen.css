@@ -5,3 +5,7 @@
 .logout {
     float: right;
 }
+
+.foodItem {
+    outline: .25px solid black;
+}
