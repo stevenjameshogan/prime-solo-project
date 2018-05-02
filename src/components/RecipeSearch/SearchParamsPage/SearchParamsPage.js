@@ -66,11 +66,6 @@ class SearchParamsPage extends Component {
         })
     }
 
-    testState = () => {
-        console.log(this.state); 
-        let uri = 'Chocolate milk is awesome';
-        console.log(encodeURI(uri));
-    }
 
     render() {
         return (
@@ -78,10 +73,10 @@ class SearchParamsPage extends Component {
             <button className="logout" onClick={this.logout}>Log Out</button>
             <h1>Step 2 - Customize Search</h1>
             <h3>Add Keywords (Up to 3)</h3>
-            <input value={this.state.keyword} placeholder="Ex. Pasta, Spicy, etc" onChange={this.handleInput("keyword")}></input>
+            <input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}></input>
             <button onClick={this.addKeyword}>+</button>
             <h3>Exclude Foods (Up to 3)</h3>
-            <input value={this.state.excludedFood} placeholder="Ex. Dairy, Peanuts, etc" onChange={this.handleInput("excludedFood")}></input>
+            <input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}></input>
             <button onClick={this.addExcludedFood}>+</button>
             {/* <h3>Max Cook Time</h3>
             <select value={this.state.maxTime} onChange={this.handleInput("maxTime")}>
@@ -91,7 +86,6 @@ class SearchParamsPage extends Component {
                 <option>90 Minutes</option>
                 <option>2 Hours</option>
             </select> */}
-            <button onClick={this.testState}>TEST</button>
             <pre>{JSON.stringify(this.props.reduxState.yummlyReducer)}</pre>
             <button><Link to="/itemselect">Back</Link></button>
             <button onClick={this.dispatchSearchTerms}>Go</button>

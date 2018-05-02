@@ -15,17 +15,22 @@ function * getRecipes(action){
         itemUrlString = itemUrlString + action.payload.searchItems[i] + '&'
     }
     let preUrlEncodedString = (action.payload.searchParams.keywords + itemUrlString + action.payload.searchParams.excludedFoods).toLowerCase();
-    console.log(preUrlEncodedString);
     let urlEncodedString = encodeURI(preUrlEncodedString);
-    console.log(urlEncodedString);
     let finalApiString = baseUrlString + urlEncodedString + 'requirePictures=true';
     console.log(finalApiString);
-    
-    const searchTerms = action.payload;
     // Send cookie and session data along with axios request
     const config ={
       headers: {'Content-Type': 'application/json'},
       withCredentials: true,
+    }
+    try{
+        const recipes = yield call(axios.get, `${finalApiString}`, config )
+        yield put({
+          type: 'SET_RECIPES',
+          payload: recipes.data
+        })
+      }
+      catch(error){
     }
     // If request is successful, dispatch the response.data off to the Reducer Store for storage and access by all components
 
