@@ -14,7 +14,7 @@ class FoodItem extends Component {
         if(this.state.isSelected === false ) {
             this.selectItem();
         } else {
-            this.unSelectItem();
+            this.deSelectItem();
         }
     }
 
@@ -28,7 +28,7 @@ class FoodItem extends Component {
         });
     };
 
-    unSelectItem = () => {
+    deSelectItem = () => {
         this.props.dispatch({
             type: 'REMOVE_SEARCH_ITEM',
             payload: this.props.item
