@@ -1,12 +1,27 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
+
 // Root Saga - Calls other Sagas based on dispatch type
 function * YummlySaga() {
   yield takeEvery('GET_RECIPES', getRecipes)
 }
 
 function * getRecipes(action){
+    console.log('in search saga', action.payload);
+    let baseUrlString = `http://api.yummly.com/v1/api/recipes?_app_id=4fe75761&_app_key=b467b28b7553146b3589a8eb934349d4`
+    let itemUrlString = '&allowedIngredient[]='
+    for (let i = 0; i < action.payload.searchItems.length; i++){
+        itemUrlString = itemUrlString + action.payload.searchItems[i] + '&'
+    }
+    let preUrlEncodedString = (action.payload.searchParams.keywords + itemUrlString + action.payload.searchParams.excludedFoods).toLowerCase();
+    console.log(preUrlEncodedString);
+    let urlEncodedString = encodeURI(preUrlEncodedString);
+    console.log(urlEncodedString);
+    let finalApiString = baseUrlString + urlEncodedString + 'requirePictures=true';
+    console.log(finalApiString);
+    
+    const searchTerms = action.payload;
     // Send cookie and session data along with axios request
     const config ={
       headers: {'Content-Type': 'application/json'},
@@ -14,18 +29,8 @@ function * getRecipes(action){
     }
     // If request is successful, dispatch the response.data off to the Reducer Store for storage and access by all components
 
-    // * DETERMINE API QUERY BASED ON USER SEARCH PARAMETERS *
-    console.log('in search saga', action.payload);
-    
-    // try{
-    //   const items = yield call(axios.get, '/api/food', config )
-    //   yield put({
-    //     type: 'SET_ITEMS',
-    //     payload: items.data
-    //   })
-    // }
-    // catch(error){
-    // }
+  
 }
+
 
 export default YummlySaga;

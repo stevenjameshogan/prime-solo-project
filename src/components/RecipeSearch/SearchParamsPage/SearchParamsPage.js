@@ -12,9 +12,9 @@ class SearchParamsPage extends Component {
             keyword: '',
             excludedFood: '',
             maxTime: '',
-            searchTerms: {
-                keywords: [],
-                excludedFoods: [],
+            searchParams: {
+                keywords: '',
+                excludedFoods: 'excludedIngredient[]=',
                 maxTime: ''
             }
         })
@@ -44,16 +44,17 @@ class SearchParamsPage extends Component {
         }
     }
 
+
     addKeyword = () => {
         this.setState({
-            searchTerms: {...this.state.searchTerms, keywords: [...this.state.searchTerms.keywords, this.state.keyword]},
+            searchParams: {...this.state.searchParams, keywords: this.state.searchParams.keywords + '&q=' + this.state.keyword},
             keyword: ''
         })
     }
 
     addExcludedFood = () => {
         this.setState({
-            searchTerms: {...this.state.searchTerms, excludedFoods: [...this.state.searchTerms.excludedFoods, this.state.excludedFood]},
+            searchParams: {...this.state.searchParams, excludedFoods:  this.state.searchParams.excludedFoods + this.state.excludedFood + '&' },
             excludedFood: ''
         })
     }
@@ -61,12 +62,14 @@ class SearchParamsPage extends Component {
     dispatchSearchTerms = () => {
         this.props.dispatch({
             type: 'GET_RECIPES',
-            payload: [this.state.searchTerms, this.props.reduxState.yummlyReducer]
+            payload: {searchParams: this.state.searchParams, searchItems: this.props.reduxState.yummlyReducer}
         })
     }
 
     testState = () => {
         console.log(this.state); 
+        let uri = 'Chocolate milk is awesome';
+        console.log(encodeURI(uri));
     }
 
     render() {
@@ -80,14 +83,14 @@ class SearchParamsPage extends Component {
             <h3>Exclude Foods (Up to 3)</h3>
             <input value={this.state.excludedFood} placeholder="Ex. Dairy, Peanuts, etc" onChange={this.handleInput("excludedFood")}></input>
             <button onClick={this.addExcludedFood}>+</button>
-            <h3>Max Cook Time</h3>
+            {/* <h3>Max Cook Time</h3>
             <select value={this.state.maxTime} onChange={this.handleInput("maxTime")}>
                 <option value="" selected disabled hidden>Max Cook Time</option>
                 <option>30 Minutes</option>
                 <option>60 Minutes</option>
                 <option>90 Minutes</option>
                 <option>2 Hours</option>
-            </select>
+            </select> */}
             <button onClick={this.testState}>TEST</button>
             <pre>{JSON.stringify(this.props.reduxState.yummlyReducer)}</pre>
             <button><Link to="/itemselect">Back</Link></button>
