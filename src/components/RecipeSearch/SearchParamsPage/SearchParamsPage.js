@@ -41,9 +41,28 @@ class SearchParamsPage extends Component {
             this.setState({
                     ...this.state,
                     [propertyName]: event.target.value,
-                
             })
         }
+    }
+
+    addKeyword = () => {
+        console.log('adding keyword', this.state.keyword);
+        this.setState({
+            searchTerms: {...this.state.searchTerms, keywords: [...this.state.searchTerms.keywords, this.state.keyword]},
+            keyword: ''
+        })
+    }
+
+    addExcludedFood = () => {
+        console.log('adding excluded', this.state.excludedFood);
+        this.setState({
+            searchTerms: {...this.state.searchTerms, excludedFoods: [...this.state.searchTerms.excludedFoods, this.state.excludedFood]},
+            excludedFood: ''
+        })
+    }
+
+    testState = () => {
+        console.log(this.state); 
     }
 
     render() {
@@ -53,10 +72,10 @@ class SearchParamsPage extends Component {
             <h1>Step 2 - Customize Search</h1>
             <h3>Add Keywords (Up to 3)</h3>
             <input value={this.state.keyword} placeholder="Ex. Pasta, Spicy, etc" onChange={this.handleInput("keyword")}></input>
-            <button>+</button>
+            <button onClick={this.addKeyword}>+</button>
             <h3>Exclude Foods (Up to 3)</h3>
             <input value={this.state.excludedFood} placeholder="Ex. Dairy, Peanuts, etc" onChange={this.handleInput("excludedFood")}></input>
-            <button>+</button>
+            <button onClick={this.addExcludedFood}>+</button>
             <h3>Max Cook Time</h3>
             <select value={this.state.maxTime} onChange={this.handleInput("maxTime")}>
                 <option value="" selected disabled hidden>Max Cook Time</option>
@@ -65,6 +84,7 @@ class SearchParamsPage extends Component {
                 <option>90 Minutes</option>
                 <option>2 Hours</option>
             </select>
+            <button onClick={this.testState}>TEST</button>
             <pre>{JSON.stringify(this.props.reduxState.yummlyReducer)}</pre>
             <button><Link to="/itemselect">Back</Link></button>
             <button><Link to="/recipes">Go!</Link></button>
