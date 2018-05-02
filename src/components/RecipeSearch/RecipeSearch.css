@@ -1,3 +1,7 @@
 .recipeDiv {
     background-color: dodgerblue;
 }
+
+.foodItem {
+    outline: .25px solid black;
+}
