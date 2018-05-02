@@ -14,7 +14,7 @@ class SearchParamsPage extends Component {
             maxTime: '',
             searchParams: {
                 keywords: '',
-                excludedFoods: '',
+                excludedFoods: '&excludedIngredient[]=',
                 maxTime: ''
             }
         })
@@ -54,7 +54,7 @@ class SearchParamsPage extends Component {
 
     addExcludedFood = () => {
         this.setState({
-            searchParams: {...this.state.searchParams, excludedFoods: this.state.searchParams.excludedFoods + '&excludedIngredient[]=' + this.state.excludedFood},
+            searchParams: {...this.state.searchParams, excludedFoods:  this.state.searchParams.excludedFoods + '&' + this.state.excludedFood},
             excludedFood: ''
         })
     }

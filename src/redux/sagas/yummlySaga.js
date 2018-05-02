@@ -9,13 +9,16 @@ function * YummlySaga() {
 
 function * getRecipes(action){
     console.log('in search saga', action.payload);
-    let baseUrlString = `http://api.yummly.com/v1/api/recipes?_app_id=4fe75761&_app_key=b467b28b7553146b3589a8eb934349d4`
-    let itemUrlString = ''
+    let baseUrlString = `http://api.yummly.com/v1/api/recipes?_app_id=4fe75761&_app_key=b467b28b7553146b3589a8eb934349d4&requirePictures=true`
+    let itemUrlString = '&allowedIngredient[]='
     for (let i = 0; i < action.payload.searchItems.length; i++){
-        itemUrlString = itemUrlString + '&allowedIngredient[]=' + action.payload.searchItems[i]
+        itemUrlString = itemUrlString + '&' + action.payload.searchItems[i]
     }
     let preUrlEncodeString = action.payload.searchParams.keywords + itemUrlString + action.payload.searchParams.excludedFoods;
     console.log(preUrlEncodeString);
+    let lowerCaseUrlString = preUrlEncodeString.toLowerCase();
+    console.log(lowerCaseUrlString);
+    
     
 
     
