@@ -1,3 +1,4 @@
+
 const yummlyReducer = (state=[], action)=>{
 
     switch(action.type){
@@ -5,7 +6,7 @@ const yummlyReducer = (state=[], action)=>{
         return [...state, action.payload]
       case 'REMOVE_SEARCH_ITEM':
         console.log(state);
-        let newList = state.filter(item => item.id !== action.payload.id)
+        let newList = state.filter(item => item !== action.payload)
         return newList;
       default:
         return state;

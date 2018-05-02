@@ -21,7 +21,7 @@ class FoodItem extends Component {
     selectItem = () => {
         this.props.dispatch({
             type: 'ADD_SEARCH_ITEM',
-            payload: this.props.item
+            payload: this.props.item.name
         });
         this.setState({
             isSelected: true
@@ -31,7 +31,7 @@ class FoodItem extends Component {
     deSelectItem = () => {
         this.props.dispatch({
             type: 'REMOVE_SEARCH_ITEM',
-            payload: this.props.item
+            payload: this.props.item.name
         });
         this.setState({
             isSelected: false
