@@ -37,7 +37,6 @@ class SearchParamsPage extends Component {
 
     handleInput = (propertyName) => {
         return (event) => {
-            console.log(event.target.value);
             this.setState({
                     ...this.state,
                     [propertyName]: event.target.value,
@@ -46,7 +45,6 @@ class SearchParamsPage extends Component {
     }
 
     addKeyword = () => {
-        console.log('adding keyword', this.state.keyword);
         this.setState({
             searchTerms: {...this.state.searchTerms, keywords: [...this.state.searchTerms.keywords, this.state.keyword]},
             keyword: ''
@@ -54,10 +52,16 @@ class SearchParamsPage extends Component {
     }
 
     addExcludedFood = () => {
-        console.log('adding excluded', this.state.excludedFood);
         this.setState({
             searchTerms: {...this.state.searchTerms, excludedFoods: [...this.state.searchTerms.excludedFoods, this.state.excludedFood]},
             excludedFood: ''
+        })
+    }
+
+    dispatchSearchTerms = () => {
+        this.props.dispatch({
+            type: 'GET_RECIPES',
+            payload: [this.state.searchTerms, this.props.reduxState.yummlyReducer]
         })
     }
 
@@ -87,7 +91,7 @@ class SearchParamsPage extends Component {
             <button onClick={this.testState}>TEST</button>
             <pre>{JSON.stringify(this.props.reduxState.yummlyReducer)}</pre>
             <button><Link to="/itemselect">Back</Link></button>
-            <button><Link to="/recipes">Go!</Link></button>
+            <button onClick={this.dispatchSearchTerms}>Go</button>
         </div>
         )
     }

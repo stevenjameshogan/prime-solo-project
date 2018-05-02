@@ -26,7 +26,7 @@ function * getFoodItems(){
     }
     catch(error){
     }
-  }
+}
   
 function * postFoodItem(action) {
   const config ={
