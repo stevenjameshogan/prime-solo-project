@@ -26,7 +26,7 @@ class FridgeItem extends Component {
         this.setState({ open: true });
     };
     handleClose = () => {
-        this.setState({ open: false });
+        this.setState({ editMode: false, open: false,  });
     };
      // toggles edit mode, for component render logic below
     toggleEditClick = () => {

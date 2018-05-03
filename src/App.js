@@ -8,6 +8,7 @@ import FoodList from './components/RecipeSearch/FoodList/FoodList';
 import SearchParamsPage from './components/RecipeSearch/SearchParamsPage/SearchParamsPage'
 import RecipeList from './components/RecipeSearch/RecipeList/RecipeList';
 import RecipeItem from './components/RecipeSearch/RecipeList/RecipeItem/RecipeItem';
+import SelectedRecipe from './components/RecipeSearch/SelectedRecipe/SelectedRecipe';
 
 import './styles/main.css';
 
@@ -24,6 +25,7 @@ const App = () => (
         <Route path="/searchparams" component={SearchParamsPage} />
         <Route path="/recipelist" component={RecipeList} />
         <Route path="/recipeitem" component={RecipeItem} />
+        <Route path="/selectedrecipe" component={SelectedRecipe} />
 
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />
