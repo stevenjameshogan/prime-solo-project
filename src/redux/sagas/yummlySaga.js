@@ -16,9 +16,9 @@ function * getRecipes(action){
     };
     let includedString = '';
     if (action.payload.searchItems.length) {
-      includedString = 'allowedIngredient[]='
+      includedString = '';
       for (let i = 0; i < action.payload.searchItems.length; i++){
-        includedString =  includedString + action.payload.searchItems[i].toLowerCase() + '&';
+        includedString =  includedString + 'allowedIngredient[]=' + action.payload.searchItems[i].toLowerCase() + '&';
       }
     };
     let excludedString = '';
@@ -45,8 +45,6 @@ function * getRecipes(action){
       catch(error){
     }
     // If request is successful, dispatch the response.data off to the Reducer Store for storage and access by all components
-
-  
 }
 
 
