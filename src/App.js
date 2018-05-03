@@ -5,7 +5,7 @@ import RegisterPage from './components/RegisterPage/RegisterPage';
 import Kitchen from './components/Kitchen/Kitchen';
 import AddFoodForm from './components/Kitchen/AddFoodForm/AddFoodForm';
 import FoodList from './components/RecipeSearch/FoodList/FoodList';
-import SearchParamsPage from './components/RecipeSearch/SearchParamsPage/SearchParamsPage'
+import SearchParams from './components/RecipeSearch/SearchParams/SearchParams'
 import RecipeList from './components/RecipeSearch/RecipeList/RecipeList';
 import RecipeItem from './components/RecipeSearch/RecipeList/RecipeItem/RecipeItem';
 import SelectedRecipe from './components/RecipeSearch/SelectedRecipe/SelectedRecipe';
@@ -22,7 +22,7 @@ const App = () => (
         <Route path="/kitchen" component={Kitchen} />
         <Route path="/addfood" component={AddFoodForm} />
         <Route path="/itemselect" component={FoodList} />
-        <Route path="/searchparams" component={SearchParamsPage} />
+        <Route path="/searchparams" component={SearchParams} />
         <Route path="/recipelist" component={RecipeList} />
         <Route path="/recipeitem" component={RecipeItem} />
         <Route path="/selectedrecipe" component={SelectedRecipe} />

@@ -4,6 +4,8 @@ import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
 // import Dialog, {DialogActions, DialogContent, DialogContentText, DialogTitle} from 'material-ui/Dialog';
 import moment from 'moment';
   
+// This component references a specific food item currently stored in the user's Pantry.
+// This was created in the parent component (Pantry) via the Map funtion and passed it's unique data
 
 class PantryItem extends Component {
     constructor(props) {

@@ -15,7 +15,7 @@ import './Kitchen.css';
 
 class Kitchen extends Component {
 
-  // On page load, make a Redux dispatch to GET all food item's belonging to a particular user
+  // On page load, make a Redux dispatch to GET all food items belonging to a particular user
   componentDidMount() {
     this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
     this.props.dispatch({

@@ -5,17 +5,20 @@ import { triggerLogout } from '../../../redux/actions/loginActions';
 import { Link } from 'react-router-dom';
 import '../RecipeSearch.css';
 
-class SearchParamsPage extends Component {
+// This component is a page where users can add custom parameters (keywords, exluded ingredients) to their recipe search
+// // This page is the second step in the Recipe Search function of the application
+
+class SearchParams extends Component {
     constructor(props) {
         super(props);
+        // Establish local state to handle user inputs (keywords), excluded forms
         this.state = ({
             keyword: '',
             excludedFood: '',
             maxTime: '',
             searchParams: {
                 keywords: '',
-                excludedFoods: '',
-                maxTime: ''
+                excludedFoods: ''
             }
         })
     }
@@ -23,18 +26,18 @@ class SearchParamsPage extends Component {
     componentDidMount() {
         this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
     }
-
     componentDidUpdate() {
         if (!this.props.user.isLoading && this.props.user.userName === null) {
             this.props.history.push('home');
         }
     }
-
+    // Log out user
     logout = () => {
         this.props.dispatch(triggerLogout());
         // this.props.history.push('home');
     }
 
+    // Handle user inputs and reset the local state accordingly
     handleInput = (propertyName) => {
         return (event) => {
             this.setState({
@@ -44,14 +47,16 @@ class SearchParamsPage extends Component {
         }
     }
 
-
+    // Reset local state after user adds a keyword to the previous state + the new keyword
+    // The Yummly API requires very specific formatting for queries so we also concatenate the required keyword characters to our keyword
     addKeyword = () => {
         this.setState({
             searchParams: {...this.state.searchParams, keywords: this.state.searchParams.keywords + '&q=' + this.state.keyword},
             keyword: ''
         })
     }
-
+    // Reset local state after user adds an exclude to the previous state + the new exclude
+    // The Yummly API requires very specific formatting for queries so we also concatenate the required keyword characters to our exclude
     addExcludedFood = () => {
         this.setState({
             searchParams: {...this.state.searchParams, excludedFoods:  this.state.searchParams.excludedFoods +
@@ -60,13 +65,14 @@ class SearchParamsPage extends Component {
         })
     }
 
+    // Dispatch our local state search parameters along with selected ingredients (stored in yummlyReducer)
+    // Dispatch as action to Redux yummlySaga where Yummly API GET request is made
     dispatchSearchTerms = () => {
         this.props.dispatch({
             type: 'GET_RECIPES',
             payload: {searchParams: this.state.searchParams, searchItems: this.props.reduxState.yummlyReducer}
         })
     }
-
 
     render() {
         return (
@@ -79,14 +85,6 @@ class SearchParamsPage extends Component {
             <h3>Exclude Foods (Up to 3)</h3>
             <input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}></input>
             <button onClick={this.addExcludedFood}>+</button>
-            {/* <h3>Max Cook Time</h3>
-            <select value={this.state.maxTime} onChange={this.handleInput("maxTime")}>
-                <option value="" selected disabled hidden>Max Cook Time</option>
-                <option>30 Minutes</option>
-                <option>60 Minutes</option>
-                <option>90 Minutes</option>
-                <option>2 Hours</option>
-            </select> */}
             <pre>{JSON.stringify(this.props.reduxState.yummlyReducer)}</pre>
             <button><Link to="/itemselect">Edit Ingredients</Link></button>
             <button onClick={this.dispatchSearchTerms}><Link to="/recipelist">Find Recipes!</Link></button>
@@ -95,10 +93,11 @@ class SearchParamsPage extends Component {
     }
 }
 
+// connect component to Redux, giving it access to the yummlyReducer and ability to dispatch to yummly Saga
 const mapReduxStateToProps = reduxState => ({
     user: reduxState.user,
     reduxState
   });
 
 // this allows us to use <App /> in index.js
-export default connect(mapReduxStateToProps)(SearchParamsPage);
+export default connect(mapReduxStateToProps)(SearchParams);

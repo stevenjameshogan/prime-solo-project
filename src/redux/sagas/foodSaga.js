@@ -16,9 +16,9 @@ function * getFoodItems(){
       headers: {'Content-Type': 'application/json'},
       withCredentials: true,
     }
-    // If request is successful, dispatch the response.data off to the Reducer Store for storage and access by all components
     try{
       const items = yield call(axios.get, '/api/food', config )
+      // If request is successful, dispatch the response data off to the foodReducer for storage and access by all components
       yield put({
         type: 'SET_ITEMS',
         payload: items.data
@@ -27,7 +27,7 @@ function * getFoodItems(){
     catch(error){
     }
 }
-  
+
 function * postFoodItem(action) {
   const config ={
     headers: {'Content-Type': 'application/json'},

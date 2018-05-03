@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../RecipeSearch.css';
 
+// This component displays more details about a user-selected recipe (selected from results of Yummly Recipe search)
+
 class SelectedRecipe extends Component {
 
     render() {
@@ -17,6 +19,7 @@ class SelectedRecipe extends Component {
     }
 }
 
+// connect component to Redux in order to retrieve this selected recipe from the selectedRecipeReducer
 const mapReduxStateToProps = reduxState => ({
     user: reduxState.user,
     reduxState

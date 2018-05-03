@@ -6,35 +6,43 @@ import { Link } from 'react-router-dom';
 import '../../RecipeSearch/RecipeSearch.css'
 import FoodItem from './FoodItem/FoodItem';
 
+// This component displays all of a user's current food items, which can be individually selected to include as ingredients in a recipe search
+// This page is the first step in the Recipe Search function of the application
+
 class FoodList extends Component {
 
+    // On page load, make a Redux dispatch to GET all food items belonging to the current user
     componentDidMount() {
         this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
         this.props.dispatch({
           type: 'GET_ITEMS'
         })
     }
-    
     componentDidUpdate() {
         if (!this.props.user.isLoading && this.props.user.userName === null) {
           this.props.history.push('home');
         }
     }
-    
+    // Log out user
     logout = () => {
         this.props.dispatch(triggerLogout());
         // this.props.history.push('home');
     }
 
     render() {
+        // Alias the Redux foodReducer state as allFoods (for clarity) which is an array of all food items held by a given user
         let allFoods = this.props.reduxState.foodReducer;
+        // Map over allFoods to create new "FoodItem" component instances for each food item. Pass each item it's unique props.
+        // Alias all instances as a value of a single variable (foodItems) for visual clarity below
         let foodItems = allFoods.map((item) => {
             return(<FoodItem key={item.id} item={item} selectItem={this.selectItem} />)
         })
+
         return (
         <div className="recipeDiv">
             <button className="logout" onClick={this.logout}>Log Out</button>
             <h1>Step 1 - Select Ingredients</h1>
+            {/* Display all food items on DOM by referencing our aliased components variable, foodItems */}
             {foodItems}
             <button><Link to="/kitchen">Back to Kitchen</Link></button>
             <button><Link to="/searchparams">Next</Link></button>
@@ -43,6 +51,7 @@ class FoodList extends Component {
     }
 }
 
+// connect component to Redux, giving it access to the state of foodReducer where selected ingredients persist
 const mapReduxStateToProps = reduxState => ({
     user: reduxState.user,
     reduxState
