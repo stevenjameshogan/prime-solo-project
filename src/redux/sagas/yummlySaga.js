@@ -16,19 +16,19 @@ function * getRecipes(action){
     };
     let includedString = '';
     if (action.payload.searchItems.length) {
-      includedString = '';
       for (let i = 0; i < action.payload.searchItems.length; i++){
         includedString =  includedString + 'allowedIngredient[]=' + action.payload.searchItems[i].toLowerCase() + '&';
       }
     };
     let excludedString = '';
     if (action.payload.searchParams.excludedFoods.length) {
-      excludedString = `excludedIngredient[]=${action.payload.searchParams.excludedFoods}`
-    };
+      excludedString = action.payload.searchParams.excludedFoods
+    }
   
     let preEncodedFinalString = baseUrlString + keywordString + includedString + excludedString + 'requirePictures=true';
     let encodedFinalString = encodeURI(preEncodedFinalString);
-    console.log(encodedFinalString);
+    console.log(preEncodedFinalString);
+    
 
     // Send cookie and session data along with axios request
     const config ={
