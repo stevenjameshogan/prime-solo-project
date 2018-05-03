@@ -14,7 +14,7 @@ class SearchParamsPage extends Component {
             maxTime: '',
             searchParams: {
                 keywords: '',
-                excludedFoods: 'excludedIngredient[]=',
+                excludedFoods: '',
                 maxTime: ''
             }
         })
