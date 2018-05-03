@@ -88,8 +88,8 @@ class SearchParamsPage extends Component {
                 <option>2 Hours</option>
             </select> */}
             <pre>{JSON.stringify(this.props.reduxState.yummlyReducer)}</pre>
-            <button><Link to="/itemselect">Back</Link></button>
-            <button onClick={this.dispatchSearchTerms}>Go</button>
+            <button><Link to="/itemselect">Edit Ingredients</Link></button>
+            <button onClick={this.dispatchSearchTerms}><Link to="/recipelist">Find Recipes!</Link></button>
         </div>
         )
     }

@@ -9,3 +9,15 @@
 .foodItem:hover {
     background-color: beige;
 }
+
+.resultDiv {
+    outline: .25px solid black;
+}
+
+.resultDiv:hover {
+    background-color: beige;
+}
+
+/* .recipeImage {
+
+} */

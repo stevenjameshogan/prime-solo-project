@@ -6,7 +6,9 @@ import Kitchen from './components/Kitchen/Kitchen';
 import AddFoodForm from './components/Kitchen/AddFoodForm/AddFoodForm';
 import FoodList from './components/RecipeSearch/FoodList/FoodList';
 import SearchParamsPage from './components/RecipeSearch/SearchParamsPage/SearchParamsPage'
-;
+import RecipeList from './components/RecipeSearch/RecipeList/RecipeList';
+import RecipeItem from './components/RecipeSearch/RecipeList/RecipeItem/RecipeItem';
+
 import './styles/main.css';
 
 const App = () => (
@@ -20,6 +22,8 @@ const App = () => (
         <Route path="/addfood" component={AddFoodForm} />
         <Route path="/itemselect" component={FoodList} />
         <Route path="/searchparams" component={SearchParamsPage} />
+        <Route path="/recipelist" component={RecipeList} />
+        <Route path="/recipeitem" component={RecipeItem} />
 
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />
