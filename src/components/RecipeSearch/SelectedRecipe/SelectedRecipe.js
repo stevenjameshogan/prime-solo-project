@@ -33,6 +33,10 @@ class SelectedRecipe extends Component {
                         <li>{recipe.ingredientLines[1]}</li>
                         <li>{recipe.ingredientLines[2]}</li>
                         <li>{recipe.ingredientLines[3]}</li>
+                        <li>{recipe.ingredientLines[4]}</li>
+                        <li>{recipe.ingredientLines[5]}</li>
+                        <li>{recipe.ingredientLines[6]}</li>
+                        <li>{recipe.ingredientLines[7]}</li>
                     </ul>
 
                     <Link to="/recipelist"><button>Back to Recipes</button></Link>

@@ -63,7 +63,7 @@ class LoginPage extends Component {
       <div>
         { this.renderAlert() }
         <form onSubmit={this.login}>
-          <h1>Login</h1>
+          <h1>Welcome to the Virtual Kitchen and Reducing Food Waste and Recipe Builder App</h1>
           <div>
             <label htmlFor="username">
               Username:

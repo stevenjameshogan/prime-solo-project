@@ -46,7 +46,7 @@ class Kitchen extends Component {
          given user's food items stored in that location */}
         <div>
           {/* Freezer Panel */}
-          <ExpansionPanel>
+          <ExpansionPanel className="panel">
               <ExpansionPanelSummary>
                   <Typography>Freezer</Typography>
               </ExpansionPanelSummary>
@@ -56,7 +56,7 @@ class Kitchen extends Component {
               </ExpansionPanelDetails>
           </ExpansionPanel>
           {/* Fridge Panel */}
-          <ExpansionPanel>
+          <ExpansionPanel className="panel">
               <ExpansionPanelSummary>
                   <Typography>Fridge</Typography>
               </ExpansionPanelSummary>
@@ -64,9 +64,9 @@ class Kitchen extends Component {
                 {/* Contents of the panel are nested in the Fridge subcomponent, where the food item data lies */}
                   <Fridge />
               </ExpansionPanelDetails>
-          </ExpansionPanel>
+          </ExpansionPanel >
           {/* Pantry Panel */}
-          <ExpansionPanel>
+          <ExpansionPanel className="panel">
               <ExpansionPanelSummary>
                   <Typography>Pantry</Typography>
               </ExpansionPanelSummary>

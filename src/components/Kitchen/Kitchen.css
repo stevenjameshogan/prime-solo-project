@@ -1,5 +1,6 @@
 .kitchenDiv {
-    background-color: green;
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/back_pic/03/52/47/8557946cc87cfc2.jpg');
+    text-align: center;
 }
 
 .logout {
@@ -8,6 +9,19 @@
 
 .foodItem {
     outline: .25px solid black;
+}
+
+.kitchenItem {
+    outline: .25px solid black;
+    padding: 3px;
+    margin: 10px;
+    width: 150px;
+    margin-left: 70px;
+    background-color: beige;
+}
+
+.panel {
+    background-image: url('../../images/fridge.png')
 }
 button {
     border: .25px solid black;

@@ -83,7 +83,7 @@ class FreezerItem extends Component {
         // If user is not editing this item, display item details on DOM
         if (!this.state.editMode) {
             return (
-                <div>
+                <div className="kitchenItem">
                     <p onClick={this.handleClickOpen}>{this.props.item.name}</p>
                     <Dialog open={this.state.open} onClose={this.handleClose}>
                         <DialogTitle>{this.props.item.name}</DialogTitle>

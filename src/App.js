@@ -13,7 +13,7 @@ import SelectedRecipe from './components/RecipeSearch/SelectedRecipe/SelectedRec
 import './styles/main.css';
 
 const App = () => (
-  <div>
+  <div id="appRoot">
     <Router>
       <Switch>
         <Redirect exact from="/" to="/home" />
