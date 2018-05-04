@@ -40,6 +40,7 @@ class FoodList extends Component {
 
         return (
         <div className="recipeDiv">
+            <Link to="/kitchen"><button>Home</button></Link>
             <button className="logout" onClick={this.logout}>Log Out</button>
             <h2>Select Ingredients</h2>
             {/* Display all food items on DOM by referencing our aliased components variable, foodItems */}

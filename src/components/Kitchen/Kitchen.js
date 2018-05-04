@@ -39,6 +39,7 @@ class Kitchen extends Component {
 
     return (
       <div className="kitchenDiv">
+        <Link to="/kitchen"><button>Home</button></Link>
         <button className="logout" onClick={this.logout}>Log Out</button>
         <h1>Welcome to your Kitchen, { this.props.user.userName }!</h1>
         {/* Categorize food items based on stored location. On click, each panel will open to reveal the

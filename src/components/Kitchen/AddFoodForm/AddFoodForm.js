@@ -72,6 +72,7 @@ class AddFoodForm extends Component {
     render() {
         return (
         <div className="kitchenDiv">
+            <Link to="/kitchen"><button>Home</button></Link>
             <button className="logout" onClick={this.logout}>Log Out</button>
             <h1>Add Food Form</h1>
             <form onSubmit={this.addFood}>

@@ -17,6 +17,8 @@ class RecipeList extends Component {
         })
         return(
             <div className="recipeDiv">
+                <Link to="/kitchen"><button>Home</button></Link>
+                <button className="logout" onClick={this.logout}>Log Out</button><br/><br/>
                 <h1>Select Recipe!</h1>
                 {/* Display recipes on DOM by referencing our aliased components variable, recipeList */}
                 {recipeList}

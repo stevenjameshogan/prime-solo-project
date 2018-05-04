@@ -77,6 +77,7 @@ class SearchParams extends Component {
     render() {
         return (
         <div className="recipeDiv">
+            <Link to="/kitchen"><button>Home</button></Link>
             <button className="logout" onClick={this.logout}>Log Out</button><br/><br/>
             <h2>Add Keywords (Up to 3)</h2>
             <input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}></input>
