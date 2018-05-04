@@ -56,7 +56,7 @@ class SearchParams extends Component {
         })
     }
     // Reset local state after user adds an exclude to the previous state + the new exclude
-    // The Yummly API requires very specific formatting for queries so we also concatenate the required keyword characters to our exclude
+    // The Yummly API requires very specific formatting for queries so we also make inputs lower case and concatenate the required keyword characters to our exclude
     addExcludedFood = () => {
         this.setState({
             searchParams: {...this.state.searchParams, excludedFoods:  this.state.searchParams.excludedFoods +

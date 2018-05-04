@@ -9,7 +9,7 @@ function * FoodSaga() {
   yield takeEvery('UPDATE_ITEM', updateFoodItem)
 }
 
-// Axios request for all food items in current user's Kitchen
+// Axios GET request for all food items in database/current user's Kitchen
 function * getFoodItems(){
     // Send cookie and session data along with axios request
     const config ={
@@ -26,54 +26,61 @@ function * getFoodItems(){
     }
     catch(error){
     }
-}
+};
 
+// Axios POST request to add a new food item to database/current user's Kitchen
 function * postFoodItem(action) {
+  // Send cookie and session data along with axios request
   const config ={
     headers: {'Content-Type': 'application/json'},
     withCredentials: true,
   }
   try{
     yield call(axios.post, '/api/food', action.payload, config )
+    // If request is successful, dispatch the response data off to the foodReducer for storage and access by all components
     yield put({
       type: 'GET_ITEMS',
     })
   }
   catch(error){
   }
-}
+};
 
+// Axios DELETE request to remove a specific food item from database/current user's Kitchen by unique id
 function * deleteFoodItem(action) {
+  // Send cookie and session data along with axios request
   const config ={
     headers: {'Content-Type': 'application/json'},
     withCredentials: true,
   }
   try{
     yield call(axios.delete, `/api/food/${action.payload.id}`, config )
+    // If request is successful, dispatch the response data off to the foodReducer for storage and access by all components
     yield put({
       type: 'GET_ITEMS',
     })
   }
   catch(error){
   }
-}
+};
 
+// Axios PIT request to rupdate a specific food item in database/current user's Kitchen by unique id
 function * updateFoodItem(action) {
+  // Send cookie and session data along with axios request
   const config ={
     headers: {'Content-Type': 'application/json'},
     withCredentials: true,
   }
   try{
     yield call(axios.put,`/api/food/${action.payload.id}`, action.payload, config )
+     // If request is successful, dispatch the response data off to the foodReducer for storage and access by all components
     yield put({
       type: 'GET_ITEMS',
     })
   }
   catch(error){
   }
-}
-
-
+};
 
 
 export default FoodSaga;
