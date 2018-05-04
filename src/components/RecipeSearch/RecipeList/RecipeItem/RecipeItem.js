@@ -25,10 +25,10 @@ class RecipeItem extends Component {
         let biggerPic = splitPic[0] + '200';
 
         return(
-        <div className="resultDiv" onClick={this.selectRecipe}>
+        <div className="resultDiv" onClick={this.selectRecipe} >
             <p>{this.props.recipe.recipeName}</p>
             <img src={biggerPic} alt="Recipe" className="recipeImage"/>
-            <button><Link to="/selectedrecipe">Details</Link></button>
+            <Link to="/selectedrecipe"></Link>
         </div>
         )
     }

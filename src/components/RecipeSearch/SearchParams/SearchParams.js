@@ -77,17 +77,16 @@ class SearchParams extends Component {
     render() {
         return (
         <div className="recipeDiv">
-            <button className="logout" onClick={this.logout}>Log Out</button>
-            <h1>Step 2 - Customize Search</h1>
-            <h3>Add Keywords (Up to 3)</h3>
+            <button className="logout" onClick={this.logout}>Log Out</button><br/><br/>
+            <h2>Add Keywords (Up to 3)</h2>
             <input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}></input>
-            <button onClick={this.addKeyword}>+</button>
-            <h3>Exclude Foods (Up to 3)</h3>
+            <button className="plusBtn" onClick={this.addKeyword}>+</button>
+            <h2>Exclude Foods (Up to 3)</h2>
             <input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}></input>
-            <button onClick={this.addExcludedFood}>+</button>
-            <pre>{JSON.stringify(this.props.reduxState.yummlyReducer)}</pre>
-            <button><Link to="/itemselect">Edit Ingredients</Link></button>
-            <button onClick={this.dispatchSearchTerms}><Link to="/recipelist">Find Recipes!</Link></button>
+            <button className="plusBtn" onClick={this.addExcludedFood}>+</button>
+            <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
+            <Link to="/itemselect"><button>Edit Ingredients</button></Link>
+            <Link to="/recipelist"><button onClick={this.dispatchSearchTerms}>Find Recipes!</button></Link>
         </div>
         )
     }

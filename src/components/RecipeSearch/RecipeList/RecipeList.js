@@ -17,11 +17,11 @@ class RecipeList extends Component {
         })
         return(
             <div className="recipeDiv">
-                <h1>We Found Recipes!</h1>
+                <h1>Select Recipe!</h1>
                 {/* Display recipes on DOM by referencing our aliased components variable, recipeList */}
                 {recipeList}
-                <button><Link to="/searchparams">Edit Search</Link></button>
-                <button><Link to="/recipeitem">Go</Link></button>
+                <Link to="/searchparams"><button>Edit Search</button></Link>
+                <Link to="/selectedrecipe"><button>See Details</button></Link>
             </div>
         )
     }

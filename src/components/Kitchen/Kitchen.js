@@ -76,8 +76,8 @@ class Kitchen extends Component {
           </ExpansionPanel>
         </div>
         {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
-        <button><Link to="/addfood">Add Food</Link></button>
-        <button><Link to="/itemselect">Find Recipe</Link></button>
+        <Link to="/addfood"><button>Add Food</button></Link>
+        <Link to="/itemselect"><button>Find Recipe</button></Link>
       </div>
     );
   }
