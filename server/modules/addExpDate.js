@@ -1,21 +1,29 @@
-var moment = require('moment');
+let moment = require('moment');
+let vegExpDate = require('./vegExpDates')
+
 
 function addExpDate(food) {
-    let date = moment();
-    console.log(date);
-    let exp_date = moment(date, "MM-DD-YYYY").add(5, 'days')
-    console.log(exp_date);
-    // let difference = moment([2018, 5, 7]).fromNow(true);
-    let difference = date.to(exp_date) 
-    console.log(difference);
-    
-    
     switch(food.category) {
+        case 'Vegetables':
+            return vegExpDate(food);
+            break;
+        case 'Fruits':
+            return moment(date, "MM-DD-YYYY").add(10, 'days');
+            break;
         case 'Meat':
-            return moment(date, "MM-DD-YYYY").add(2, 'days');
+            return moment(date, "MM-DD-YYYY").add(10, 'days');
+            break;
+        case 'Grains':
+            return moment(date, "MM-DD-YYYY").add(10, 'days');
+            break;
+        case 'Dairy':
+            return moment(date, "MM-DD-YYYY").add(10, 'days');
+            break;
+        case 'Sugars':
+            return moment(date, "MM-DD-YYYY").add(10, 'days');
             break;
         default: 
-            return moment(date, "MM-DD-YYYY").add(20, 'days')
+            return moment(date, "MM-DD-YYYY").add(4, 'days')
     }
 }
 
