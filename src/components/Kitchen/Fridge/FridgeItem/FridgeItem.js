@@ -124,12 +124,9 @@ class FridgeItem extends Component {
                                 </select>
                                 <select value={this.state.foodItem.location} onChange={this.handleInput("location")}>
                                     <option value="" selected disabled hidden>Choose Location</option>
-                                    <option>Vegetables</option>
-                                    <option>Fruits</option>
-                                    <option>Meat</option>
-                                    <option>Dairy</option>
-                                    <option>Grains</option>
-                                    <option>Sugars</option>
+                                    <option>Fridge</option>
+                                    <option>Freezer</option>
+                                    <option>Pantry</option>
                                 </select>
                                 <input value={this.state.foodItem.notes} placeholder={this.props.item.notes} onChange={this.handleInput("notes")}></input>
                                 {/* Closes edit display via toggling editMode boolean */}

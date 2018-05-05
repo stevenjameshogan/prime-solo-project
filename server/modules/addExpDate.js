@@ -13,7 +13,7 @@ function addExpDate(food) {
             return fruitExpDate(food);
             break;
         case 'Meat':
-            return moment(date, "MM-DD-YYYY").add(10, 'days');
+            return meatExpDate(food);
             break;
         case 'Grains':
             return moment(date, "MM-DD-YYYY").add(10, 'days');
