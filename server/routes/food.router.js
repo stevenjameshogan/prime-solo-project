@@ -68,8 +68,12 @@ router.put('/:id', (req, res) => {
     if (req.isAuthenticated()) {
         // Alias req.body as 'updatedFood' for easier code comprehension, form query text based on input date from client
         const updatedFood = req.body;
-        const queryText = `UPDATE food_items SET name = $1, quantity = $2, category = $3, location = $4, notes = $5 WHERE id = $6`;
-        pool.query(queryText, [updatedFood.name, updatedFood.quantity, updatedFood.category, updatedFood.location, updatedFood.notes, req.params.id])
+        const image = addFoodIcon(updatedFood);
+        const expDate = addExpDate(updatedFood);
+        const queryText = `UPDATE food_items SET name = $1, quantity = $2, category = $3, location = $4, exp_date = $5,
+                            notes = $6, image_url = $7 WHERE id = $8`;
+        pool.query(queryText, [updatedFood.name, updatedFood.quantity, updatedFood.category, updatedFood.location, 
+                                expDate, updatedFood.notes, image, req.params.id])
         .then((result) => {
             res.sendStatus(201);
         }).catch((err) => {

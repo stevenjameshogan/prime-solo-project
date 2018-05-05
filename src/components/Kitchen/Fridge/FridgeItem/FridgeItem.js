@@ -112,6 +112,7 @@ class FridgeItem extends Component {
                     <Dialog open={this.state.open} onClose={this.handleClose}>
                         <DialogContent>
                             <form>
+                                <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food"/>
                                 <input value={this.state.foodItem.name} placeholder={this.props.item.name} onChange={this.handleInput("name")}></input>
                                 <input value={this.state.foodItem.quantity}  placeholder={this.props.item.quantity}
                                     onChange={this.handleInput("quantity")}></input>
