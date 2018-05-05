@@ -1,5 +1,7 @@
 let moment = require('moment');
-let vegExpDate = require('./vegExpDates')
+let vegExpDate = require('./vegExpDate')
+let fruitExpDate = require('./fruitExpDate')
+let meatExpDate = require('./meatExpDate')
 
 
 function addExpDate(food) {
@@ -8,7 +10,7 @@ function addExpDate(food) {
             return vegExpDate(food);
             break;
         case 'Fruits':
-            return moment(date, "MM-DD-YYYY").add(10, 'days');
+            return fruitExpDate(food);
             break;
         case 'Meat':
             return moment(date, "MM-DD-YYYY").add(10, 'days');
