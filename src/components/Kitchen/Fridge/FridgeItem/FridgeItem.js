@@ -117,10 +117,13 @@ class FridgeItem extends Component {
                                 <input value={this.state.foodItem.quantity}  placeholder={this.props.item.quantity}
                                     onChange={this.handleInput("quantity")}></input>
                                 <select value={this.state.foodItem.category} onChange={this.handleInput("category")}>
-                                    <option value="" selected disabled hidden>Category</option>
+                                    <option value="" selected disabled hidden>Choose Category</option>
                                     <option>Vegetables</option>
-                                    <option>Meat</option>
+                                    <option>Fruits</option>
+                                    <option>Meat/Seafood</option>
                                     <option>Dairy</option>
+                                    <option>Grains</option>
+                                    <option>Sugars</option>
                                 </select>
                                 <select value={this.state.foodItem.location} onChange={this.handleInput("location")}>
                                     <option value="" selected disabled hidden>Choose Location</option>

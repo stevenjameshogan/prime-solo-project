@@ -153,6 +153,117 @@ function meatExpDate(food) {
                 return moment(date, "MM-DD-YYYY").add(0, 'days');
             };
             break;
+        case 'fish':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(2, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(120, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+        case 'salmon':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(2, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(120, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+        case 'tuna':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(2, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(120, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+        case 'bass':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(2, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(120, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+        case 'dried fish':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(30, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(120, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+        case 'clam':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(9, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(9, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+        case 'crab':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(7, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(60, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+            break;
+        case 'shrimp':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(5, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(200, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+            break;
+        case 'lobster':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(6, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(200, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+            break;
+        case 'venison':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(5, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(120, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+            break;
+        case 'rabbit':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(2, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(180, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+            break;
+        case 'duck':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(2, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(180, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+            break;
+        case 'goose':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(2, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(180, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
+            break;
         default:
             return moment(date, "MM-DD-YYYY").add(5, 'days');
     }

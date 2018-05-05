@@ -83,7 +83,7 @@ class AddFoodForm extends Component {
                     <option value="" selected disabled hidden>Category</option>
                     <option>Vegetables</option>
                     <option>Fruits</option>
-                    <option>Meat</option>
+                    <option>Meat/Seafood</option>
                     <option>Dairy</option>
                     <option>Grains</option>
                     <option>Sugars</option>
