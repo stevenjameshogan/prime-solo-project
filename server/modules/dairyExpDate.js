@@ -68,7 +68,7 @@ function dairyExpDate(food) {
             return moment(date, "MM-DD-YYYY").add(0, 'days');
             break;
         default: 
-            return moment(date, "MM-DD-YYYY").add(60, 'days');
+            return moment(date, "MM-DD-YYYY").add(14, 'days');
     }
 }
 

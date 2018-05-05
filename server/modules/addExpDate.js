@@ -24,10 +24,10 @@ function addExpDate(food) {
         return dairyExpDate(food);
             break;
         case 'Sugars':
-            return moment(date, "MM-DD-YYYY").add(10, 'days');
+            return moment(date, "MM-DD-YYYY").add(365, 'days');
             break;
         default: 
-            return moment(date, "MM-DD-YYYY").add(7, 'days')
+            return moment(date, "MM-DD-YYYY").add(30, 'days')
     }
 }
 
