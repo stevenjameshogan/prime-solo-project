@@ -85,7 +85,7 @@ class FreezerItem extends Component {
             return (
                 <div className="kitchenItem">
                     <div className="smallItem" onClick={this.handleClickOpen}>
-                        <p>{this.props.item.name}</p>
+                        {/* <p>{this.props.item.name}</p> */}
                         <img className="smallItemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food" />
                     </div>
                     <Dialog open={this.state.open} onClose={this.handleClose}>
@@ -115,11 +115,14 @@ class FreezerItem extends Component {
                                 <input value={this.state.foodItem.name} placeholder={this.props.item.name} onChange={this.handleInput("name")}></input>
                                 <input value={this.state.foodItem.quantity}  placeholder={this.props.item.quantity}
                                     onChange={this.handleInput("quantity")}></input>
-                                <select value={this.state.foodItem.category} onChange={this.handleInput("category")}>
-                                    <option value="" selected disabled hidden>Category</option>
+                              <select value={this.state.foodItem.location} onChange={this.handleInput("location")}>
+                                    <option value="" selected disabled hidden>Choose Location</option>
                                     <option>Vegetables</option>
+                                    <option>Fruits</option>
                                     <option>Meat</option>
                                     <option>Dairy</option>
+                                    <option>Grains</option>
+                                    <option>Sugars</option>
                                 </select>
                                 <select value={this.state.foodItem.location} onChange={this.handleInput("location")}>
                                     <option value="" selected disabled hidden>Choose Location</option>

@@ -15,9 +15,10 @@
     outline: .25px solid black;
     padding: 3px;
     margin: 10px;
-    width: 150px;
-    margin-left: 70px;
+    width: 75px;
+    /* margin-left: 70px; */
     background-color: beige;
+    float: left;
 }
 
 /* .panel {

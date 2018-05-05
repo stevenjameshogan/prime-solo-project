@@ -82,8 +82,11 @@ class AddFoodForm extends Component {
                 <select value={this.state.newFood.category} onChange={this.handleInput("category")}>
                     <option value="" selected disabled hidden>Category</option>
                     <option>Vegetables</option>
+                    <option>Fruits</option>
                     <option>Meat</option>
                     <option>Dairy</option>
+                    <option>Grains</option>
+                    <option>Sugars</option>
                 </select>
                 <select value={this.state.newFood.location} onChange={this.handleInput("location")}>
                     <option value="" selected disabled hidden>Choose Location</option>

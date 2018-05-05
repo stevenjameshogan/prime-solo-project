@@ -155,6 +155,9 @@ function addFoodIcon(food) {
         case 'olive':
             return 'olive.png';
             break;
+        case 'onion':
+            return 'onion.png';
+            break;
         case 'orange':
             return 'orange.png';
             break;
@@ -287,7 +290,32 @@ function addFoodIcon(food) {
         case 'ketchup':
             return 'mustard-2.png';
             break;
+        case 'ground beef':
+            return 'ham.png';
+            break;
+        case 'ground turkey':
+            return 'ham.png';
+            break;
+        case 'ground chicken':
+            return 'ham.png';
+            break;
+        case 'ground chicken':
+            return 'ham.png';
+            break;
         default: 
+            if (food.category === 'Vegetables') {
+                return 'salad-1.png'
+            } else if (food.category === 'Fruit') {
+                return 'apple-1.png'
+            } else if (food.category === 'Meat') {
+                return 'meat-1.png'
+            } else if (food.category === 'Grains') {
+                return 'grain.png'
+            } else if (food.category === 'Dairy') {
+                return 'milk.png'
+            } else if (food.category === 'Sugars') {
+                return 'cupcake.png'
+            }
             return 'food.png'
     }
 }
