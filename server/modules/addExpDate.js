@@ -12,7 +12,7 @@ function addExpDate(food) {
     
     switch(food.category) {
         case 'Meat':
-            return moment(date, "MM-DD-YYYY").add(5, 'days');
+            return moment(date, "MM-DD-YYYY").add(2, 'days');
             break;
         default: 
             return moment(date, "MM-DD-YYYY").add(20, 'days')
