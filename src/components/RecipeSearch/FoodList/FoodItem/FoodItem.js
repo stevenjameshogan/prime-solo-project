@@ -36,7 +36,7 @@ class FoodItem extends Component {
                 isSelected: true
             });
         } else {
-            alert('Only 5 ingredients!')
+            alert('Only 5 ingredients allowed!')
         }
     };
 
