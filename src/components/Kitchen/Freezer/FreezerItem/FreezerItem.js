@@ -86,12 +86,12 @@ class FreezerItem extends Component {
                 <div className="kitchenItem">
                     <div className="smallItem" onClick={this.handleClickOpen}>
                         <p>{this.props.item.name}</p>
-                        <img className="smallItemImg" src={require(`../../images/${this.props.item.image_url}`)} />
+                        <img className="smallItemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food" />
                     </div>
                     <Dialog open={this.state.open} onClose={this.handleClose}>
                         <DialogTitle>{this.props.item.name}</DialogTitle>
                         <DialogContent>
-                                <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} />
+                                <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food" />
                                 <p>Quantity/Servings: {this.props.item.quantity}</p>
                                 <p>Expiration Date: {expDate}</p>
                                 <p>Category: {this.props.item.category}</p>

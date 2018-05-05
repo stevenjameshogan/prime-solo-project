@@ -5,6 +5,7 @@ import foodReducer from './foodReducer';
 import yummlyReducer from './yummlyReducer';
 import recipeResultsReducer from './recipeResultsReducer'
 import selectedRecipeReducer from './selectedRecipeReducer'
+import expDateReducer from './expDateReducer'
 
 
 const store = combineReducers({
@@ -13,7 +14,8 @@ const store = combineReducers({
   foodReducer,
   yummlyReducer,
   recipeResultsReducer,
-  selectedRecipeReducer
+  selectedRecipeReducer,
+  expDateReducer
 });
 
 export default store;

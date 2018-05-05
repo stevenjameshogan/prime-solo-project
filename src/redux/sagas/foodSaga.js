@@ -22,6 +22,10 @@ function * getFoodItems(){
       yield put({
         type: 'SET_ITEMS',
         payload: items.data
+      });
+      yield put({
+        type: 'SET_EXPIRING',
+        payload: items.data
       })
     }
     catch(error){
