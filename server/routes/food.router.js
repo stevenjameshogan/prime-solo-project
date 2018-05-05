@@ -1,7 +1,8 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
-const addFoodIcon = require('../modules/addFoodIcons')
+const addFoodIcon = require('../modules/addFoodIcons');
+const addExpDate = require('../modules/addExpDate');
 
 // GET all food items from database for a particular user based on their unique user_id
 router.get('/', (req, res) => {
@@ -28,14 +29,11 @@ router.post('/', (req, res) => {
         // Alias req.body as 'food' for easier code comprehension, form query text based on input date from client
         const food = req.body;
         console.log(food);
-        
         const image = addFoodIcon(food);
-        
-        console.log(image);
-        
-        const queryText = `INSERT INTO food_items (user_id, name, quantity, category, location, notes, image_url) 
-                         VALUES ($1, $2, $3, $4, $5, $6, $7)`
-        pool.query(queryText, [req.user.id, food.name, food.quantity, food.category, food.location, food.notes, image])
+        const expDate = addExpDate(food);
+        const queryText = `INSERT INTO food_items (user_id, name, quantity, category, location, exp_date, notes, image_url) 
+                         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`
+        pool.query(queryText, [req.user.id, food.name, food.quantity, food.category, food.location, expDate, food.notes, image])
         .then((result) => {
             res.sendStatus(201);
         }).catch((err) => {

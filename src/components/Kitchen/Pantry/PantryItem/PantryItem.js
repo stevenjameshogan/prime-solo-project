@@ -85,10 +85,14 @@ class PantryItem extends Component {
         if (!this.state.editMode) {
             return (
                 <div className="kitchenItem">
-                    <p onClick={this.handleClickOpen}>{this.props.item.name}</p>
+                    <div className="smallItem" onClick={this.handleClickOpen}>
+                        <p>{this.props.item.name}</p>
+                        <img className="smallItemImg" src={require(`../../images/${this.props.item.image_url}`)} />
+                    </div>
                     <Dialog open={this.state.open} onClose={this.handleClose}>
                         <DialogTitle>{this.props.item.name}</DialogTitle>
                         <DialogContent>
+                                <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} />
                                 <p>Quantity/Servings: {this.props.item.quantity}</p>
                                 <p>Expiration Date: {expDate}</p>
                                 <p>Category: {this.props.item.category}</p>
