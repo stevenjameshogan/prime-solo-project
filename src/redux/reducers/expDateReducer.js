@@ -8,7 +8,6 @@ const expDateReducer = (state=[], action)=>{
         let expiring = action.payload.filter(
           (food => (Math.abs(date.diff(food.exp_date, 'days')) < 3))
         )
-        console.log('expiring', expiring);
         // let difference = date.to(exp_date) 
         return expiring;
       default:

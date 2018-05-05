@@ -37,8 +37,8 @@ class Kitchen extends Component {
   }
 
   test = () => {
-    if (this.props.reduxState.expDateReducer) {
-      console.log('there are things expiring')
+    if (this.props.reduxState.expDateReducer.length) {
+      console.log('there are things expiring', this.props.reduxState.expDateReducer.length)
     } else {
       console.log('nothing expiring')
     }
