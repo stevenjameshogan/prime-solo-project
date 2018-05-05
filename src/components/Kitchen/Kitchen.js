@@ -9,6 +9,7 @@ import Typography from 'material-ui/Typography';
 import Fridge from './Fridge/Fridge';
 import Freezer from './Freezer/Freezer';
 import Pantry from './Pantry/Pantry';
+import moment from 'moment';
 import './Kitchen.css';
 
 // This component is a virtual representation of a given user's Kitchen and all food items currently held by the user.
@@ -50,17 +51,11 @@ class Kitchen extends Component {
     // this.props.history.push('home');
   }
 
-  test = () => {
-    if (this.props.reduxState.expDateReducer.length) {
-      console.log('there are things expiring', this.props.reduxState.expDateReducer.length)
-    } else {
-      console.log('nothing expiring')
-    }
-  }
 
   render() {
+    let date = moment();
     let expiringItems = this.props.reduxState.expDateReducer.map((item) => {
-      return(<p key={item.id}>{item.name}</p>)
+    return(<p key={item.id}>{item.name} ({item.quantity})</p>)
     })
 
     if (this.props.reduxState.expDateReducer.length) {
@@ -72,9 +67,10 @@ class Kitchen extends Component {
             <DialogTitle>Expiring food!</DialogTitle>
             <DialogContent>
                 {expiringItems}
+                <Link to="/itemselect"><button>Quick Search!</button></Link>
+                <button onClick={this.handleClose}>Got it</button>
             </DialogContent>
           </Dialog>
-          <h2 onClick={this.test}>Expiring</h2>
           <h1>Welcome to your Kitchen, { this.props.user.userName }!</h1>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
            given user's food items stored in that location */}
@@ -120,7 +116,6 @@ class Kitchen extends Component {
         <div className="kitchenDiv">
           <Link to="/kitchen"><button>Home</button></Link>
           <button className="logout" onClick={this.logout}>Log Out</button>
-          <h2 onClick={this.test}>Test</h2>
           <h1>Welcome to your Kitchen, { this.props.user.userName }!</h1>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
            given user's food items stored in that location */}
