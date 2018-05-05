@@ -4,6 +4,7 @@ import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { triggerLogout } from '../../redux/actions/loginActions';
 import { Link } from 'react-router-dom';
 import ExpansionPanel, { ExpansionPanelSummary, ExpansionPanelDetails,} from 'material-ui/ExpansionPanel';
+import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
 import Typography from 'material-ui/Typography';
 import Fridge from './Fridge/Fridge';
 import Freezer from './Freezer/Freezer';
@@ -45,6 +46,7 @@ class Kitchen extends Component {
   }
 
   render() {
+    
 
     return (
       <div className="kitchenDiv">
