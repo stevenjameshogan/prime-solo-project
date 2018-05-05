@@ -307,7 +307,7 @@ function addFoodIcon(food) {
                 return 'salad-1.png'
             } else if (food.category === 'Fruit') {
                 return 'apple-1.png'
-            } else if (food.category === 'Meat') {
+            } else if (food.category === 'Meat/Seafood') {
                 return 'meat-1.png'
             } else if (food.category === 'Grains') {
                 return 'grain.png'

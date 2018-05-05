@@ -21,6 +21,14 @@ function meatExpDate(food) {
             } else {
                 return moment(date, "MM-DD-YYYY").add(0, 'days');
             };
+        case 'beef':
+            if (food.location === 'Fridge'){
+                return moment(date, "MM-DD-YYYY").add(3, 'days');
+            } else if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(90, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(0, 'days');
+            };
         case 'ground chicken':
             if (food.location === 'Fridge'){
                 return moment(date, "MM-DD-YYYY").add(3, 'days');

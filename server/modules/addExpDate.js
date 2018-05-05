@@ -3,6 +3,7 @@ let vegExpDate = require('./vegExpDate')
 let fruitExpDate = require('./fruitExpDate')
 let meatExpDate = require('./meatExpDate')
 let grainExpDate = require('./grainExpDate')
+let dairyExpDate = require('./dairyExpDate')
 
 
 function addExpDate(food) {
@@ -20,7 +21,7 @@ function addExpDate(food) {
             return grainExpDate(food);
             break;
         case 'Dairy':
-            return moment(date, "MM-DD-YYYY").add(10, 'days');
+        return dairyExpDate(food);
             break;
         case 'Sugars':
             return moment(date, "MM-DD-YYYY").add(10, 'days');
