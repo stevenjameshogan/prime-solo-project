@@ -2,9 +2,10 @@
 function addFoodIcon(food) {
     switch(food.name) {
         case 'bacon':
-            return image_url='../../src/images/bacon.png'
+            return 'bacon.png';
             break;
-        default: image_url = undefined;
+        default: 
+            return 'food.png'
     }
 }
 

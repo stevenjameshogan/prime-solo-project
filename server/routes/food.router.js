@@ -27,7 +27,12 @@ router.post('/', (req, res) => {
     if (req.isAuthenticated()) {
         // Alias req.body as 'food' for easier code comprehension, form query text based on input date from client
         const food = req.body;
+        console.log(food);
+        
         const image = addFoodIcon(food);
+        
+        console.log(image);
+        
         const queryText = `INSERT INTO food_items (user_id, name, quantity, category, location, notes, image_url) 
                          VALUES ($1, $2, $3, $4, $5, $6, $7)`
         pool.query(queryText, [req.user.id, food.name, food.quantity, food.category, food.location, food.notes, image])

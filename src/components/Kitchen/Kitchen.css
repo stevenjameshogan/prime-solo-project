@@ -20,12 +20,26 @@
     background-color: beige;
 }
 
-.panel {
-    background-image: url('../../images/fridge.png')
-}
+/* .panel {
+    background-image: url('../../../images/fridge.png')
+} */
 button {
     border: .25px solid black;
     width: 50%;
     height: 50px;
     font-size: 20px;
 }
+
+.itemImg {
+    width: 100px;
+    height: 100px;
+}
+
+.smallItemImg {
+    width: 30px;
+    height: 30px;
+}
+
+/* .smallItem {
+    float: left;
+} */
