@@ -26,13 +26,18 @@ class FoodItem extends Component {
     // Upon user selection, dispatch item name to Redux yummlyReducer
     // This will add it to the yummlyReducer state, which is a list of all selected ingredients for use in search
     selectItem = () => {
-        this.props.dispatch({
-            type: 'ADD_SEARCH_ITEM',
-            payload: this.props.item.name
-        });
-        this.setState({
-            isSelected: true
-        });
+        console.log(this.props.reduxState.yummlyReducer.length);
+        if(this.props.reduxState.yummlyReducer.length < 5 ) {
+            this.props.dispatch({
+                type: 'ADD_SEARCH_ITEM',
+                payload: this.props.item.name
+            });
+            this.setState({
+                isSelected: true
+            });
+        } else {
+            alert('Only 5 ingredients allowed!')
+        }
     };
 
     // Upon user de-selection, dispatch item name to Redux yummlyReducer
