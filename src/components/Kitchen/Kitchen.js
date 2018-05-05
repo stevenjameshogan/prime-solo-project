@@ -20,7 +20,8 @@ class Kitchen extends Component {
     this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
     this.props.dispatch({
       type: 'GET_ITEMS'
-    })
+    });
+   
   }
 
   componentDidUpdate() {
@@ -35,12 +36,21 @@ class Kitchen extends Component {
     // this.props.history.push('home');
   }
 
+  test = () => {
+    if (this.props.reduxState.expDateReducer) {
+      console.log('there are things expiring')
+    } else {
+      console.log('nothing expiring')
+    }
+  }
+
   render() {
 
     return (
       <div className="kitchenDiv">
         <Link to="/kitchen"><button>Home</button></Link>
         <button className="logout" onClick={this.logout}>Log Out</button>
+        <h2 onClick={this.test}>Test</h2>
         <h1>Welcome to your Kitchen, { this.props.user.userName }!</h1>
         {/* Categorize food items based on stored location. On click, each panel will open to reveal the
          given user's food items stored in that location */}
