@@ -304,8 +304,8 @@ function addFoodIcon(food) {
             break;
         default: 
             if (food.category === 'Vegetables') {
-                return 'salad-1.png'
-            } else if (food.category === 'Fruit') {
+                return 'salad-1.png';
+            } else if (food.category === 'Fruits') {
                 return 'apple-1.png'
             } else if (food.category === 'Meat/Seafood') {
                 return 'meat-1.png'

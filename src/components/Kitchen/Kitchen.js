@@ -57,7 +57,7 @@ class Kitchen extends Component {
   }
 
   render() {
-    let date = moment();
+    // let date = moment();
     let expiringItems = this.props.reduxState.expDateReducer.map((item) => {
     return(<p key={item.id}>{item.name} ({item.quantity})</p>)
     })

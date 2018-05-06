@@ -79,6 +79,8 @@ function vegExpDate(food) {
         case 'garlic':
             return moment(date, "MM-DD-YYYY").add(30, 'days');
             break;
+        default:
+            return moment(date, "MM-DD-YYYY").add(5, 'days');
     }
 }
 

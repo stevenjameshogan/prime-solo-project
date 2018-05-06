@@ -16,7 +16,9 @@ class FoodItem extends Component {
 
     // Toggle whether or not this item is selected by user, call functions below based on isSelected
     toggleItemSelect = () => {
-        if(this.state.isSelected === false ) {
+        if(this.state.isSelected === false || this.props.reduxState.yummlyReducer.includes(this.props.item)){
+            console.log('selecting');
+            
             this.selectItem();
         } else {
             this.deSelectItem();
