@@ -10,12 +10,13 @@ import Fridge from './Fridge/Fridge';
 import Freezer from './Freezer/Freezer';
 import Pantry from './Pantry/Pantry';
 import moment from 'moment';
+import { Home, AccountBox, Kitchen, Search } from 'material-ui-icons';
 import './Kitchen.css';
 
 // This component is a virtual representation of a given user's Kitchen and all food items currently held by the user.
 // This page is primarily a container for our Freezer, Fridge, and Pantry subcomponents
 
-class Kitchen extends Component {
+class KitchenHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -70,8 +71,8 @@ class Kitchen extends Component {
     if (this.props.reduxState.expDateReducer.length) {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><button>Home</button></Link>
-          <button className="logout" onClick={this.logout}>Log Out</button>
+          <Link to="/kitchen"><Home/> Home</Link>
+          <AccountBox className="logout" onClick={this.logout}/>
           <Dialog open={this.state.open} onClose={this.handleClose}>
             <DialogTitle>Expiring food!</DialogTitle>
             <DialogContent>
@@ -116,16 +117,16 @@ class Kitchen extends Component {
             </ExpansionPanel>
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
-          <Link to="/addfood"><button>Add Food</button></Link>
+          <Link to="/addfood"><button>Add Food <Kitchen /></button></Link>
           <Link to="/itemselect"><button>Find Recipe</button></Link>
         </div>
       );
     } else {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><button onClick={this.clearSearch}>Home</button></Link>
-          <button className="logout" onClick={this.logout}>Log Out</button>
-          <h1>Welcome to your Kitchen, { this.props.user.userName }!</h1>
+          <Link to="/kitchen"><Home/></Link>
+          <AccountBox className="logout" onClick={this.logout}/>
+          <h1>Welcome, { this.props.user.userName }!</h1>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
            given user's food items stored in that location */}
           <div>
@@ -161,8 +162,8 @@ class Kitchen extends Component {
             </ExpansionPanel>
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
-          <Link to="/addfood"><button>Add Food</button></Link>
-          <Link to="/itemselect"><button>Find Recipe</button></Link>
+          <Link to="/addfood"><button><Kitchen/>Add Food </button></Link>
+          <Link to="/itemselect"><button><Search/>Find Recipe</button></Link>
         </div>
       );
     }
@@ -176,5 +177,5 @@ const mapReduxStateToProps = reduxState => ({
   });
 
 // this allows us to use <App /> in index.js
-export default connect(mapReduxStateToProps)(Kitchen);
+export default connect(mapReduxStateToProps)(KitchenHome);
 

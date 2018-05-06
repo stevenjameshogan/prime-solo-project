@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RecipeItem from './RecipeItem/RecipeItem';
+import { Home, AccountBox } from 'material-ui-icons';
 import { Link } from 'react-router-dom';
 import '../RecipeSearch.css';
 
@@ -23,8 +24,8 @@ class RecipeList extends Component {
         })
         return(
             <div className="recipeDiv">
-                <Link to="/kitchen"><button onClick={this.clearSearch}>Home</button></Link>
-                <button className="logout" onClick={this.logout}>Log Out</button><br/><br/>
+                <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
+                <AccountBox className="logout" onClick={this.logout}/>
                 <h1>Select Recipe!</h1>
                 {/* Display recipes on DOM by referencing our aliased components variable, recipeList */}
                 {recipeList}

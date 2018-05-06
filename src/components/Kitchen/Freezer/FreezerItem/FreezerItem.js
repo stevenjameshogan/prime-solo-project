@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
-// import Dialog, {DialogActions, DialogContent, DialogContentText, DialogTitle} from 'material-ui/Dialog';
+import { Edit, Delete, Save, ArrowBack} from 'material-ui-icons';
 import moment from 'moment';
 
 // This component references a specific food item currently stored in the user's Freezer.
@@ -98,8 +98,8 @@ class FreezerItem extends Component {
                                 <p>Location: {this.props.item.location}</p>
                                 <p>Notes: {this.props.item.notes}</p>
                                 {/* Closes edit display via toggling editMode boolean */}
-                                <button onClick={this.toggleEditClick}>Edit</button>
-                                <button onClick={this.deleteItem}>Remove</button>
+                                <Edit onClick={this.toggleEditClick}/>
+                                <Delete onClick={this.deleteItem}/>
                         </DialogContent>
                     </Dialog>
                 </div>
@@ -132,9 +132,9 @@ class FreezerItem extends Component {
                                 </select>
                                 <input value={this.state.foodItem.notes} placeholder={this.props.item.notes} onChange={this.handleInput("notes")}></input>
                                 {/* Closes edit display via toggling editMode boolean */}
-                                <button onClick={this.toggleEditClick}>Back</button>
+                                <ArrowBack onClick={this.toggleEditClick}></ArrowBack>
                                 {/* Save any changed values to database by calling updateItem function */}
-                                <button onClick={this.updateItem}>Save</button>
+                                <Save onClick={this.updateItem}/>
                             </form>
                         </DialogContent>
                     </Dialog>

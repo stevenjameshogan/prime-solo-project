@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
-import Kitchen from './components/Kitchen/Kitchen';
+import KitchenHome from './components/Kitchen/KitchenHome';
 import AddFoodForm from './components/Kitchen/AddFoodForm/AddFoodForm';
 import FoodList from './components/RecipeSearch/FoodList/FoodList';
 import SearchParams from './components/RecipeSearch/SearchParams/SearchParams'
@@ -19,7 +19,7 @@ const App = () => (
         <Redirect exact from="/" to="/home" />
         <Route path="/home" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
-        <Route path="/kitchen" component={Kitchen} />
+        <Route path="/kitchen" component={KitchenHome} />
         <Route path="/addfood" component={AddFoodForm} />
         <Route path="/itemselect" component={FoodList} />
         <Route path="/searchparams" component={SearchParams} />

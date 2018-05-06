@@ -3,8 +3,9 @@ import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import '../../RecipeSearch/RecipeSearch.css'
+import { Home, AccountBox, Kitchen, Search, ArrowBack, ArrowForward } from 'material-ui-icons';
 import FoodItem from './FoodItem/FoodItem';
+import '../../RecipeSearch/RecipeSearch.css'
 
 // This component displays all of a user's current food items, which can be individually selected to include as ingredients in a recipe search
 // This page is the first step in the Recipe Search function of the application
@@ -46,14 +47,14 @@ class FoodList extends Component {
 
         return (
         <div className="recipeDiv">
-            <Link to="/kitchen"><button onClick={this.clearSearch}>Home</button></Link>
-            <button className="logout" onClick={this.logout}>Log Out</button>
+            <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
+            <AccountBox className="logout" onClick={this.logout}/>
             <h2>Select Ingredients</h2>
             {/* Display all food items on DOM by referencing our aliased components variable, foodItems */}
             {foodItems}
             <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
-            <Link to="/kitchen"><button onClick={this.clearSearch}>Back to Kitchen</button></Link>
-            <Link to="/searchparams"><button>Next Step</button></Link>
+            <Link to="/kitchen"><button onClick={this.clearSearch}><ArrowBack/>Back to Kitchen</button></Link>
+            <Link to="/searchparams"><button>Next Step<ArrowForward/></button></Link>
         </div>
         )
     }

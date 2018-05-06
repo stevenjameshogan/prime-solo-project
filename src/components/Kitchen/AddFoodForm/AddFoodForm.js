@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
+import { Home, AccountBox, ArrowBack, Search} from 'material-ui-icons';
 import { Link } from 'react-router-dom';
 import '../Kitchen.css'
 
@@ -72,8 +73,8 @@ class AddFoodForm extends Component {
     render() {
         return (
         <div className="kitchenDiv">
-            <Link to="/kitchen"><button>Home</button></Link>
-            <button className="logout" onClick={this.logout}>Log Out</button>
+            <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
+            <AccountBox className="logout" onClick={this.logout}/>
             <form onSubmit={this.addFood}>
                 <input value={this.state.newFood.name} placeholder="Name" onChange={this.handleInput("name")}></input>
                 <input value={this.state.newFood.quantity}  placeholder="Quantity/Servings" 
@@ -97,8 +98,8 @@ class AddFoodForm extends Component {
                 <button type="submit">Submit</button>
             </form>
             <br/>
-            <Link to="/kitchen"><button>Back to Kitchen</button></Link>
-            <Link to="/itemselect"><button>Find Recipe</button></Link>
+            <Link to="/kitchen"><button><ArrowBack/>Back to Kitchen</button></Link>
+            <Link to="/itemselect"><button><Search/>Find Recipe</button></Link>
         </div>
         )
     }
