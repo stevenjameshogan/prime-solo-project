@@ -2,12 +2,19 @@
 const yummlyReducer = (state=[], action)=>{
     switch(action.type){
       case 'ADD_SEARCH_ITEM':
+        if (state.includes(action.payload)){
+          console.log('included');
+          // Reset state as previous state + newly selected food item
+          return state
+        }
       // Reset state as previous state + newly selected food item
         return [...state, action.payload]
       case 'REMOVE_SEARCH_ITEM':
       // Removes deselected item from state via filter() function
         let newList = state.filter(item => item !== action.payload)
         return newList;
+      case 'CLEAR_SEARCH_PARAMS':
+        return [];
       default:
         return state;
     }

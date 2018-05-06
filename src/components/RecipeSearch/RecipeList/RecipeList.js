@@ -9,6 +9,12 @@ import '../RecipeSearch.css';
 
 class RecipeList extends Component {
 
+    clearSearch = () => {
+        this.props.dispatch({
+            type: 'CLEAR_SEARCH_PARAMS'
+        })
+    }
+
     render() {
         // Map over state of recipeResultsReducer to create new "RecipeItem" instances for each found recipe. Pass each item it's unique props.
         // Alias all instances as a value of a single variable (foodItems) for visual clarity below
@@ -17,7 +23,7 @@ class RecipeList extends Component {
         })
         return(
             <div className="recipeDiv">
-                <Link to="/kitchen"><button>Home</button></Link>
+                <Link to="/kitchen"><button onClick={this.clearSearch}>Home</button></Link>
                 <button className="logout" onClick={this.logout}>Log Out</button><br/><br/>
                 <h1>Select Recipe!</h1>
                 {/* Display recipes on DOM by referencing our aliased components variable, recipeList */}
