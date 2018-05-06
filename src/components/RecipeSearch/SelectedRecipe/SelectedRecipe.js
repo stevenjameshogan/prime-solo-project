@@ -13,10 +13,6 @@ class SelectedRecipe extends Component {
         // Alias our recipe as "recipe" for code clarity
         let recipe = this.props.reduxState.selectedRecipeReducer;
         console.log(recipe);
-        // let ingredients = recipe.ingredientLines.map((ingredient) => {
-        //     return(<p>Hello</p>)
-        // });
-        // If we have recieved all of the data-rich recipe details (images) from the API request, display all on DOM
         if (recipe.images) {
             return (
                 <div className="recipeDiv" id="selectedRecipe">

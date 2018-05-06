@@ -1,20 +1,33 @@
 import React, { Component } from 'react';
+import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../../RecipeSearch.css';
+
 
 // This component references a specific recipe found via our Yummly API recipe search
 // This was created in the parent component (RecipeList) via the Map funtion and passed it's unique data
 
 class RecipeItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            // Boolean value to determine if UI Dialogue is displayed or not
+            open: false,
+        }
+    }
 
-    // If user selects this recipe, dispatch unique id to yummlySaga to make Yummly API GET request for more details
-    selectRecipe = () => {
+    // Toggle local state "open" value to open or close the pop-up UI Dialog
+    handleClickOpen = () => {
+        this.setState({ open: true });
         this.props.dispatch({
             type: 'GET_SELECTED_RECIPE',
             payload: this.props.recipe.id
         })
-    }
+    };
+    handleClose = () => {
+        this.setState({ open: false });
+    };
 
     render() {
         // Alias recipe url as "recipePic" for code clarity
@@ -25,11 +38,11 @@ class RecipeItem extends Component {
         let biggerPic = splitPic[0] + '200';
 
         return(
-        <div className="resultDiv" onClick={this.selectRecipe} >
-            <p>{this.props.recipe.recipeName}</p>
-            <img src={biggerPic} alt="Recipe" className="recipeImage"/>
-            <Link to="/selectedrecipe"></Link>
-        </div>
+            <div className="resultDiv" onClick={this.handleClickOpen} >
+                <p>{this.props.recipe.recipeName}</p>
+                <img src={biggerPic} alt="Recipe" className="recipeImage"/>
+                <Link to="/selectedrecipe"></Link>
+            </div>
         )
     }
 }
