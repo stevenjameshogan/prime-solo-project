@@ -10,10 +10,6 @@ import FoodItem from './FoodItem/FoodItem';
 // This page is the first step in the Recipe Search function of the application
 
 class FoodList extends Component {
-    constructor(props) {
-        super(props);
-        
-    }
 
     // On page load, make a Redux dispatch to GET all food items belonging to the current user
     componentDidMount() {

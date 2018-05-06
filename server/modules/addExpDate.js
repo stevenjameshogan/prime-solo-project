@@ -7,6 +7,7 @@ let dairyExpDate = require('./dairyExpDate')
 
 
 function addExpDate(food) {
+    let date = moment();
     switch(food.category) {
         case 'Vegetables':
             return vegExpDate(food);
