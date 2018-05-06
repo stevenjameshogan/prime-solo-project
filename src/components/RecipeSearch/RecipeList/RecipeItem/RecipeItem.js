@@ -3,6 +3,7 @@ import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../../RecipeSearch.css';
+import SelectedRecipe from '../../SelectedRecipe/SelectedRecipe';
 
 
 // This component references a specific recipe found via our Yummly API recipe search
@@ -19,6 +20,8 @@ class RecipeItem extends Component {
 
     // Toggle local state "open" value to open or close the pop-up UI Dialog
     handleClickOpen = () => {
+        console.log('hello');
+        
         this.setState({ open: true });
         this.props.dispatch({
             type: 'GET_SELECTED_RECIPE',
@@ -26,6 +29,7 @@ class RecipeItem extends Component {
         })
     };
     handleClose = () => {
+        console.log('closing');
         this.setState({ open: false });
     };
 
@@ -37,13 +41,30 @@ class RecipeItem extends Component {
         // Concatenate a larger number to splitPic url to return a larger image, store url in 'biggerPic' variable
         let biggerPic = splitPic[0] + '200';
 
-        return(
+        if (this.state.open) {
+            return(
+                <div>
+                    <div className="resultDiv" onClick={this.handleClickOpen} >
+                        <p>{this.props.recipe.recipeName}</p>
+                        <img src={biggerPic} alt="Recipe" className="recipeImage"/>
+                    </div>
+                    <Dialog open={this.state.open} onClose={this.handleClose}>
+                        {/* <DialogTitle>Hello</DialogTitle> */}
+                        <DialogContent>
+                            Hello
+                            {/* <SelectedRecipe handleClose={this.handleClose}/> */}
+                        </DialogContent>
+                    </Dialog>
+                </div>
+            )
+        } else {
+            return(
             <div className="resultDiv" onClick={this.handleClickOpen} >
                 <p>{this.props.recipe.recipeName}</p>
                 <img src={biggerPic} alt="Recipe" className="recipeImage"/>
-                <Link to="/selectedrecipe"></Link>
             </div>
-        )
+            )
+        }
     }
 }
 
