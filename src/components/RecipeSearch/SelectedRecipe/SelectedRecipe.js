@@ -13,15 +13,9 @@ class SelectedRecipe extends Component {
         // Alias our recipe as "recipe" for code clarity
         let recipe = this.props.reduxState.selectedRecipeReducer;
         console.log(recipe);
-        // let ingredients = recipe.ingredientLines.map((ingredient) => {
-        //     return(<p>Hello</p>)
-        // });
-        // If we have recieved all of the data-rich recipe details (images) from the API request, display all on DOM
         if (recipe.images) {
             return (
                 <div className="recipeDiv" id="selectedRecipe">
-                    <Link to="/kitchen"><button>Home</button></Link>
-                    <button className="logout" onClick={this.logout}>Log Out</button><br/><br/>
                     <h1>{recipe.name}</h1>
                     <img src={recipe.images[0].hostedLargeUrl} alt="Delicious Recipe Pic" />
                     <p>Prep Time: {recipe.prepTime}</p>
@@ -32,14 +26,9 @@ class SelectedRecipe extends Component {
                         <li>{recipe.ingredientLines[0]}</li>
                         <li>{recipe.ingredientLines[1]}</li>
                         <li>{recipe.ingredientLines[2]}</li>
-                        <li>{recipe.ingredientLines[3]}</li>
-                        <li>{recipe.ingredientLines[4]}</li>
-                        <li>{recipe.ingredientLines[5]}</li>
-                        <li>{recipe.ingredientLines[6]}</li>
-                        <li>{recipe.ingredientLines[7]}</li>
                     </ul>
 
-                    <Link to="/recipelist"><button>Back to Recipes</button></Link>
+                    <Link to="/recipelist" onClick={this.props.handleClose}><button>Back to Recipes</button></Link>
                     <button><a href={recipe.source.sourceRecipeUrl}>Go to Recipe!</a></button>
                 </div>
             )
