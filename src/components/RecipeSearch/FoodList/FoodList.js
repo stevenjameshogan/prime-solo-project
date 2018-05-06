@@ -29,6 +29,12 @@ class FoodList extends Component {
         // this.props.history.push('home');
     }
 
+    clearSearch = () => {
+        this.props.dispatch({
+            type: 'CLEAR_SEARCH_PARAMS'
+        })
+    }
+
     render() {
         // Alias the Redux foodReducer state as allFoods (for clarity) which is an array of all food items held by a given user
         let allFoods = this.props.reduxState.foodReducer;
@@ -40,12 +46,13 @@ class FoodList extends Component {
 
         return (
         <div className="recipeDiv">
-            <Link to="/kitchen"><button>Home</button></Link>
+            <Link to="/kitchen"><button onClick={this.clearSearch}>Home</button></Link>
             <button className="logout" onClick={this.logout}>Log Out</button>
             <h2>Select Ingredients</h2>
             {/* Display all food items on DOM by referencing our aliased components variable, foodItems */}
             {foodItems}
-            <Link to="/kitchen"><button>Back to Kitchen</button></Link>
+            <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
+            <Link to="/kitchen"><button onClick={this.clearSearch}>Back to Kitchen</button></Link>
             <Link to="/searchparams"><button>Next Step</button></Link>
         </div>
         )

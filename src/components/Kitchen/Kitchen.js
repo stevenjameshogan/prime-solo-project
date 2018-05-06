@@ -36,7 +36,6 @@ class Kitchen extends Component {
     this.props.dispatch({
       type: 'GET_ITEMS'
     });
-   
   }
 
   componentDidUpdate() {
@@ -51,6 +50,11 @@ class Kitchen extends Component {
     // this.props.history.push('home');
   }
 
+  clearSearch = () => {
+    this.props.dispatch({
+        type: 'CLEAR_SEARCH_PARAMS'
+    })
+  }
 
   render() {
     let date = moment();
@@ -114,7 +118,7 @@ class Kitchen extends Component {
     } else {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><button>Home</button></Link>
+          <Link to="/kitchen"><button onClick={this.clearSearch}>Home</button></Link>
           <button className="logout" onClick={this.logout}>Log Out</button>
           <h1>Welcome to your Kitchen, { this.props.user.userName }!</h1>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
