@@ -61,8 +61,8 @@ class KitchenHome extends Component {
     // let date = moment();
     let expiringItems = this.props.reduxState.expDateReducer.map((item) => {
     return(
-      <div>
-        <p key={item.id}>{item.name}</p>
+      <div key={item.id}>
+        <p>{item.name}</p>
         <img className="tinyItemImg" src={require(`./images/${item.image_url}`)} alt="food"/>
       </div>
     )
@@ -71,7 +71,7 @@ class KitchenHome extends Component {
     if (this.props.reduxState.expDateReducer.length) {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Home/> Home</Link>
+          <Link to="/kitchen"><Home/></Link>
           <AccountBox className="logout" onClick={this.logout}/>
           <Dialog open={this.state.open} onClose={this.handleClose}>
             <DialogTitle>Expiring food!</DialogTitle>
@@ -118,7 +118,7 @@ class KitchenHome extends Component {
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <Link to="/addfood"><button>Add Food <Kitchen /></button></Link>
-          <Link to="/itemselect"><button>Find Recipe</button></Link>
+          <Link to="/itemselect"><button>Find Recipes<Search/></button></Link>
         </div>
       );
     } else {
@@ -163,7 +163,7 @@ class KitchenHome extends Component {
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <Link to="/addfood"><button><Kitchen/>Add Food </button></Link>
-          <Link to="/itemselect"><button><Search/>Find Recipe</button></Link>
+          <Link to="/itemselect"><button>Find Recipes<Search/></button></Link>
         </div>
       );
     }

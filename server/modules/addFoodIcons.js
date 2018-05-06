@@ -9,7 +9,7 @@ function addFoodIcon(food) {
             return 'asparagus.png';
             break;
         case 'avocado':
-            return 'bacon.png';
+            return 'avocado.png';
             break;
         case 'bacon':
             return 'bacon.png';
