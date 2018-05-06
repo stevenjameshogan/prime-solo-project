@@ -89,9 +89,9 @@ class FridgeItem extends Component {
                         {/* <p>{this.props.item.name}</p> */}
                         <img className="smallItemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food" />
                     </div>
-                    <Dialog open={this.state.open} onClose={this.handleClose}>
+                    <Dialog open={this.state.open} onClose={this.handleClose} className="foodItemDialog" >
                         <DialogTitle>{this.props.item.name}</DialogTitle>
-                        <DialogContent>
+                        <DialogContent className="foodItemDialog">
                                 <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food"/>
                                 <p>Quantity/Servings: {this.props.item.quantity}</p>
                                 <p>Expiration Date: {expDate}</p>

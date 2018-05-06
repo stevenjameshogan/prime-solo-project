@@ -59,7 +59,12 @@ class Kitchen extends Component {
   render() {
     // let date = moment();
     let expiringItems = this.props.reduxState.expDateReducer.map((item) => {
-    return(<p key={item.id}>{item.name} ({item.quantity})</p>)
+    return(
+      <div>
+        <p key={item.id}>{item.name}</p>
+        <img className="tinyItemImg" src={require(`./images/${item.image_url}`)} alt="food"/>
+      </div>
+    )
     })
 
     if (this.props.reduxState.expDateReducer.length) {
