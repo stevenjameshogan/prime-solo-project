@@ -51,8 +51,7 @@ class RecipeItem extends Component {
                     <Dialog open={this.state.open} onClose={this.handleClose}>
                         {/* <DialogTitle>Hello</DialogTitle> */}
                         <DialogContent>
-                            Hello
-                            {/* <SelectedRecipe handleClose={this.handleClose}/> */}
+                            <SelectedRecipe handleClose={this.handleClose}/>
                         </DialogContent>
                     </Dialog>
                 </div>
