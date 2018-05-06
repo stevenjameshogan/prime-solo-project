@@ -51,6 +51,7 @@ class FoodList extends Component {
             <h2>Select Ingredients</h2>
             {/* Display all food items on DOM by referencing our aliased components variable, foodItems */}
             {foodItems}
+            <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
             <Link to="/kitchen"><button onClick={this.clearSearch}>Back to Kitchen</button></Link>
             <Link to="/searchparams"><button>Next Step</button></Link>
         </div>
