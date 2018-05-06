@@ -98,8 +98,10 @@ class AddFoodForm extends Component {
                 <button type="submit">Submit</button>
             </form>
             <br/>
-            <Link to="/kitchen"><button><ArrowBack/>Back to Kitchen</button></Link>
-            <Link to="/itemselect"><button><Search/>Find Recipe</button></Link>
+            <div className="buttonDiv">
+                <Link to="/kitchen"><button><ArrowBack/>Back to Kitchen</button></Link>
+                <Link to="/itemselect"><button><Search/>Find Recipe</button></Link>
+            </div>
         </div>
         )
     }

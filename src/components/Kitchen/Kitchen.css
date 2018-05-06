@@ -43,3 +43,9 @@
 .foodItemDialog {
     text-align: center;
 }
+
+.buttonDiv {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

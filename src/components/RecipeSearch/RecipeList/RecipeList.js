@@ -29,8 +29,10 @@ class RecipeList extends Component {
                 <h1>Select Recipe!</h1>
                 {/* Display recipes on DOM by referencing our aliased components variable, recipeList */}
                 {recipeList}
-                <Link to="/searchparams"><button>Edit Search</button></Link>
-                <Link to="/selectedrecipe"><button>See Details</button></Link>
+                <div className="buttonDiv">
+                    <Link to="/searchparams"><button>Edit Search</button></Link>
+                    <Link to="/selectedrecipe"><button>See Details</button></Link>
+                </div>
             </div>
         )
     }

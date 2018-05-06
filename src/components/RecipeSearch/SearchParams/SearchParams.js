@@ -87,8 +87,10 @@ class SearchParams extends Component {
             <input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}></input>
             <Add className="plusBtn" onClick={this.addExcludedFood}/>
             <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
-            <Link to="/itemselect"><button><ArrowBack/>Edit Ingredients</button></Link>
-            <Link to="/recipelist"><button onClick={this.dispatchSearchTerms}>Find Recipes!<ArrowForward/></button></Link>
+            <div className="buttonDiv">
+                <Link to="/itemselect"><button><ArrowBack/>Edit Ingredients</button></Link>
+                <Link to="/recipelist"><button onClick={this.dispatchSearchTerms}>Find Recipes!<ArrowForward/></button></Link>
+            </div>
         </div>
         )
     }

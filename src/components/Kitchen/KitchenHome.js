@@ -81,7 +81,7 @@ class KitchenHome extends Component {
                 <button onClick={this.handleClose}>Got it</button>
             </DialogContent>
           </Dialog>
-          <h1>Welcome to your Kitchen, { this.props.user.userName }!</h1>
+          <h1>Welcome, { this.props.user.userName }!</h1>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
            given user's food items stored in that location */}
           <div>
@@ -117,8 +117,10 @@ class KitchenHome extends Component {
             </ExpansionPanel>
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
-          <Link to="/addfood"><button>Add Food <Kitchen /></button></Link>
-          <Link to="/itemselect"><button>Find Recipes<Search/></button></Link>
+          <div className="buttonDiv">
+            <Link to="/addfood"><button>Add Food <Kitchen /></button></Link>
+            <Link to="/itemselect"><button>Find Recipes<Search/></button></Link>
+          </div>
         </div>
       );
     } else {
@@ -162,8 +164,10 @@ class KitchenHome extends Component {
             </ExpansionPanel>
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
-          <Link to="/addfood"><button><Kitchen/>Add Food </button></Link>
-          <Link to="/itemselect"><button>Find Recipes<Search/></button></Link>
+          <div className="buttonDiv">
+            <Link to="/addfood"><button><Kitchen/>Add Food </button></Link>
+            <Link to="/itemselect"><button>Find Recipes<Search/></button></Link>
+          </div>
         </div>
       );
     }
