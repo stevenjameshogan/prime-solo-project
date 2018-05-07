@@ -1,6 +1,9 @@
 .kitchenDiv {
     background-image: url('https://png.pngtree.com/thumb_back/fw800/back_pic/03/52/47/8557946cc87cfc2.jpg');
 }
+#bottomDiv {
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/back_pic/03/52/47/8557946cc87cfc2.jpg');
+}
 
 .logout {
     float: right;
@@ -18,13 +21,6 @@
     border-collapse: separate; 
     float: left;
 }
-
-/* button {
-    border: .25px solid black;
-    width: 50%;
-    height: 50px;
-    font-size: 20px;
-} */
 
 .itemImg {
     width: 100px;
@@ -48,4 +44,8 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.panel {
+    background-color: aquamarine
 }
