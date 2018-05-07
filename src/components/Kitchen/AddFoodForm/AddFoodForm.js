@@ -75,6 +75,7 @@ class AddFoodForm extends Component {
         <div className="kitchenDiv">
             <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
             <AccountBox className="logout" onClick={this.logout}/>
+            {/* New food submission form */}
             <form onSubmit={this.addFood}>
                 <input value={this.state.newFood.name} placeholder="Name" onChange={this.handleInput("name")}></input>
                 <input value={this.state.newFood.quantity}  placeholder="Quantity/Servings" 

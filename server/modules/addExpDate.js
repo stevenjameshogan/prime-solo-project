@@ -5,6 +5,8 @@ let meatExpDate = require('./meatExpDate')
 let grainExpDate = require('./grainExpDate')
 let dairyExpDate = require('./dairyExpDate')
 
+// This module is a function that deterines the unique expiration date for each food. Each food category has it's own module
+// To keep the code clean.
 
 function addExpDate(food) {
     let date = moment();

@@ -30,6 +30,7 @@ class FoodList extends Component {
         // this.props.history.push('home');
     }
 
+    // Dispatches the yummlyReducer to clear it's state. This allows the user to start a search from scratch
     clearSearch = () => {
         this.props.dispatch({
             type: 'CLEAR_SEARCH_PARAMS'

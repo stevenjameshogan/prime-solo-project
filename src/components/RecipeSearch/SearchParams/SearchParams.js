@@ -80,10 +80,10 @@ class SearchParams extends Component {
         <div className="recipeDiv">
             <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
             <AccountBox className="logout" onClick={this.logout}/>
-            <h2>Add Keywords (Up to 3)</h2>
+            <h2>Add Keywords</h2>
             <input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}></input>
             <Add className="plusBtn" onClick={this.addKeyword}/>
-            <h2>Exclude Foods (Up to 3)</h2>
+            <h2>Exclude Foods</h2>
             <input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}></input>
             <Add className="plusBtn" onClick={this.addExcludedFood}/>
             <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>

@@ -51,6 +51,7 @@ class KitchenHome extends Component {
     // this.props.history.push('home');
   }
 
+  // 
   clearSearch = () => {
     this.props.dispatch({
         type: 'CLEAR_SEARCH_PARAMS'
@@ -58,7 +59,7 @@ class KitchenHome extends Component {
   }
 
   render() {
-    // let date = moment();
+    // Map over array of expiring food items (held in expDateReducer) and create a visual JSX display for each item
     let expiringItems = this.props.reduxState.expDateReducer.map((item) => {
     return(
       <div key={item.id}>
@@ -67,14 +68,15 @@ class KitchenHome extends Component {
       </div>
     )
     })
-
+    // If the user has any food items expiring soon, render a pop-up dialog modal to alert them, along with quick link option
+    // To the Recipe Search portion of the App
     if (this.props.reduxState.expDateReducer.length) {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Home/></Link>
+          <Link to="/kitchen"><Home onClick={this.clearSearch}/></Link>
           <AccountBox className="logout" onClick={this.logout}/>
           <Dialog open={this.state.open} onClose={this.handleClose}>
-            <DialogTitle>Expiring food!</DialogTitle>
+            <DialogTitle>{this.props.user.userName}, you have expiring food!</DialogTitle>
             <DialogContent>
                 {expiringItems}
                 <Link to="/itemselect"><button>Quick Search!</button></Link>
@@ -123,7 +125,9 @@ class KitchenHome extends Component {
           </div>
         </div>
       );
-    } else {
+    } 
+    // Otherwise, if the user doesn't have expiring food, render the Kitchen page as normal
+    else {
       return (
         <div className="kitchenDiv">
           <Link to="/kitchen"><Home/></Link>

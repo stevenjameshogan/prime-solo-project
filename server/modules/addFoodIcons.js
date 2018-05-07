@@ -1,5 +1,8 @@
 let pluralize = require('pluralize')
 
+// This module is a function that takes in a food and returns an image url based on the food name
+// It uses "pluralize" and .toLowerCase functions to account for different ways of user entering the food name
+
 function addFoodIcon(food) {
     switch(pluralize.singular(food.name.toLowerCase())) {
         case 'apple':
@@ -302,6 +305,7 @@ function addFoodIcon(food) {
         case 'ground chicken':
             return 'ham.png';
             break;
+        // If a food name is not one of these things, populate it's icon based on category
         default: 
             if (food.category === 'Vegetables') {
                 return 'salad-1.png';

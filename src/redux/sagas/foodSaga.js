@@ -23,6 +23,7 @@ function * getFoodItems(){
         type: 'SET_ITEMS',
         payload: items.data
       });
+      // Also dispatches the expDateReducer all of the foods, as the reducer uses to identify and store expiring food items
       yield put({
         type: 'SET_EXPIRING',
         payload: items.data

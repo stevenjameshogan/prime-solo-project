@@ -28,10 +28,10 @@ router.post('/', (req, res) => {
     if (req.isAuthenticated()) {
         // Alias req.body as 'food' for easier code comprehension, form query text based on input date from client
         const food = req.body;
-        console.log(food);
+        // Call addFoodIcon function (in module) to populate the image_url field for each item
         const image = addFoodIcon(food);
+        // Call addExpDate function (in module) to populate the exp_date field for each item
         const expDate = addExpDate(food);
-        console.log('in server POST', req.body, image, expDate);
         const queryText = `INSERT INTO food_items (user_id, name, quantity, category, location, exp_date, notes, image_url) 
                          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`
         pool.query(queryText, [req.user.id, food.name, food.quantity, food.category, food.location, expDate, food.notes, image])
@@ -69,10 +69,10 @@ router.put('/:id', (req, res) => {
     if (req.isAuthenticated()) {
         // Alias req.body as 'updatedFood' for easier code comprehension, form query text based on input date from client
         const updatedFood = req.body;
+        // Call addFoodIcon function (in module) to populate the image_url field for each item
         const image = addFoodIcon(updatedFood);
+        // Call addExpDate function (in module) to populate the exp_date field for each item
         const expDate = addExpDate(updatedFood);
-        console.log('in server PUT', req.body, image, expDate);
-        
         const queryText = `UPDATE food_items SET name = $1, quantity = $2, category = $3, location = $4, exp_date = $5,
                             notes = $6, image_url = $7 WHERE id = $8`;
         pool.query(queryText, [updatedFood.name, updatedFood.quantity, updatedFood.category, updatedFood.location, 

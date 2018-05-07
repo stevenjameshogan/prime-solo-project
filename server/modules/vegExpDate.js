@@ -1,6 +1,7 @@
 var moment = require('moment');
 let pluralize = require('pluralize')
 
+// This module is a function that returns an expiration date for each food in the "Vegetables" category
 function vegExpDate(food) {
     let date = moment();
     switch(pluralize.singular(food.name.toLowerCase())) {
