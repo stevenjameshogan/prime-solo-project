@@ -88,7 +88,7 @@ class KitchenHome extends Component {
            given user's food items stored in that location */}
           <div>
             {/* Freezer Panel */}
-            <ExpansionPanel className="panel">
+            <ExpansionPanel >
                 <ExpansionPanelSummary>
                     <Typography>Freezer</Typography>
                 </ExpansionPanelSummary>
@@ -98,7 +98,7 @@ class KitchenHome extends Component {
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             {/* Fridge Panel */}
-            <ExpansionPanel className="panel">
+            <ExpansionPanel>
                 <ExpansionPanelSummary>
                     <Typography>Fridge</Typography>
                 </ExpansionPanelSummary>
@@ -108,7 +108,7 @@ class KitchenHome extends Component {
                 </ExpansionPanelDetails>
             </ExpansionPanel >
             {/* Pantry Panel */}
-            <ExpansionPanel className="panel">
+            <ExpansionPanel >
                 <ExpansionPanelSummary>
                     <Typography>Pantry</Typography>
                 </ExpansionPanelSummary>
@@ -117,6 +117,9 @@ class KitchenHome extends Component {
                     <Pantry />
                 </ExpansionPanelDetails>
             </ExpansionPanel>
+          </div>
+           <div id="bottomDiv">
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <div className="buttonDiv">
@@ -137,7 +140,7 @@ class KitchenHome extends Component {
            given user's food items stored in that location */}
           <div>
             {/* Freezer Panel */}
-            <ExpansionPanel className="panel">
+            <ExpansionPanel>
                 <ExpansionPanelSummary>
                     <Typography>Freezer</Typography>
                 </ExpansionPanelSummary>
@@ -147,7 +150,7 @@ class KitchenHome extends Component {
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             {/* Fridge Panel */}
-            <ExpansionPanel className="panel">
+            <ExpansionPanel>
                 <ExpansionPanelSummary>
                     <Typography>Fridge</Typography>
                 </ExpansionPanelSummary>
@@ -157,7 +160,7 @@ class KitchenHome extends Component {
                 </ExpansionPanelDetails>
             </ExpansionPanel >
             {/* Pantry Panel */}
-            <ExpansionPanel className="panel">
+            <ExpansionPanel>
                 <ExpansionPanelSummary>
                     <Typography>Pantry</Typography>
                 </ExpansionPanelSummary>
@@ -166,6 +169,9 @@ class KitchenHome extends Component {
                     <Pantry />
                 </ExpansionPanelDetails>
             </ExpansionPanel>
+          </div>
+          <div id="bottomDiv">
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <div className="buttonDiv">
