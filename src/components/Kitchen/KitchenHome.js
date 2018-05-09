@@ -80,8 +80,8 @@ class KitchenHome extends Component {
             <DialogTitle>{this.props.user.userName}, you have expiring food!</DialogTitle>
             <DialogContent>
                 {expiringItems}
-                <Link to="/itemselect"><button>Quick Search!</button></Link>
-                <button onClick={this.handleClose}>Got it</button>
+                <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes!<Search /></Button></Link>
+                <Button variant="raised" onClick={this.handleClose}>Got it</Button>
             </DialogContent>
           </Dialog>
           <h1>Welcome, { this.props.user.userName }!</h1>
