@@ -14,12 +14,12 @@ class Fridge extends Component {
         // Map over fridgeList to create new "FridgeItem" component instances for each item. Pass each item it's unique props.
         // Alias all instances as a value of a single variable (fridgeItems) for clarity below
         let fridgeItems = fridgeList.map((item) => {
-            return(<FridgeItem key={item.id} item={item} />)
+            return(<FridgeItem key={item.id} item={item} className="panelContent" />)
         })
 
         return(
             // Display all Fridge items on DOM by referencing our aliased components variable, fridgeItems
-            <div>
+            <div className="panelConten">
                 {fridgeItems}
             </div>
         )

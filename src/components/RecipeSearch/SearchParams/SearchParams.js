@@ -79,22 +79,27 @@ class SearchParams extends Component {
 
     render() {
         return (
-        <div className="recipeDiv">
-            <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
-            <AccountBox className="logout" onClick={this.logout}/>
-            <h2>Add Keywords</h2>
-            <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
-            <Button variant="fab" onClick={this.addKeyword}><Add/></Button>
-            <h2>Exclude Foods</h2>
-            <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
-            <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button>
-            <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
-            <div className="buttonDiv">
-                <Link to="/itemselect" ><Button variant="raised" color="primary"><ArrowBack/>Edit Ingredients</Button></Link>
-                <Link to="/recipelist"><Button variant="raised" color="primary" onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
+            <div className="pageDiv">
+                <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
+                <AccountBox className="logout" onClick={this.logout}/>
+                <div className="paramsDiv">
+                    <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
+                    <h2>Add Keywords</h2>
+                    <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
+                    <Button variant="fab" onClick={this.addKeyword}><Add/></Button>
+                    <h4>{JSON.stringify(this.state.searchParams.keywords)}</h4>
+                    <br/><br/><br/><br/>
+                    <h2>Exclude Foods</h2>
+                    <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
+                    <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button>
+                    <h4>{JSON.stringify(this.state.searchParams.excludedFoods)}</h4>
+                </div>
+                <div className="buttonDiv">
+                        <Link to="/itemselect" ><Button variant="raised" color="primary"><ArrowBack/>Edit Ingredients</Button></Link>
+                        <Link to="/recipelist"><Button variant="raised" color="primary" onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
+                </div>
             </div>
-        </div>
-        )
+            )
     }
 }
 
