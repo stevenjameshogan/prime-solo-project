@@ -58,6 +58,7 @@ class FoodItem extends Component {
         return(
         
         <div onClick={this.toggleItemSelect} className="foodItem">
+            <img className="tinyItemImg" src={require(`../images/${this.props.item.image_url}`)} alt="food" />
             <p>{this.props.item.name}</p>
         </div>
         

@@ -48,15 +48,17 @@ class FoodList extends Component {
         })
 
         return (
-        <div className="recipeDiv">
+        <div>
             <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
             <AccountBox className="logout" onClick={this.logout}/>
             <h2>Select Ingredients</h2>
-            {/* Display all food items on DOM by referencing our aliased components variable, foodItems */}
-            {foodItems}
+            <div className="ingredientDiv">
+                {/* Display all food items on DOM by referencing our aliased components variable, foodItems */}
+                {foodItems}
+            </div>
             <div className="buttonDiv">
-                <Link to="/kitchen"><Button variant="raised" color="primary" onClick={this.clearSearch}><Kitchen/>Back to Kitchen</Button></Link>
-                <Link to="/searchparams"><Button variant="raised" color="primary">Next Step<ArrowForward/></Button></Link>
+                    <Link to="/kitchen"><Button variant="raised" color="primary" onClick={this.clearSearch}><Kitchen/>Back to Kitchen</Button></Link>
+                    <Link to="/searchparams"><Button variant="raised" color="primary">Next Step<ArrowForward/></Button></Link>
             </div>
         </div>
         )
