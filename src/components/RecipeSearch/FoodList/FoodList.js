@@ -4,6 +4,7 @@ import { triggerLogout } from '../../../redux/actions/loginActions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Home, AccountBox, Kitchen, Search, ArrowBack, ArrowForward } from 'material-ui-icons';
+import Button from 'material-ui/Button';
 import FoodItem from './FoodItem/FoodItem';
 import '../../RecipeSearch/RecipeSearch.css'
 

@@ -5,6 +5,7 @@ import { triggerLogout } from '../../redux/actions/loginActions';
 import { Link } from 'react-router-dom';
 import ExpansionPanel, { ExpansionPanelSummary, ExpansionPanelDetails,} from 'material-ui/ExpansionPanel';
 import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
+import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import Fridge from './Fridge/Fridge';
 import Freezer from './Freezer/Freezer';
@@ -123,8 +124,8 @@ class KitchenHome extends Component {
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <div className="buttonDiv">
-            <Link to="/addfood"><button>Add Food <Kitchen /></button></Link>
-            <Link to="/itemselect"><button>Find Recipes<Search/></button></Link>
+            <Link to="/addfood"><Button variant="raised" color="primary">Add Food<Kitchen /></Button></Link>
+            <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes<Search /></Button></Link>
           </div>
         </div>
       );
@@ -175,8 +176,8 @@ class KitchenHome extends Component {
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <div className="buttonDiv">
-            <Link to="/addfood"><button><Kitchen/>Add Food </button></Link>
-            <Link to="/itemselect"><button>Find Recipes<Search/></button></Link>
+            <Link to="/addfood"><Button variant="raised" color="primary">Add Food<Kitchen /></Button></Link>
+            <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes<Search /></Button></Link>
           </div>
         </div>
       );

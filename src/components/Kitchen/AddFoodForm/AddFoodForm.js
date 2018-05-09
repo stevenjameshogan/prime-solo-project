@@ -4,6 +4,7 @@ import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
 import { Home, AccountBox, ArrowBack, Search} from 'material-ui-icons';
 import Input, { InputLabel } from 'material-ui/Input';
+import Button from 'material-ui/Button';
 import Select from 'material-ui/Select';
 import { MenuItem } from 'material-ui/Menu';
 import { Link } from 'react-router-dom';
@@ -105,8 +106,8 @@ class AddFoodForm extends Component {
             </form>
             <br/>
             <div className="buttonDiv">
-                <Link to="/kitchen"><button><ArrowBack/>Back to Kitchen</button></Link>
-                <Link to="/itemselect"><button><Search/>Find Recipe</button></Link>
+                <Link to="/kitchen"><Button variant="raised" color="primary"><ArrowBack />Back to Kitchen</Button></Link>
+                <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes<Search /></Button></Link>
             </div>
         </div>
         )
