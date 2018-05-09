@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
-import { Home, AccountBox, Kitchen, Search, ArrowBack, ArrowForward, Add } from 'material-ui-icons';
+import { Home, AccountBox, Kitchen, Search, ArrowBack, ArrowForward, Add, Restaurant } from 'material-ui-icons';
+import Button from 'material-ui/Button';
 import Input from 'material-ui/Input';
 import { Link } from 'react-router-dom';
 import '../RecipeSearch.css';
@@ -83,14 +84,14 @@ class SearchParams extends Component {
             <AccountBox className="logout" onClick={this.logout}/>
             <h2>Add Keywords</h2>
             <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
-            <Add className="plusBtn" onClick={this.addKeyword}/>
+            <Button variant="fab" onClick={this.addKeyword}><Add/></Button>
             <h2>Exclude Foods</h2>
             <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
-            <Add className="plusBtn" onClick={this.addExcludedFood}/>
+            <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button>
             <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
             <div className="buttonDiv">
-                <Link to="/itemselect"><button><ArrowBack/>Edit Ingredients</button></Link>
-                <Link to="/recipelist"><button onClick={this.dispatchSearchTerms}>Find Recipes!<ArrowForward/></button></Link>
+                <Link to="/itemselect" ><Button variant="raised" color="primary"><ArrowBack/>Edit Ingredients</Button></Link>
+                <Link to="/recipelist"><Button variant="raised" color="primary" onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
             </div>
         </div>
         )

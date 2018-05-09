@@ -5,6 +5,8 @@ import { triggerLogout } from '../../redux/actions/loginActions';
 import { Link } from 'react-router-dom';
 import ExpansionPanel, { ExpansionPanelSummary, ExpansionPanelDetails,} from 'material-ui/ExpansionPanel';
 import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
+import Button from 'material-ui/Button';
+import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import Fridge from './Fridge/Fridge';
 import Freezer from './Freezer/Freezer';
@@ -73,14 +75,14 @@ class KitchenHome extends Component {
     if (this.props.reduxState.expDateReducer.length) {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Home onClick={this.clearSearch}/></Link>
+          <Link to="/kitchen"><Home className="topNavBtn" onClick={this.clearSearch}/></Link>
           <AccountBox className="logout" onClick={this.logout}/>
           <Dialog open={this.state.open} onClose={this.handleClose}>
             <DialogTitle>{this.props.user.userName}, you have expiring food!</DialogTitle>
             <DialogContent>
                 {expiringItems}
-                <Link to="/itemselect"><button>Quick Search!</button></Link>
-                <button onClick={this.handleClose}>Got it</button>
+                <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes!<Search /></Button></Link>
+                <Button variant="raised" onClick={this.handleClose}>Got it</Button>
             </DialogContent>
           </Dialog>
           <h1>Welcome, { this.props.user.userName }!</h1>
@@ -123,8 +125,8 @@ class KitchenHome extends Component {
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <div className="buttonDiv">
-            <Link to="/addfood"><button>Add Food <Kitchen /></button></Link>
-            <Link to="/itemselect"><button>Find Recipes<Search/></button></Link>
+            <Link to="/addfood"><Button variant="raised" color="primary">Add Food<Kitchen /></Button></Link>
+            <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes<Search /></Button></Link>
           </div>
         </div>
       );
@@ -133,7 +135,7 @@ class KitchenHome extends Component {
     else {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Home/></Link>
+          <Link to="/kitchen"><Home className="topNavBtn" onClick={this.clearSearch}/></Link>
           <AccountBox className="logout" onClick={this.logout}/>
           <h1>Welcome, { this.props.user.userName }!</h1>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
@@ -175,8 +177,8 @@ class KitchenHome extends Component {
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <div className="buttonDiv">
-            <Link to="/addfood"><button><Kitchen/>Add Food </button></Link>
-            <Link to="/itemselect"><button>Find Recipes<Search/></button></Link>
+            <Link to="/addfood"><Button variant="raised" color="primary">Add Food<Kitchen /></Button></Link>
+            <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes<Search /></Button></Link>
           </div>
         </div>
       );

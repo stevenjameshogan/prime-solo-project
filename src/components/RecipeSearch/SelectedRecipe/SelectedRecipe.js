@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../RecipeSearch.css';
 import { RingLoader } from 'react-spinners';
+import Button from 'material-ui/Button';
 
 // This component displays more details about a user-selected recipe (selected from results of Yummly Recipe search)
 
@@ -28,8 +29,8 @@ class SelectedRecipe extends Component {
                         <li>{recipe.ingredientLines[2]}</li>
                     </ul>
 
-                    <Link to="/recipelist" onClick={this.props.handleClose}><button>Back to Recipes</button></Link>
-                    <button><a href={recipe.source.sourceRecipeUrl}>Go to Recipe!</a></button>
+                    <Link to="/recipelist" onClick={this.props.handleClose}><Button variant="raised" color="primary">Back to Results</Button></Link>
+                    <Button variant="raised" color="primary"><a href={recipe.source.sourceRecipeUrl}>Go to Recipe!</a></Button>
                 </div>
             )
         } else {
