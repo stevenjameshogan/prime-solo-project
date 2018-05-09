@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
 import { Home, AccountBox, ArrowBack, Search} from 'material-ui-icons';
-import Input from 'material-ui/Input';
+import Input, { InputLabel } from 'material-ui/Input';
+import Select from 'material-ui/Select';
+import { MenuItem } from 'material-ui/Menu';
 import { Link } from 'react-router-dom';
 import '../Kitchen.css';
 
@@ -82,21 +84,22 @@ class AddFoodForm extends Component {
                 <Input value={this.state.newFood.name} placeholder="Food Name" onChange={this.handleInput("name")}/>
                 <Input value={this.state.newFood.quantity}  placeholder="Quantity/Servings" onChange={this.handleInput("quantity")}/>
                 <Input value={this.state.newFood.notes} placeholder="Notes" onChange={this.handleInput("notes")}/>
-                <select value={this.state.newFood.category} onChange={this.handleInput("category")}>
-                    <option value="" selected disabled hidden>Category</option>
-                    <option>Vegetables</option>
-                    <option>Fruits</option>
-                    <option>Meat/Seafood</option>
-                    <option>Dairy</option>
-                    <option>Grains</option>
-                    <option>Sugars</option>
-                </select>
-                <select value={this.state.newFood.location} onChange={this.handleInput("location")}>
-                    <option value="" selected disabled hidden>Choose Location</option>
-                    <option>Fridge</option>
-                    <option>Freezer</option>
-                    <option>Pantry</option>
-                </select>
+                <br/>
+                <InputLabel>Category</InputLabel><br/>
+                <Select value={this.state.newFood.category} onChange={this.handleInput("category")}>
+                    <MenuItem value="Vegetables">Vegetables</MenuItem>
+                    <MenuItem value="Fruits">Fruits</MenuItem>
+                    <MenuItem value="Meat/Seafood">Meat/Seafood</MenuItem>
+                    <MenuItem value="Dairy">Dairy</MenuItem>
+                    <MenuItem value="Grains">Grains</MenuItem>
+                    <MenuItem value="Sugars">Sugars</MenuItem>
+                </Select> <br/>
+                <InputLabel>Location</InputLabel><br/>
+                <Select value={this.state.newFood.location} onChange={this.handleInput("location")}>
+                    <MenuItem value="Fridge">Fridge</MenuItem>
+                    <MenuItem value="Freezer">Freezer</MenuItem>
+                    <MenuItem value="Pantry">Pantry</MenuItem>
+                </Select>
                 <br/><br/>
                 <button type="submit">Submit</button>
             </form>
