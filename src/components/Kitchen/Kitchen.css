@@ -58,3 +58,8 @@
 .addFoodForm {
     background-color: beige
 }
+
+.topNavBtn {
+    width: 40px;
+    height: 40px;
+}

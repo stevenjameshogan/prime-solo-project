@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import ExpansionPanel, { ExpansionPanelSummary, ExpansionPanelDetails,} from 'material-ui/ExpansionPanel';
 import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
+import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import Fridge from './Fridge/Fridge';
 import Freezer from './Freezer/Freezer';
@@ -74,7 +75,7 @@ class KitchenHome extends Component {
     if (this.props.reduxState.expDateReducer.length) {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Home onClick={this.clearSearch}/></Link>
+          <Link to="/kitchen"><Home className="topNavBtn" onClick={this.clearSearch}/></Link>
           <AccountBox className="logout" onClick={this.logout}/>
           <Dialog open={this.state.open} onClose={this.handleClose}>
             <DialogTitle>{this.props.user.userName}, you have expiring food!</DialogTitle>
@@ -134,7 +135,7 @@ class KitchenHome extends Component {
     else {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Home/></Link>
+          <Link to="/kitchen"><Home className="topNavBtn" onClick={this.clearSearch}/></Link>
           <AccountBox className="logout" onClick={this.logout}/>
           <h1>Welcome, { this.props.user.userName }!</h1>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
