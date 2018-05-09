@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
 import { Edit, Delete, Save, ArrowBack} from 'material-ui-icons';
+import Input from 'material-ui/Input';
 import moment from 'moment';
   
 // This component references a specific food item currently stored in the user's Pantry.
@@ -112,9 +113,9 @@ class PantryItem extends Component {
                     <Dialog open={this.state.open} onClose={this.handleClose}>
                         <DialogContent>
                             <form>
-                                <input value={this.state.foodItem.name} placeholder={this.props.item.name} onChange={this.handleInput("name")}></input>
-                                <input value={this.state.foodItem.quantity}  placeholder={this.props.item.quantity}
-                                    onChange={this.handleInput("quantity")}></input>
+                                <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food"/>
+                                <Input value={this.state.foodItem.name} placeholder={this.props.item.name} onChange={this.handleInput("name")}/>
+                                <Input value={this.state.foodItem.quantity} onChange={this.handleInput("quantity")}/>
                                 <select value={this.state.foodItem.category} onChange={this.handleInput("category")}>
                                     <option value="" selected disabled hidden>Choose Category</option>
                                     <option>Vegetables</option>
@@ -130,7 +131,7 @@ class PantryItem extends Component {
                                     <option>Freezer</option>
                                     <option>Pantry</option>
                                 </select>
-                                <input value={this.state.foodItem.notes} placeholder={this.props.item.notes} onChange={this.handleInput("notes")}></input>
+                                <Input value={this.state.foodItem.notes} placeholder={this.props.item.notes} onChange={this.handleInput("notes")}/>
                                 {/* Closes edit display via toggling editMode boolean */}
                                 <ArrowBack onClick={this.toggleEditClick}></ArrowBack>
                                 {/* Save any changed values to database by calling updateItem function */}

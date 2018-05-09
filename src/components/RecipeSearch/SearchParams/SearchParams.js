@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
 import { Home, AccountBox, Kitchen, Search, ArrowBack, ArrowForward, Add } from 'material-ui-icons';
+import Input from 'material-ui/Input';
 import { Link } from 'react-router-dom';
 import '../RecipeSearch.css';
 
@@ -81,10 +82,10 @@ class SearchParams extends Component {
             <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
             <AccountBox className="logout" onClick={this.logout}/>
             <h2>Add Keywords</h2>
-            <input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}></input>
+            <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
             <Add className="plusBtn" onClick={this.addKeyword}/>
             <h2>Exclude Foods</h2>
-            <input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}></input>
+            <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
             <Add className="plusBtn" onClick={this.addExcludedFood}/>
             <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
             <div className="buttonDiv">
