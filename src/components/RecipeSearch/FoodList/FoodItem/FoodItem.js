@@ -55,14 +55,23 @@ class FoodItem extends Component {
     };
 
     render() {
-        return(
-        
-        <div onClick={this.toggleItemSelect} className="ingredientItem">
-            <img className="tinyItemImg" src={require(`../images/${this.props.item.image_url}`)} alt="food" />
-            <p>{this.props.item.name}</p>
-        </div>
-        
-        )
+        if (!this.state.isSelected) {
+            return(
+                <div onClick={this.toggleItemSelect} className="ingredientItem">
+                    <img className="tinyItemImg" src={require(`../images/${this.props.item.image_url}`)} alt="food" />
+                    <p>{this.props.item.name}</p>
+                </div>
+                
+                )
+
+        } else {
+            return (
+            <div onClick={this.toggleItemSelect} className="ingredientItemSelected">
+                <img className="tinyItemImg" src={require(`../images/${this.props.item.image_url}`)} alt="food" />
+                <p>{this.props.item.name}</p>
+            </div> 
+            )
+        }
     }
 }
 
