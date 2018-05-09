@@ -3,10 +3,10 @@
     padding-left: 35px;
   }
 
-.foodItem {
-    outline: .25px solid black;
+.ingredientItem {
+    border: .5px solid black;
     font-size: 12px;
-    border-radius: 20px;
+    border-radius: 30%;
     width: 80px;
     height: 70px;
     float: left;
@@ -25,9 +25,6 @@
     text-align: center
 }
 
-.resultDiv:hover {
-    background-color: beige;
-}
 
 button {
     border: .25px solid black;
