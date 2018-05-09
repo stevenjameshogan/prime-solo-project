@@ -78,11 +78,10 @@ class AddFoodForm extends Component {
             <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
             <AccountBox className="logout" onClick={this.logout}/>
             {/* New food submission form */}
-            <form onSubmit={this.addFood}>
-                <input value={this.state.newFood.name} placeholder="Name" onChange={this.handleInput("name")}></input>
-                <input value={this.state.newFood.quantity}  placeholder="Quantity/Servings" 
-                       onChange={this.handleInput("quantity")}></input>
-                <input value={this.state.newFood.notes} placeholder="Notes" onChange={this.handleInput("notes")}></input>
+            <form onSubmit={this.addFood} className="addFoodForm">
+                <Input value={this.state.newFood.name} placeholder="Food Name" onChange={this.handleInput("name")}/>
+                <Input value={this.state.newFood.quantity}  placeholder="Quantity/Servings" onChange={this.handleInput("quantity")}/>
+                <Input value={this.state.newFood.notes} placeholder="Notes" onChange={this.handleInput("notes")}/>
                 <select value={this.state.newFood.category} onChange={this.handleInput("category")}>
                     <option value="" selected disabled hidden>Category</option>
                     <option>Vegetables</option>
@@ -98,6 +97,7 @@ class AddFoodForm extends Component {
                     <option>Freezer</option>
                     <option>Pantry</option>
                 </select>
+                <br/><br/>
                 <button type="submit">Submit</button>
             </form>
             <br/>
