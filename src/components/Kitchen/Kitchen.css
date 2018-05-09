@@ -49,3 +49,8 @@
 .panel {
     background-color: aquamarine
 }
+
+.foodName {
+    font-size: 12px;
+    text-align: center
+}

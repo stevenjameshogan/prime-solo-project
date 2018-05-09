@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
 import { Home, AccountBox, ArrowBack, Search} from 'material-ui-icons';
+import Input from 'material-ui/Input';
 import { Link } from 'react-router-dom';
-import '../Kitchen.css'
+import '../Kitchen.css';
+
 
 // This component serves as a submission form for a given user to add a new food item to their Kitchen
 
