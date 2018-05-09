@@ -1,6 +1,22 @@
  .ingredientDiv {
     text-align: center;
     padding-left: 35px;
+    padding-bottom: 900px;
+  }
+
+ .paramsDiv {
+    text-align: center;
+    padding-left: 35px;
+    padding: 20px;
+    padding-bottom: 75px;
+    margin: 10px;
+    border: .5px black;
+    background-color: beige;
+    opacity: .95;
+  }
+
+  .pageDiv {
+    background-image: url('https://www.eatthis.com/content/uploads//media/images/ext/781897626/veggies-fruit.jpg')
   }
 
 .ingredientItem {
@@ -16,8 +32,8 @@
     text-align: center
 }
 
-.foodItem:hover {
-    background-color: beige;
+.ingredientItem:hover {
+    background-color: rgb(41, 148, 151);
 }
 
 .resultDiv {
