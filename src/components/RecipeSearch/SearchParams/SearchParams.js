@@ -89,7 +89,7 @@ class SearchParams extends Component {
                     <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
                     <Button variant="fab" onClick={this.addKeyword}><Add/></Button>
                     <h4>{JSON.stringify(this.state.searchParams.keywords)}</h4>
-                    <br/><br/><br/><br/>
+                    <br/><br/>
                     <h2>Exclude Foods</h2>
                     <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
                     <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button>

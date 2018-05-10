@@ -37,7 +37,7 @@ class PantryItem extends Component {
         this.setState({ open: true });
     };
     handleClose = () => {
-        this.setState({ open: false });
+        this.setState({ open: false, editMode: false });
     };
 
     // Toggle local state "editMode" value, this determines what is rendered on the DOM below
