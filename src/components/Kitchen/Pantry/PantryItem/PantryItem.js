@@ -114,31 +114,32 @@ class PantryItem extends Component {
         } else {
             return(
                 <div>
-                    <p onClick={this.handleClickOpen}>{this.props.item.name}</p>
+                    <div className="smallItem" onClick={this.handleClickOpen}>
+                        {/* <img className="smallItemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food" />
+                        <p className="foodName">{this.props.item.name}</p> */}
+                    </div>
                     <Dialog open={this.state.open} onClose={this.handleClose}>
                         <DialogTitle>{this.props.item.name}</DialogTitle>
                         <DialogContent  className="foodItemDialog" style={{padding:"24px 24px 24px 24px"}}  >
-                            <form>
-                                <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food"/>
-                                <Input className="input" value={this.state.foodItem.name} placeholder={this.props.item.name} onChange={this.handleInput("name")}/>
-                                <Input className="input" value={this.state.foodItem.quantity} onChange={this.handleInput("quantity")}/>
-                                <InputLabel className="input" >Category</InputLabel><br/>
-                                <Select className="select" value={this.state.foodItem.category} onChange={this.handleInput("category")}>
-                                    <MenuItem value="Vegetables">Vegetables</MenuItem>
-                                    <MenuItem value="Fruits">Fruits</MenuItem>
-                                    <MenuItem value="Meat/Seafood">Meat/Seafood</MenuItem>
-                                    <MenuItem value="Dairy">Dairy</MenuItem>
-                                    <MenuItem value="Grains">Grains</MenuItem>
-                                    <MenuItem value="Sugars">Sugars</MenuItem>
-                                </Select><br/>
-                                <InputLabel className="input" >Location</InputLabel><br/>
-                                <Select className="select" value={this.state.foodItem.location} onChange={this.handleInput("location")}>
-                                    <MenuItem value="Fridge">Fridge</MenuItem>
-                                    <MenuItem value="Freezer">Freezer</MenuItem>
-                                    <MenuItem value="Pantry">Pantry</MenuItem>
-                                </Select>
-                                <Input className="input" value={this.state.foodItem.notes} placeholder={this.props.item.notes} onChange={this.handleInput("notes")}/>
-                            </form>
+                            <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food"/>
+                            <Input className="input" value={this.state.foodItem.name} placeholder={this.props.item.name} onChange={this.handleInput("name")}/>
+                            <Input className="input" value={this.state.foodItem.quantity} onChange={this.handleInput("quantity")}/>
+                            <InputLabel className="input" >Category</InputLabel><br/>
+                            <Select className="select" value={this.state.foodItem.category} onChange={this.handleInput("category")}>
+                                <MenuItem value="Vegetables">Vegetables</MenuItem>
+                                <MenuItem value="Fruits">Fruits</MenuItem>
+                                <MenuItem value="Meat/Seafood">Meat/Seafood</MenuItem>
+                                <MenuItem value="Dairy">Dairy</MenuItem>
+                                <MenuItem value="Grains">Grains</MenuItem>
+                                <MenuItem value="Sugars">Sugars</MenuItem>
+                            </Select><br/>
+                            <InputLabel className="input" >Location</InputLabel><br/>
+                            <Select className="select" value={this.state.foodItem.location} onChange={this.handleInput("location")}>
+                                <MenuItem value="Fridge">Fridge</MenuItem>
+                                <MenuItem value="Freezer">Freezer</MenuItem>
+                                <MenuItem value="Pantry">Pantry</MenuItem>
+                            </Select>
+                            <Input className="input" value={this.state.foodItem.notes} placeholder={this.props.item.notes} onChange={this.handleInput("notes")}/>
                             <div className="buttonDivDialog">
                                 {/* Closes edit display via toggling editMode boolean */}
                                 <Button variant="raised" onClick={this.toggleEditClick}>Cancel</Button>
