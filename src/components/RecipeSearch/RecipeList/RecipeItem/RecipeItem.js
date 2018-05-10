@@ -41,22 +41,6 @@ class RecipeItem extends Component {
         // Concatenate a larger number to splitPic url to return a larger image, store url in 'biggerPic' variable
         let biggerPic = splitPic[0] + '200';
 
-        if (this.state.open) {
-            return(
-                <div>
-                    <div className="resultDiv" onClick={this.handleClickOpen} >
-                        <p>{this.props.recipe.recipeName}</p>
-                        <img src={biggerPic} alt="Recipe" className="recipeImage"/>
-                    </div>
-                    <Dialog open={this.state.open} onClose={this.handleClose}>
-                        {/* <DialogTitle>Hello</DialogTitle> */}
-                        <DialogContent>
-                            <SelectedRecipe handleClose={this.handleClose}/>
-                        </DialogContent>
-                    </Dialog>
-                </div>
-            )
-        } else {
             return(
             <div className="resultDiv" onClick={this.handleClickOpen} >
                 <p>{this.props.recipe.recipeName}</p>
@@ -64,7 +48,7 @@ class RecipeItem extends Component {
             </div>
             )
         }
-    }
+    
 }
 
 // connect component to Redux in order to dispatch this recipe's unique id to the yummlySaga to use in API request
