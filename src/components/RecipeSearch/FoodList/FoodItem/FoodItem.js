@@ -23,7 +23,6 @@ class FoodItem extends Component {
     // Toggle whether or not this item is selected by user, call functions below based on isSelected
     toggleItemSelect = () => {
         if(this.state.isSelected === false || this.props.reduxState.yummlyReducer.includes(this.props.item)){
-            console.log('selecting');
             this.selectItem();
         } else {
             this.deSelectItem();
@@ -33,7 +32,6 @@ class FoodItem extends Component {
     // Upon user selection, dispatch item name to Redux yummlyReducer
     // This will add it to the yummlyReducer state, which is a list of all selected ingredients for use in search
     selectItem = () => {
-        console.log(this.props.reduxState.yummlyReducer.length);
         if(this.props.reduxState.yummlyReducer.length < 5 ) {
             this.props.dispatch({
                 type: 'ADD_SEARCH_ITEM',
@@ -61,7 +59,6 @@ class FoodItem extends Component {
 
     render() {
         if (this.state.isSelected) {
-            console.log('is selected', this.props.item);
             return(
                 <div onClick={this.toggleItemSelect} className="ingredientItemSelected">
                     <img className="tinyItemImg" src={require(`../images/${this.props.item.image_url}`)} alt="food" />
@@ -70,7 +67,6 @@ class FoodItem extends Component {
                 )
 
         } else {
-            console.log('is NOT selected', this.props.item);
             return (
             <div onClick={this.toggleItemSelect} className="ingredientItem">
                 <img className="tinyItemImg" src={require(`../images/${this.props.item.image_url}`)} alt="food" />

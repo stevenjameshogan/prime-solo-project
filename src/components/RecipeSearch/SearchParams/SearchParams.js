@@ -80,7 +80,7 @@ class SearchParams extends Component {
     render() {
         return (
             <div className="pageDiv">
-                <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
+                <Link to="/kitchen" onClick={this.clearSearch}><Kitchen/></Link>
                 <AccountBox className="logout" onClick={this.logout}/>
                 <div className="paramsDiv">
                     <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
@@ -95,8 +95,10 @@ class SearchParams extends Component {
                     <h4>{JSON.stringify(this.state.searchParams.excludedFoods)}</h4>
                 </div>
                 <div className="buttonDiv">
-                        <Link to="/itemselect" ><Button variant="raised" color="primary"><ArrowBack/>Edit Ingredients</Button></Link>
-                        <Link to="/recipelist"><Button variant="raised" color="primary" onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
+                        <Link to="/itemselect" ><Button variant="raised" color="primary" className="bottomBtn">
+                        <ArrowBack/>Edit Ingredients</Button></Link>
+                        <Link to="/recipelist"><Button variant="raised" color="primary" className="bottomBtn" 
+                            onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
                 </div>
             </div>
             )

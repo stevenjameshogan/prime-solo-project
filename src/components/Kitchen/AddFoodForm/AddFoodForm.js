@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
-import { Home, AccountBox, ArrowBack, Search, Add} from 'material-ui-icons';
+import { Kitchen, AccountBox, ArrowBack, Search, Add} from 'material-ui-icons';
 import Input, { InputLabel } from 'material-ui/Input';
 import Button from 'material-ui/Button';
 import Select from 'material-ui/Select';
@@ -78,7 +78,7 @@ class AddFoodForm extends Component {
     render() {
         return (
         <div className="kitchenDiv">
-            <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
+            <Link to="/kitchen" onClick={this.clearSearch}><Kitchen/></Link>
             <AccountBox className="logout" onClick={this.logout}/>
             {/* New food submission form */}
             <form onSubmit={this.addFood} className="addFoodForm">
@@ -106,8 +106,10 @@ class AddFoodForm extends Component {
             </form>
             <br/>
             <div className="buttonDiv">
-                <Link to="/kitchen"><Button variant="raised" color="primary"><ArrowBack />Back to Kitchen</Button></Link>
-                <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes<Search /></Button></Link>
+                <Link to="/kitchen"><Button variant="raised" color="primary" className="bottomBtn">
+                    <ArrowBack />Back to Kitchen</Button></Link>
+                <Link to="/itemselect"><Button variant="raised" color="primary" className="bottomBtn">Find Recipes<Search />
+                    </Button></Link>
             </div>
         </div>
         )

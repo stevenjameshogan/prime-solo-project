@@ -135,7 +135,7 @@ class KitchenHome extends Component {
     else {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Home className="topNavBtn" onClick={this.clearSearch}/></Link>
+          <Link to="/kitchen"><Kitchen className="topNavBtn" onClick={this.clearSearch}/></Link>
           <AccountBox className="logout" onClick={this.logout}/>
           <h1>Welcome, { this.props.user.userName }!</h1>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
@@ -177,8 +177,8 @@ class KitchenHome extends Component {
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <div className="buttonDiv">
-            <Link to="/addfood"><Button variant="raised" color="primary">Add Food<Kitchen /></Button></Link>
-            <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes<Search /></Button></Link>
+            <Link to="/addfood"><Button variant="raised" color="primary" className="bottomBtn">Add Food<Kitchen /></Button></Link>
+            <Link to="/itemselect"><Button variant="raised" color="primary" className="bottomBtn">Find Recipes<Search /></Button></Link>
           </div>
         </div>
       );

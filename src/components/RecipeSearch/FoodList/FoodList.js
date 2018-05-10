@@ -49,7 +49,7 @@ class FoodList extends Component {
 
         return (
         <div>
-            <Link to="/kitchen" onClick={this.clearSearch}><Home/></Link>
+            <Link to="/kitchen" onClick={this.clearSearch}><Kitchen/></Link>
             <AccountBox className="logout" onClick={this.logout}/>
             <h2>Select Ingredients</h2>
             <div className="ingredientDiv">
@@ -57,8 +57,9 @@ class FoodList extends Component {
                 {foodItems}
             </div>
             <div className="buttonDiv">
-                    <Link to="/kitchen"><Button variant="raised" color="primary" onClick={this.clearSearch}><Kitchen/>Back to Kitchen</Button></Link>
-                    <Link to="/searchparams"><Button variant="raised" color="primary">Next Step<ArrowForward/></Button></Link>
+                    <Link to="/kitchen"><Button className="bottomBtn"variant="raised" color="primary" onClick={this.clearSearch}>
+                        <Kitchen/>Back to Kitchen</Button></Link>
+                    <Link to="/searchparams"><Button className="bottomBtn" variant="raised" color="primary">Next Step<ArrowForward/></Button></Link>
             </div>
         </div>
         )
