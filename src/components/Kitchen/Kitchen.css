@@ -68,8 +68,19 @@
 }
 
 .addFoodForm {
-    background-color: beige
-    width
+    width: 150px;
+    height: 350px;
+    padding: 40px 70px 50px 50px;
+    background-color: beige;
+    opacity: .85;
+}
+
+.input {
+    margin: 5px;
+}
+.select {
+    margin: 5px;
+    width: 100%
 }
 
 

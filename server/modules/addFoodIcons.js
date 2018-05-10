@@ -135,7 +135,7 @@ function addFoodIcon(food) {
             return 'milk-1.png';
             break;
         case 'mushroom':
-            return 'mushroom-1.png';
+            return 'mushroom.png';
             break;
         case 'mustard':
             return 'mustard.png';
