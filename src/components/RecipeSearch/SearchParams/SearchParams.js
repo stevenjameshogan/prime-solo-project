@@ -81,8 +81,8 @@ class SearchParams extends Component {
     render() {
         return (
             <div className="pageDiv">
-                <Link to="/kitchen" onClick={this.clearSearch}><Kitchen/></Link>
-                <AccountBox className="logout" onClick={this.logout}/>
+                <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
+                <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
                 <div className="paramsDiv">
                     <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
                     <h2>Add Keywords</h2>

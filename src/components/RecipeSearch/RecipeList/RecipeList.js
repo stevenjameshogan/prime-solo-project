@@ -25,8 +25,8 @@ class RecipeList extends Component {
         })
         return(
             <div className="recipeDiv">
-                <Link to="/kitchen" onClick={this.clearSearch}><Kitchen/></Link>
-                <AccountBox className="logout" onClick={this.logout}/>
+                <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
+                <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
                 <h1>Select Recipe!</h1>
                 {/* Display recipes on DOM by referencing our aliased components variable, recipeList */}
                 {recipeList}

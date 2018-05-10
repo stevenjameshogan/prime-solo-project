@@ -77,9 +77,9 @@ class AddFoodForm extends Component {
 
     render() {
         return (
-        <div className="kitchenDiv">
-            <Link to="/kitchen" onClick={this.clearSearch}><Kitchen/></Link>
-            <AccountBox className="logout" onClick={this.logout}/>
+        <div className="addFoodDiv">
+            <Link to="/kitchen" onClick={this.clearSearch} ><Kitchen style={{fontSize: 40}}/></Link>
+            <AccountBox className="logout" onClick={this.logout} className="logout" style={{fontSize: 40}} />
             {/* New food submission form */}
             <form onSubmit={this.addFood} className="addFoodForm">
                 <Input value={this.state.newFood.name} placeholder="Food Name" onChange={this.handleInput("name")}/>

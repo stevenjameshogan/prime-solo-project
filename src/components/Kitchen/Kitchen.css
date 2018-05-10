@@ -1,9 +1,14 @@
 .kitchenDiv {
-    background-image: url('./images/BackgroundTop.jpg')
-
+    background-image: url('./images/Herbs2.jpg')
 }
+
+.addFoodDiv {
+    background-image: url('./images/Herbs.jpg');
+    padding-bottom: 200px;
+}
+
 #bottomDiv {
-    background-image: url('./images/Background.jpg')
+    background-image: url('./images/Herbs.jpg')
 }
 
 .logout {
@@ -64,12 +69,10 @@
 
 .addFoodForm {
     background-color: beige
+    width
 }
 
-.topNavBtn {
-    width: 40px;
-    height: 40px;
-}
+
 
 h1 {
     text-align: center
