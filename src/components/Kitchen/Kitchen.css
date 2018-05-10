@@ -1,9 +1,14 @@
 .kitchenDiv {
-    background-image: url('https://www.eatthis.com/content/uploads//media/images/ext/781897626/veggies-fruit.jpg');
-
+    background-image: url('./images/Herbs2.jpg')
 }
+
+.addFoodDiv {
+    background-image: url('./images/Herbs.jpg');
+    padding-bottom: 200px;
+}
+
 #bottomDiv {
-    background-image: url('https://www.eatthis.com/content/uploads//media/images/ext/781897626/veggies-fruit.jpg')
+    background-image: url('./images/Herbs.jpg')
 }
 
 .logout {
@@ -63,13 +68,22 @@
 }
 
 .addFoodForm {
-    background-color: beige
+    width: 150px;
+    height: 350px;
+    padding: 40px 70px 50px 50px;
+    background-color: beige;
+    opacity: .85;
 }
 
-.topNavBtn {
-    width: 40px;
-    height: 40px;
+.input {
+    margin: 5px;
 }
+.select {
+    margin: 5px;
+    width: 100%
+}
+
+
 
 h1 {
     text-align: center

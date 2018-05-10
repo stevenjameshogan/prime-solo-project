@@ -77,17 +77,18 @@ class AddFoodForm extends Component {
 
     render() {
         return (
-        <div className="kitchenDiv">
-            <Link to="/kitchen" onClick={this.clearSearch}><Kitchen/></Link>
-            <AccountBox className="logout" onClick={this.logout}/>
+        <div className="addFoodDiv">
+            <Link to="/kitchen" onClick={this.clearSearch} ><Kitchen style={{fontSize: 40}}/></Link>
+            <AccountBox className="logout" onClick={this.logout} className="logout" style={{fontSize: 40}} />
             {/* New food submission form */}
             <form onSubmit={this.addFood} className="addFoodForm">
-                <Input value={this.state.newFood.name} placeholder="Food Name" onChange={this.handleInput("name")}/>
-                <Input value={this.state.newFood.quantity}  placeholder="Quantity/Servings" onChange={this.handleInput("quantity")}/>
-                <Input value={this.state.newFood.notes} placeholder="Notes" onChange={this.handleInput("notes")}/>
+                <h2>Add Foods!</h2>
+                <Input value={this.state.newFood.name} placeholder="Food Name" onChange={this.handleInput("name")} className="input"/>
+                <Input value={this.state.newFood.quantity}  placeholder="Quantity/Servings" onChange={this.handleInput("quantity")} className="input"/>
+                <Input value={this.state.newFood.notes} placeholder="Notes" onChange={this.handleInput("notes")} className="input"/>
                 <br/>
-                <InputLabel>Category</InputLabel><br/>
-                <Select value={this.state.newFood.category} onChange={this.handleInput("category")}>
+                <InputLabel className="input">Category</InputLabel><br/>
+                <Select value={this.state.newFood.category} onChange={this.handleInput("category")} className="select" >
                     <MenuItem value="Vegetables">Vegetables</MenuItem>
                     <MenuItem value="Fruits">Fruits</MenuItem>
                     <MenuItem value="Meat/Seafood">Meat/Seafood</MenuItem>
@@ -95,14 +96,14 @@ class AddFoodForm extends Component {
                     <MenuItem value="Grains">Grains</MenuItem>
                     <MenuItem value="Sugars">Sugars</MenuItem>
                 </Select> <br/>
-                <InputLabel>Location</InputLabel><br/>
-                <Select value={this.state.newFood.location} onChange={this.handleInput("location")}>
+                <InputLabel className="input">Location</InputLabel><br/>
+                <Select value={this.state.newFood.location} onChange={this.handleInput("location")} className="select">
                     <MenuItem value="Fridge">Fridge</MenuItem>
                     <MenuItem value="Freezer">Freezer</MenuItem>
                     <MenuItem value="Pantry">Pantry</MenuItem>
                 </Select>
                 <br/><br/>
-                <Button variant="fab" color="primary" type="submit"><Add/></Button>
+                <Button variant="fab" color="primary" type="submit" style={{float:"right"}}>< Add/></Button>
             </form>
             <br/>
             <div className="buttonDiv">

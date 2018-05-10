@@ -4,6 +4,7 @@ import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
 import { Home, AccountBox, Kitchen, Search, ArrowBack, ArrowForward, Add, Restaurant } from 'material-ui-icons';
 import Button from 'material-ui/Button';
+import Chip from 'material-ui/Chip';
 import Input from 'material-ui/Input';
 import { Link } from 'react-router-dom';
 import '../RecipeSearch.css';
@@ -80,15 +81,15 @@ class SearchParams extends Component {
     render() {
         return (
             <div className="pageDiv">
-                <Link to="/kitchen" onClick={this.clearSearch}><Kitchen/></Link>
-                <AccountBox className="logout" onClick={this.logout}/>
+                <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
+                <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
                 <div className="paramsDiv">
                     <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
                     <h2>Add Keywords</h2>
                     <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
                     <Button variant="fab" onClick={this.addKeyword}><Add/></Button>
                     <h4>{JSON.stringify(this.state.searchParams.keywords)}</h4>
-                    <br/><br/><br/><br/>
+                    <br/><br/>
                     <h2>Exclude Foods</h2>
                     <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
                     <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button>

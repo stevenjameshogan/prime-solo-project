@@ -75,8 +75,8 @@ class KitchenHome extends Component {
     if (this.props.reduxState.expDateReducer.length) {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Home className="topNavBtn" onClick={this.clearSearch}/></Link>
-          <AccountBox className="logout" onClick={this.logout}/>
+          <Link to="/kitchen"><Kitchen style={{fontSize: 40}} onClick={this.clearSearch}/></Link>
+          <AccountBox className="logout" style={{fontSize: 40}} onClick={this.logout}/>
           <Dialog open={this.state.open} onClose={this.handleClose}>
             <DialogTitle>{this.props.user.userName}, you have expiring food!</DialogTitle>
             <DialogContent>
@@ -85,7 +85,7 @@ class KitchenHome extends Component {
                 <Button variant="raised" onClick={this.handleClose}>Got it</Button>
             </DialogContent>
           </Dialog>
-          <h1>Welcome, { this.props.user.userName }!</h1>
+          <h1>{this.props.user.userName}'s Kitchen</h1>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
            given user's food items stored in that location */}
           <div>
@@ -125,8 +125,8 @@ class KitchenHome extends Component {
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <div className="buttonDiv">
-            <Link to="/addfood"><Button variant="raised" color="primary">Add Food<Kitchen /></Button></Link>
-            <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes<Search /></Button></Link>
+               <Link to="/addfood"><Button variant="raised" color="primary" className="bottomBtn">Add Food<Kitchen /></Button></Link>
+              <Link to="/itemselect"><Button variant="raised" color="primary" className="bottomBtn">Find Recipes<Search /></Button></Link>
           </div>
         </div>
       );
@@ -135,9 +135,9 @@ class KitchenHome extends Component {
     else {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Kitchen className="topNavBtn" onClick={this.clearSearch}/></Link>
-          <AccountBox className="logout" onClick={this.logout}/>
-          <h1>Welcome, { this.props.user.userName }!</h1>
+          <Link to="/kitchen"><Kitchen style={{fontSize: 40}} onClick={this.clearSearch}/></Link>
+          <AccountBox style={{fontSize: 40}} className="logout" onClick={this.logout}/>
+          <h1>{this.props.user.userName}'s Kitchen</h1>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
            given user's food items stored in that location */}
           <div>
