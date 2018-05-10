@@ -83,23 +83,22 @@ class SearchParams extends Component {
             <div className="pageDiv">
                 <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
                 <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
-                <div className="paramsDiv">
-                    <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
-                    <h2>Add Keywords</h2>
-                    <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
-                    <Button variant="fab" onClick={this.addKeyword}><Add/></Button>
-                    <h4>{JSON.stringify(this.state.searchParams.keywords)}</h4>
-                    <br/><br/>
-                    <h2>Exclude Foods</h2>
-                    <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
-                    <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button>
-                    <h4>{JSON.stringify(this.state.searchParams.excludedFoods)}</h4>
+                <div className="params">
+                    <div className="paramsDiv">
+                        <h2>Add Keywords</h2>
+                        <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
+                        <Button variant="fab" onClick={this.addKeyword}><Add/></Button>
+                        <br/><br/><br/><br/><br/>
+                        <h2>Exclude Foods</h2>
+                        <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
+                        <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button>
+                    </div>
                 </div>
                 <div className="buttonDiv">
-                        <Link to="/itemselect" ><Button variant="raised" color="primary" className="bottomBtn">
-                        <ArrowBack/>Edit Ingredients</Button></Link>
-                        <Link to="/recipelist"><Button variant="raised" color="primary" className="bottomBtn" 
-                            onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
+                    <Link to="/itemselect" ><Button variant="raised" color="primary" className="bottomBtn">
+                    <ArrowBack/>Edit Ingredients</Button></Link>
+                    <Link to="/recipelist"><Button variant="raised" color="primary" className="bottomBtn" 
+                        onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
                 </div>
             </div>
             )
