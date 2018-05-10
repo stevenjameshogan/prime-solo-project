@@ -9,16 +9,21 @@ class FoodItem extends Component {
     constructor(props){
         super(props);
         // Establish a local state to toggle whether or not this item has been selected by user for recipe search
-        this.state=({
-            isSelected: false
-        });
+        if (this.props.reduxState.yummlyReducer.includes(this.props.item.name)){
+            this.state=({
+                isSelected: true
+            });
+        } else {
+            this.state=({
+                isSelected: false
+            });
+        }
     };
 
     // Toggle whether or not this item is selected by user, call functions below based on isSelected
     toggleItemSelect = () => {
         if(this.state.isSelected === false || this.props.reduxState.yummlyReducer.includes(this.props.item)){
             console.log('selecting');
-            
             this.selectItem();
         } else {
             this.deSelectItem();
@@ -55,14 +60,24 @@ class FoodItem extends Component {
     };
 
     render() {
-        return(
-        
-        <div onClick={this.toggleItemSelect} className="ingredientItem">
-            <img className="tinyItemImg" src={require(`../images/${this.props.item.image_url}`)} alt="food" />
-            <p>{this.props.item.name}</p>
-        </div>
-        
-        )
+        if (this.state.isSelected) {
+            console.log('is selected', this.props.item);
+            return(
+                <div onClick={this.toggleItemSelect} className="ingredientItemSelected">
+                    <img className="tinyItemImg" src={require(`../images/${this.props.item.image_url}`)} alt="food" />
+                    <p>{this.props.item.name}</p>
+                </div>
+                )
+
+        } else {
+            console.log('is NOT selected', this.props.item);
+            return (
+            <div onClick={this.toggleItemSelect} className="ingredientItem">
+                <img className="tinyItemImg" src={require(`../images/${this.props.item.image_url}`)} alt="food" />
+                <p>{this.props.item.name}</p>
+            </div> 
+            )
+        }
     }
 }
 
