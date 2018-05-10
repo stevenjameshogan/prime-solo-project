@@ -70,6 +70,7 @@ class SearchParams extends Component {
         this.setState({
             searchParams: {...this.state.searchParams, excludedFoods:  this.state.searchParams.excludedFoods +
                             'excludedIngredient[]=' + this.state.excludedFood.toLowerCase() + '&' },
+            displayParams: {...this.state.displayParams, excludedFoods: [...this.state.displayParams.excludedFoods, this.state.excludedFood]},
             excludedFood: ''
         })
     }
@@ -86,14 +87,16 @@ class SearchParams extends Component {
     render() {
         let search = this.state.displayParams;
         let keywords = <br/>
+        let excludedFoods = <br/>
         if (search.keywords.length) {
-            console.log(search.keywords);
-            
             keywords = search.keywords.map((keyword) => {
                 return(<Chip key={keyword} label={keyword}/>)
             })
-            // let keywords = search.keywords;
-
+        } 
+        if (search.excludedFoods.length) {
+            excludedFoods = search.excludedFoods.map((excludedFood) => {
+                return(<Chip key={excludedFood} label={excludedFood}/>)
+            })
         } 
         return (
             <div className="pageDiv">
@@ -110,7 +113,8 @@ class SearchParams extends Component {
                         <h2>Exclude Foods</h2>
                         <p>(Up to 3)</p>
                         <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
-                        <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button>
+                        <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button><br/>
+                        {excludedFoods}
                     </div>
                 </div>
                 <div className="buttonDiv">
