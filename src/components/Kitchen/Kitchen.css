@@ -19,6 +19,12 @@
     outline: .25px solid black;
 }
 
+.foodItemDialog {
+    width: 250px;
+    height: 500px;
+    text-align: center;
+}
+
 .kitchenItem {
     padding-top: 20px;
     padding: 5px;
@@ -42,14 +48,14 @@
     height: 30px;
 }
 
-.foodItemDialog {
-    text-align: center;
-}
 
 .buttonDiv {
     position: fixed;
     bottom: 0;
     width: 80%;
+}
+.buttonDivDialog {
+    padding-top: 90px;
 }
 
 .bottomBtn {

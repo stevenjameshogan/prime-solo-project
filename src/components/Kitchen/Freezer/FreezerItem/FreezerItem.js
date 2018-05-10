@@ -5,6 +5,7 @@ import { Edit, Delete, Save, ArrowBack} from 'material-ui-icons';
 import Input, { InputLabel } from 'material-ui/Input';
 import Select from 'material-ui/Select';
 import { MenuItem } from 'material-ui/Menu';
+import Button from 'material-ui/Button';
 import moment from 'moment';
 
 // This component references a specific food item currently stored in the user's Freezer.
@@ -91,18 +92,20 @@ class FreezerItem extends Component {
                         <img className="smallItemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food" />
                         <p className="foodName">{this.props.item.name}</p>
                     </div>
-                    <Dialog open={this.state.open} onClose={this.handleClose} className="foodItemDialog" >
+                    <Dialog open={this.state.open} onClose={this.handleClose}>
                         <DialogTitle>{this.props.item.name}</DialogTitle>
-                        <DialogContent>
+                        <DialogContent className="foodItemDialog" style={{padding:"24px 24px 24px 24px"}} >
                                 <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food" />
                                 <p>Quantity/Servings: {this.props.item.quantity}</p>
                                 <p>Expiration Date: {expDate}</p>
                                 <p>Category: {this.props.item.category}</p>
                                 <p>Location: {this.props.item.location}</p>
                                 <p>Notes: {this.props.item.notes}</p>
-                                {/* Closes edit display via toggling editMode boolean */}
-                                <Edit onClick={this.toggleEditClick}/>
-                                <Delete onClick={this.deleteItem}/>
+                                <div className="buttonDivDialog">
+                                    {/* Closes edit display via toggling editMode boolean */}
+                                    <Button variant="raised" onClick={this.toggleEditClick} >Edit</Button>
+                                    <Button variant="raised" onClick={this.deleteItem}>Remove</Button>
+                                </div>
                         </DialogContent>
                     </Dialog>
                 </div>
@@ -111,15 +114,19 @@ class FreezerItem extends Component {
             // If user clicks edit, display input form on DOM so user can change values
             return(
                 <div>
-                    <p onClick={this.handleClickOpen}>{this.props.item.name}</p>
+                    <div className="smallItem" onClick={this.handleClickOpen}>
+                        {/* <img className="smallItemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food" />
+                        <p className="foodName">{this.props.item.name}</p> */}
+                    </div>
                     <Dialog open={this.state.open} onClose={this.handleClose}>
-                        <DialogContent>
+                        <DialogTitle>{this.props.item.name}</DialogTitle>
+                        <DialogContent  className="foodItemDialog" style={{padding:"24px 24px 24px 24px"}}  >
                             <form>
                                 <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food"/>
-                                <Input value={this.state.foodItem.name} placeholder={this.props.item.name} onChange={this.handleInput("name")}/>
-                                <Input value={this.state.foodItem.quantity} onChange={this.handleInput("quantity")}/>
-                                <InputLabel>Category</InputLabel><br/>
-                                <Select value={this.state.foodItem.category} onChange={this.handleInput("category")}>
+                                <Input className="input" value={this.state.foodItem.name} placeholder={this.props.item.name} onChange={this.handleInput("name")}/>
+                                <Input className="input" value={this.state.foodItem.quantity} onChange={this.handleInput("quantity")}/>
+                                <InputLabel className="input">Category</InputLabel><br/>
+                                <Select value={this.state.foodItem.category} onChange={this.handleInput("category")} className="select">
                                     <MenuItem value="Vegetables">Vegetables</MenuItem>
                                     <MenuItem value="Fruits">Fruits</MenuItem>
                                     <MenuItem value="Meat/Seafood">Meat/Seafood</MenuItem>
@@ -127,18 +134,20 @@ class FreezerItem extends Component {
                                     <MenuItem value="Grains">Grains</MenuItem>
                                     <MenuItem value="Sugars">Sugars</MenuItem>
                                 </Select><br/>
-                                <InputLabel>Location</InputLabel><br/>
-                                <Select value={this.state.foodItem.location} onChange={this.handleInput("location")}>
+                                <InputLabel className="input">Location</InputLabel><br/>
+                                <Select value={this.state.foodItem.location} onChange={this.handleInput("location")} className="select">
                                     <MenuItem value="Fridge">Fridge</MenuItem>
                                     <MenuItem value="Freezer">Freezer</MenuItem>
                                     <MenuItem value="Pantry">Pantry</MenuItem>
                                 </Select>
-                                <Input value={this.state.foodItem.notes} placeholder={this.props.item.notes} onChange={this.handleInput("notes")}/>
-                                {/* Closes edit display via toggling editMode boolean */}
-                                <ArrowBack onClick={this.toggleEditClick}></ArrowBack>
-                                {/* Save any changed values to database by calling updateItem function */}
-                                <Save onClick={this.updateItem}/>
+                                <Input className="input" value={this.state.foodItem.notes} placeholder={this.props.item.notes} onChange={this.handleInput("notes")}/>
                             </form>
+                            <div className="buttonDivDialog">
+                                {/* Closes edit display via toggling editMode boolean */}
+                                <Button variant="raised" onClick={this.toggleEditClick}>Cancel</Button>
+                                {/* Save any changed values to database by calling updateItem function */}
+                                <Button variant="raised" onClick={this.updateItem}>Save</Button>
+                            </div>
                         </DialogContent>
                     </Dialog>
                 </div>
