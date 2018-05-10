@@ -48,9 +48,7 @@
     background-color: rgb(22, 97, 22);
 }
 
-.ingredientItem:hover {
-    background-color: rgb(41, 148, 151);
-}
+
 
 .resultDiv {
     outline: .25px solid black;
