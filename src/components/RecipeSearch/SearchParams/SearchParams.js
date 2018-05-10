@@ -4,6 +4,7 @@ import { USER_ACTIONS } from '../../../redux/actions/userActions';
 import { triggerLogout } from '../../../redux/actions/loginActions';
 import { Home, AccountBox, Kitchen, Search, ArrowBack, ArrowForward, Add, Restaurant } from 'material-ui-icons';
 import Button from 'material-ui/Button';
+import Chip from 'material-ui/Chip';
 import Input from 'material-ui/Input';
 import { Link } from 'react-router-dom';
 import '../RecipeSearch.css';

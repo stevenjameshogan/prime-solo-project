@@ -1,9 +1,9 @@
 .kitchenDiv {
-    background-image: url('https://www.eatthis.com/content/uploads//media/images/ext/781897626/veggies-fruit.jpg');
+    background-image: url('./images/BackgroundTop.jpg')
 
 }
 #bottomDiv {
-    background-image: url('https://www.eatthis.com/content/uploads//media/images/ext/781897626/veggies-fruit.jpg')
+    background-image: url('./images/Background.jpg')
 }
 
 .logout {
