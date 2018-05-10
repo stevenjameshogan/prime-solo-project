@@ -48,7 +48,7 @@ class FoodList extends Component {
         })
 
         return (
-        <div>
+        <div className="pageDiv">
             <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
             <AccountBox style={{fontSize: 40}} className="logout" onClick={this.logout}/>
             <h2>Select Ingredients</h2>

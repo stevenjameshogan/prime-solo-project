@@ -16,7 +16,7 @@
   }
 
   .pageDiv {
-    background-image: url('https://www.eatthis.com/content/uploads//media/images/ext/781897626/veggies-fruit.jpg')
+    background-image: url('./FoodList/images/Herbs.jpg');
   }
 
 .ingredientItem {
@@ -30,7 +30,8 @@
     padding-top: 20px;
     margin: 8px;
     text-align: center;
-    /* background-color: beige; */
+    background-color: beige;
+    opacity: .90;
 }
 
 .ingredientItemSelected {
