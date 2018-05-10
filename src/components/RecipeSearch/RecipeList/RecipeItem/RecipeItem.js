@@ -20,8 +20,6 @@ class RecipeItem extends Component {
 
     // Toggle local state "open" value to open or close the pop-up UI Dialog
     handleClickOpen = () => {
-        console.log('hello');
-        
         this.setState({ open: true });
         this.props.dispatch({
             type: 'GET_SELECTED_RECIPE',
@@ -29,7 +27,6 @@ class RecipeItem extends Component {
         })
     };
     handleClose = () => {
-        console.log('closing');
         this.setState({ open: false });
     };
 

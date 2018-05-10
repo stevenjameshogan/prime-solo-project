@@ -23,6 +23,10 @@ class SearchParams extends Component {
             searchParams: {
                 keywords: '',
                 excludedFoods: ''
+            },
+            displayParams: {
+                keywords: [],
+                excludedFoods: []
             }
         })
     }
@@ -56,6 +60,7 @@ class SearchParams extends Component {
     addKeyword = () => {
         this.setState({
             searchParams: {...this.state.searchParams, keywords: this.state.searchParams.keywords + '&q=' + this.state.keyword},
+            displayParams: {...this.state.displayParams, keywords: [...this.state.displayParams.keywords, this.state.keyword]},
             keyword: ''
         })
     }
@@ -79,6 +84,17 @@ class SearchParams extends Component {
     }
 
     render() {
+        let search = this.state.displayParams;
+        let keywords = <br/>
+        if (search.keywords.length) {
+            console.log(search.keywords);
+            
+            keywords = search.keywords.map((keyword) => {
+                return(<Chip key={keyword} label={keyword}/>)
+            })
+            // let keywords = search.keywords;
+
+        } 
         return (
             <div className="pageDiv">
                 <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
@@ -86,10 +102,13 @@ class SearchParams extends Component {
                 <div className="params">
                     <div className="paramsDiv">
                         <h2>Add Keywords</h2>
+                        <p>(Up to 3)</p>
                         <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
-                        <Button variant="fab" onClick={this.addKeyword}><Add/></Button>
-                        <br/><br/><br/><br/><br/>
+                        <Button variant="fab" onClick={this.addKeyword}><Add/></Button><br/>
+                        {keywords}
+                        <br/><br/>
                         <h2>Exclude Foods</h2>
+                        <p>(Up to 3)</p>
                         <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
                         <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button>
                     </div>
