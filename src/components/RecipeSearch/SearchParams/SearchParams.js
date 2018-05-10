@@ -23,6 +23,10 @@ class SearchParams extends Component {
             searchParams: {
                 keywords: '',
                 excludedFoods: ''
+            },
+            displayParams: {
+                keywords: [],
+                excludedFoods: []
             }
         })
     }
@@ -56,6 +60,7 @@ class SearchParams extends Component {
     addKeyword = () => {
         this.setState({
             searchParams: {...this.state.searchParams, keywords: this.state.searchParams.keywords + '&q=' + this.state.keyword},
+            displayParams: {...this.state.displayParams, keywords: [...this.state.displayParams.keywords, this.state.keyword]},
             keyword: ''
         })
     }
@@ -65,6 +70,7 @@ class SearchParams extends Component {
         this.setState({
             searchParams: {...this.state.searchParams, excludedFoods:  this.state.searchParams.excludedFoods +
                             'excludedIngredient[]=' + this.state.excludedFood.toLowerCase() + '&' },
+            displayParams: {...this.state.displayParams, excludedFoods: [...this.state.displayParams.excludedFoods, this.state.excludedFood]},
             excludedFood: ''
         })
     }
@@ -79,27 +85,43 @@ class SearchParams extends Component {
     }
 
     render() {
+        let search = this.state.displayParams;
+        let keywords = <br/>
+        let excludedFoods = <br/>
+        if (search.keywords.length) {
+            keywords = search.keywords.map((keyword) => {
+                return(<Chip key={keyword} label={keyword}/>)
+            })
+        } 
+        if (search.excludedFoods.length) {
+            excludedFoods = search.excludedFoods.map((excludedFood) => {
+                return(<Chip key={excludedFood} label={excludedFood}/>)
+            })
+        } 
         return (
             <div className="pageDiv">
                 <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
                 <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
-                <div className="paramsDiv">
-                    <h4>{JSON.stringify(this.props.reduxState.yummlyReducer)}</h4>
-                    <h2>Add Keywords</h2>
-                    <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
-                    <Button variant="fab" onClick={this.addKeyword}><Add/></Button>
-                    <h4>{JSON.stringify(this.state.searchParams.keywords)}</h4>
-                    <br/><br/>
-                    <h2>Exclude Foods</h2>
-                    <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
-                    <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button>
-                    <h4>{JSON.stringify(this.state.searchParams.excludedFoods)}</h4>
+                <div className="params">
+                    <div className="paramsDiv">
+                        <h2>Add Keywords</h2>
+                        <p>(Up to 3)</p>
+                        <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
+                        <Button variant="fab" onClick={this.addKeyword}><Add/></Button><br/>
+                        {keywords}
+                        <br/><br/>
+                        <h2>Exclude Foods</h2>
+                        <p>(Up to 3)</p>
+                        <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
+                        <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button><br/>
+                        {excludedFoods}
+                    </div>
                 </div>
                 <div className="buttonDiv">
-                        <Link to="/itemselect" ><Button variant="raised" color="primary" className="bottomBtn">
-                        <ArrowBack/>Edit Ingredients</Button></Link>
-                        <Link to="/recipelist"><Button variant="raised" color="primary" className="bottomBtn" 
-                            onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
+                    <Link to="/itemselect" ><Button variant="raised" color="primary" className="bottomBtn">
+                    <ArrowBack/>Edit Ingredients</Button></Link>
+                    <Link to="/recipelist"><Button variant="raised" color="primary" className="bottomBtn" 
+                        onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
                 </div>
             </div>
             )
