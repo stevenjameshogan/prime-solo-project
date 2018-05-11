@@ -10,11 +10,13 @@ import Button from 'material-ui/Button';
 
 class SelectedRecipe extends Component {
 
-
     render() {
         // Alias our recipe as "recipe" for code clarity
         let recipe = this.props.reduxState.selectedRecipeReducer;
-        console.log(recipe);
+        console.log(recipe.ingredientLines);
+        // let ingredients = recipe.ingredientLines.map((ingredient) => {
+        //     return(<p key={ingredient}>Hi</p>)
+        // })
         if (recipe.images) {
             return (
                 <div className="pageDiv">
@@ -29,11 +31,7 @@ class SelectedRecipe extends Component {
                         <p>Total Time: {recipe.totalTime}</p>
                         <p>Makes {recipe.numberOfServings} Servings</p>
                         <p>Ingredients:</p>
-                        <ul>
-                            <li>{recipe.ingredientLines[0]}</li>
-                            <li>{recipe.ingredientLines[1]}</li>
-                            <li>{recipe.ingredientLines[2]}</li>
-                        </ul>
+
                         <div className="buttonDiv">
                             <Link to="/recipelist" onClick={this.props.handleClose}><Button variant="raised" color="primary" className="bottomBtn">Back to Results</Button></Link>
                             <Button variant="raised" color="primary" className="bottomBtn"><a href={recipe.source.sourceRecipeUrl}>Go to Recipe!</a></Button>
