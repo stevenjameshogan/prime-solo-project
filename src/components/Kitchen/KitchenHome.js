@@ -32,6 +32,9 @@ class KitchenHome extends Component {
   };
   handleClose = () => {
       this.setState({ open: false });
+      this.props.dispatch({
+        type: 'EXP_WARNING'
+      })
   };
   // On page load, make a Redux dispatch to GET all food items belonging to a particular user
   componentDidMount() {
@@ -72,7 +75,7 @@ class KitchenHome extends Component {
     })
     // If the user has any food items expiring soon, render a pop-up dialog modal to alert them, along with quick link option
     // To the Recipe Search portion of the App
-    if (this.props.reduxState.expDateReducer.length) {
+    if (this.props.reduxState.expDateReducer.length && this.props.reduxState.expTrackerReducer === false) {
       return (
         <div className="kitchenDiv">
           <Link to="/kitchen"><Kitchen style={{fontSize: 40}} onClick={this.clearSearch}/></Link>

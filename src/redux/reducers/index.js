@@ -3,9 +3,10 @@ import user from './userReducer';
 import login from './loginReducer';
 import foodReducer from './foodReducer';
 import yummlyReducer from './yummlyReducer';
-import recipeResultsReducer from './recipeResultsReducer'
-import selectedRecipeReducer from './selectedRecipeReducer'
-import expDateReducer from './expDateReducer'
+import recipeResultsReducer from './recipeResultsReducer';
+import selectedRecipeReducer from './selectedRecipeReducer';
+import expDateReducer from './expDateReducer';
+import expTrackerReducer from './expTrackerReducer';
 
 
 const store = combineReducers({
@@ -15,7 +16,8 @@ const store = combineReducers({
   yummlyReducer,
   recipeResultsReducer,
   selectedRecipeReducer,
-  expDateReducer
+  expDateReducer,
+  expTrackerReducer
 });
 
 export default store;
