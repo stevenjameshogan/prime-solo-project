@@ -22,6 +22,10 @@
   .resultsDiv {
       padding-bottom: 200px;
   }
+  .recipeDiv {
+      padding-bottom: 200px;
+      text-align: center;
+  }
 
   .pageDiv {
     background-image: url('./FoodList/images/Herbs.jpg');

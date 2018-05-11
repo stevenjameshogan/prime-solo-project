@@ -24,7 +24,7 @@ class SelectedRecipe extends Component {
                         <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
                         <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
                     </div>
-                    <div className="recipeDiv" id="selectedRecipe">
+                    <div className="recipeDiv">
                         <h1>{recipe.name}</h1>
                         <img src={recipe.images[0].hostedLargeUrl} alt="Delicious Recipe Pic" />
                         <p>Prep Time: {recipe.prepTime}</p>

@@ -12,7 +12,7 @@ import Fridge from './Fridge/Fridge';
 import Freezer from './Freezer/Freezer';
 import Pantry from './Pantry/Pantry';
 import moment from 'moment';
-import { Home, AccountBox, Kitchen, Search } from 'material-ui-icons';
+import { Home, AccountBox, Kitchen, Search, Warning } from 'material-ui-icons';
 import './Kitchen.css';
 
 // This component is a virtual representation of a given user's Kitchen and all food items currently held by the user.
@@ -67,7 +67,7 @@ class KitchenHome extends Component {
     // Map over array of expiring food items (held in expDateReducer) and create a visual JSX display for each item
     let expiringItems = this.props.reduxState.expDateReducer.map((item) => {
     return(
-      <div key={item.id}>
+      <div key={item.id} className="expiringFood">
         <p>{item.name}</p>
         <img className="tinyItemImg" src={require(`./images/${item.image_url}`)} alt="food"/>
       </div>
@@ -81,11 +81,13 @@ class KitchenHome extends Component {
           <Link to="/kitchen"><Kitchen style={{fontSize: 40}} onClick={this.clearSearch}/></Link>
           <AccountBox className="logout" style={{fontSize: 40}} onClick={this.logout}/>
           <Dialog open={this.state.open} onClose={this.handleClose}>
-            <DialogTitle>{this.props.user.userName}, you have expiring food!</DialogTitle>
-            <DialogContent>
+            <DialogTitle><Warning style={{fontSize: 40}}/><br/>{this.props.user.userName}, you have expiring food!</DialogTitle>
+            <DialogContent className="expiringDiv">
                 {expiringItems}
-                <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes!<Search /></Button></Link>
-                <Button variant="raised" onClick={this.handleClose}>Got it</Button>
+                <div className="expiringButtons">
+                  <Button variant="raised" onClick={this.handleClose}>Got it</Button>
+                  <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes!<Search /></Button></Link>
+                </div>
             </DialogContent>
           </Dialog>
           <h1>{this.props.user.userName}'s Kitchen</h1>
