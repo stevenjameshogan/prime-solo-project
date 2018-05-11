@@ -66,7 +66,11 @@ function vegExpDate(food) {
             return moment(date, "MM-DD-YYYY").add(14, 'days');
             break;
         case 'corn':
-            return moment(date, "MM-DD-YYYY").add(2, 'days');
+            if (food.location === 'Freezer') {
+                return moment(date, "MM-DD-YYYY").add(365, 'days');
+            } else {
+                return moment(date, "MM-DD-YYYY").add(7, 'days');
+            }
             break;
         case 'potato':
             return moment(date, "MM-DD-YYYY").add(30, 'days');

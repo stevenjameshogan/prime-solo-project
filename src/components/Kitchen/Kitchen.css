@@ -75,9 +75,9 @@
     width: 170px;
     height: 350px;
     padding: 40px 70px 50px 50px;
-    margin-top: 70px;
+    margin-top: 50px;
     background-color: beige;
-    opacity: .85;
+    opacity: .95;
 }
 
 .input {
@@ -119,4 +119,8 @@ h1 {
 
 #title {
     background-color: #f9a825;
+}
+
+.panel {
+    background-color: beige;
 }
