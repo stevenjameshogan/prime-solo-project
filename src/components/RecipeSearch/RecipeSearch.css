@@ -61,6 +61,21 @@
     background-color: #43a047;
 }
 
+.ingredientItemExpiring {
+    border: .5px solid black;
+    font-size: 12px;
+    border-radius: 30%;
+    width: 80px;
+    height: 70px;
+    float: left;
+    padding: 4px;
+    padding-top: 20px;
+    margin: 8px;
+    text-align: center;
+    color: beige;
+    background-color: #f9a825;
+}
+
 
 .resultDiv {
     outline: .25px solid black;

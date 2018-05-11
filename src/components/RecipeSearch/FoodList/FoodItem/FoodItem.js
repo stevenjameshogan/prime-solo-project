@@ -66,6 +66,13 @@ class FoodItem extends Component {
                 </div>
                 )
 
+        } else if (this.props.reduxState.expDateReducer.includes(this.props.item)) {
+            return (
+                <div onClick={this.toggleItemSelect} className="ingredientItemExpiring">
+                    <img className="tinyItemImg" src={require(`../images/${this.props.item.image_url}`)} alt="food" />
+                    <p>{this.props.item.name}</p>
+                </div> 
+                )
         } else {
             return (
             <div onClick={this.toggleItemSelect} className="ingredientItem">

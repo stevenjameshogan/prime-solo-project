@@ -65,9 +65,6 @@
     
 }
 
-.panel {
-    background-color: aquamarine
-}
 
 .foodName {
     font-size: 12px;
@@ -121,5 +118,5 @@ h1 {
 }
 
 #title {
-    background-color: rgb(252, 248, 38);
+    background-color: #f9a825;
 }

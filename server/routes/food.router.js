@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     // Check if user is authenticated (registered and logged in)
     if(req.isAuthenticated()){
         // If authenticated, make request to PostgresQL DB
-        const queryText = 'SELECT * FROM food_items WHERE user_id = $1;';
+        const queryText = 'SELECT * FROM food_items WHERE user_id = $1 ORDER BY exp_date;';
         pool.query(queryText, [req.user.id]).then((result) => {
             res.send(result.rows);
         })
