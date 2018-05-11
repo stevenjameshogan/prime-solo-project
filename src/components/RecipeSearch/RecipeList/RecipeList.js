@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import RecipeItem from './RecipeItem/RecipeItem';
 import { Kitchen, AccountBox, ArrowBack } from 'material-ui-icons';
 import Button from 'material-ui/Button';
+import { RingLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 import '../RecipeSearch.css';
 
@@ -23,25 +24,50 @@ class RecipeList extends Component {
         let recipeList = this.props.reduxState.recipeResultsReducer.map((recipe) => {
             return(<RecipeItem key={recipe.id} recipe={recipe} />)
         })
-        return(
-            <div className="pageDiv">
-                <div className="resultsDiv">
-                    <div>
-                        <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
-                        <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
-                        <h1>Select Recipe!</h1>
-                        {/* Display recipes on DOM by referencing our aliased components variable, recipeList */}
-                        {recipeList}
+        if (this.props.reduxState.recipeResultsReducer.length) {
+            return(
+                <div className="pageDiv">
+                    <div className="resultsDiv">
+                        <div>
+                            <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
+                            <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
+                            <h1>Select Recipe!</h1>
+                            {/* Display recipes on DOM by referencing our aliased components variable, recipeList */}
+                            {recipeList}
+                        </div>
+                        <div className="buttonDiv">
+                            <Link to="/searchparams"><Button variant="raised" color="primary" className="bottomBtn">
+                                <ArrowBack/>Edit Search</Button></Link>
+                            <Link to="/selectedrecipe"><Button variant="raised" color="primary" className="bottomBtn">Recipe Details!</Button>
+                                </Link>
+                        </div>
                     </div>
-                    <div className="buttonDiv">
-                        <Link to="/searchparams"><Button variant="raised" color="primary" className="bottomBtn">
-                            <ArrowBack/>Edit Search</Button></Link>
-                        <Link to="/selectedrecipe"><Button variant="raised" color="primary" className="bottomBtn">Recipe Details!</Button>
-                            </Link>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <div className="pageDiv">
+                    <div className="resultsDiv">
+                        <div>
+                            <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
+                            <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
+                        </div>
+                        <div className="spinner">
+                            <RingLoader />
+                        </div>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <div className="buttonDiv">
+                            <Link to="/searchparams"><Button variant="raised" color="primary" className="bottomBtn">
+                                <ArrowBack/>Edit Search</Button></Link>
+                            <Link to="/selectedrecipe"><Button variant="raised" color="primary" className="bottomBtn">Recipe Details!</Button>
+                                </Link>
+                        </div>
                     </div>
                 </div>
             </div>
-        )
+            )
+        }
     }
 }
 
