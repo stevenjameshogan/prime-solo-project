@@ -1,5 +1,6 @@
 .kitchenDiv {
-    background-image: url('./images/Herbs2.jpg')
+    background-image: url('./images/Herbs2.jpg');
+    padding-bottom: 50px;
 }
 
 .addFoodDiv {

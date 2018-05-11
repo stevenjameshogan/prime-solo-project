@@ -16,7 +16,7 @@ class Pantry extends Component {
         let pantryItems = pantryList.map((item) => {
             return(<PantryItem key={item.id} item={item} />)
         })
-
+        
         return(
             // Display all Pantry items on DOM by referencing our aliased components variable, freezerItems
             <div>
