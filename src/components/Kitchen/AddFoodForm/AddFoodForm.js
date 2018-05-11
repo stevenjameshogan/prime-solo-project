@@ -6,6 +6,7 @@ import { Kitchen, AccountBox, ArrowBack, Search, Add} from 'material-ui-icons';
 import Input, { InputLabel } from 'material-ui/Input';
 import Button from 'material-ui/Button';
 import Select from 'material-ui/Select';
+import Snackbar from 'material-ui/Snackbar';
 import { MenuItem } from 'material-ui/Menu';
 import { Link } from 'react-router-dom';
 import '../Kitchen.css';
@@ -18,6 +19,7 @@ class AddFoodForm extends Component {
         super(props);
         // Establish a local state in order to store our new food item based on user inputs
         this.state = ({
+            open: false,
             newFood: {
                 name: '',
                 quantity: '',
@@ -75,6 +77,20 @@ class AddFoodForm extends Component {
         }
     }
 
+    handleClick = () => {
+        console.log('opening');
+        
+        this.setState({ open: true });
+    };
+    
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        this.setState({ open: false });
+    };
+
     render() {
         return (
         <div className="addFoodDiv">
@@ -103,7 +119,9 @@ class AddFoodForm extends Component {
                     <MenuItem value="Pantry">Pantry</MenuItem>
                 </Select>
                 <br/><br/>
-                <Button variant="fab" color="primary" type="submit" style={{float:"right"}}>< Add/></Button>
+                <Button variant="fab" color="primary" type="submit" style={{float:"right"}} onClick={this.handleClick}>< Add/></Button>
+                <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'left',}} open={this.state.open}
+                    autoHideDuration={1000} onClose={this.handleClose} message={<span id="message-id">Food added!</span>} />
             </form>
             <br/>
             <div className="buttonDiv">
