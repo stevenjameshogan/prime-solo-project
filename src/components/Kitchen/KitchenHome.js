@@ -81,12 +81,12 @@ class KitchenHome extends Component {
           <Link to="/kitchen"><Kitchen style={{fontSize: 40}} onClick={this.clearSearch}/></Link>
           <AccountBox className="logout" style={{fontSize: 40}} onClick={this.logout}/>
           <Dialog open={this.state.open} onClose={this.handleClose}>
-            <DialogTitle><Warning style={{fontSize: 40}}/><br/>{this.props.user.userName}, you have expiring food!</DialogTitle>
+            <DialogTitle id="title"><Warning style={{fontSize: 40}}/><br/>{this.props.user.userName}, you have expiring food!</DialogTitle>
             <DialogContent className="expiringDiv">
                 {expiringItems}
                 <div className="expiringButtons">
                   <Button variant="raised" onClick={this.handleClose}>Got it</Button>
-                  <Link to="/itemselect"><Button variant="raised" color="primary">Find Recipes!<Search /></Button></Link>
+                  <Link to="/itemselect"><Button variant="raised" color="primary" onClick={this.handleClose}>Find Recipes!<Search /></Button></Link>
                 </div>
             </DialogContent>
           </Dialog>
@@ -95,35 +95,7 @@ class KitchenHome extends Component {
            given user's food items stored in that location */}
           <div>
             {/* Freezer Panel */}
-            <ExpansionPanel >
-                <ExpansionPanelSummary>
-                    <Typography>Freezer</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                  {/* Contents of the panel are nested in the Freezer subcomponent, where the food item data lies */}
-                    <Freezer />
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
-            {/* Fridge Panel */}
-            <ExpansionPanel>
-                <ExpansionPanelSummary>
-                    <Typography>Fridge</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                  {/* Contents of the panel are nested in the Fridge subcomponent, where the food item data lies */}
-                    <Fridge />
-                </ExpansionPanelDetails>
-            </ExpansionPanel >
-            {/* Pantry Panel */}
-            <ExpansionPanel >
-                <ExpansionPanelSummary>
-                    <Typography>Pantry</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                  {/* Contents of the panel are nested in the Pantry subcomponent, where the food item data lies */}
-                    <Pantry />
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
+
           </div>
            <div id="bottomDiv">
           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>

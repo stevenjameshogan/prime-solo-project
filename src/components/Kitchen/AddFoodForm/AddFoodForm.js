@@ -82,7 +82,7 @@ class AddFoodForm extends Component {
             <AccountBox className="logout" onClick={this.logout} className="logout" style={{fontSize: 40}} />
             {/* New food submission form */}
             <form onSubmit={this.addFood} className="addFoodForm">
-                <h2>Add Foods!</h2>
+                <h3>Enter Food</h3>
                 <Input value={this.state.newFood.name} placeholder="Food Name" onChange={this.handleInput("name")} className="input"/>
                 <Input value={this.state.newFood.quantity}  placeholder="Quantity/Servings" onChange={this.handleInput("quantity")} className="input"/>
                 <Input value={this.state.newFood.notes} placeholder="Notes" onChange={this.handleInput("notes")} className="input"/>
