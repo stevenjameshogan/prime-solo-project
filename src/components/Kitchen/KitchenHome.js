@@ -90,14 +90,8 @@ class KitchenHome extends Component {
                 </div>
             </DialogContent>
           </Dialog>
-          <h1>{this.props.user.userName}'s Kitchen</h1>
-          {/* Categorize food items based on stored location. On click, each panel will open to reveal the
-           given user's food items stored in that location */}
-          <div>
-            {/* Freezer Panel */}
-
-          </div>
-           <div id="bottomDiv">
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          <div id="bottomDiv">
           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
