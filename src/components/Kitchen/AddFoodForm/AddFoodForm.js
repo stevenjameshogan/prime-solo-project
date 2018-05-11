@@ -125,10 +125,10 @@ class AddFoodForm extends Component {
             </form>
             <br/>
             <div className="buttonDiv">
-                <Link to="/kitchen"><Button variant="raised" color="primary" className="bottomBtn">
-                    <ArrowBack />Back to Kitchen</Button></Link>
-                <Link to="/itemselect"><Button variant="raised" color="primary" className="bottomBtn">Find Recipes<Search />
-                    </Button></Link>
+            <Link to="/kitchen"><Button className="bottomBtn" variant="raised" style={{fontSize: 17}}
+                        color="primary"><Kitchen/>Back to Kitchen</Button></Link>
+                <Link to="/itemselect"><Button variant="raised" color="primary" style={{fontSize: 17}}
+                className="bottomBtn">Find Recipes<Search /></Button></Link>
             </div>
         </div>
         )

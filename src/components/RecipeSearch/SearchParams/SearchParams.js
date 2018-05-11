@@ -118,10 +118,10 @@ class SearchParams extends Component {
                     </div>
                 </div>
                 <div className="buttonDiv">
-                    <Link to="/itemselect" ><Button variant="raised" color="primary" className="bottomBtn">
-                    <ArrowBack/>Edit Ingredients</Button></Link>
-                    <Link to="/recipelist"><Button variant="raised" color="primary" className="bottomBtn" 
-                        onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
+                    <Link to="/itemselect" ><Button variant="raised" color="primary" style={{fontSize: 17}}
+                        className="bottomBtn" ><ArrowBack/>Edit Ingredients</Button></Link>
+                    <Link to="/recipelist"><Button variant="raised" color="primary" style={{fontSize: 17}}
+                        className="bottomBtn" onClick={this.dispatchSearchTerms}>Find Recipes!<Restaurant/></Button></Link>
                 </div>
             </div>
             )

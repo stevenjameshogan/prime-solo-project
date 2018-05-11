@@ -57,9 +57,10 @@ class FoodList extends Component {
                 {foodItems}
             </div>
             <div className="buttonDiv">
-                    <Link to="/kitchen"><Button className="bottomBtn"variant="raised" color="primary" onClick={this.clearSearch}>
-                        <Kitchen/>Back to Kitchen</Button></Link>
-                    <Link to="/searchparams"><Button className="bottomBtn" variant="raised" color="primary">Next Step<ArrowForward/></Button></Link>
+                    <Link to="/kitchen"><Button className="bottomBtn" variant="raised" style={{fontSize: 17}}
+                        color="primary" onClick={this.clearSearch}><Kitchen/>Back to Kitchen</Button></Link>
+                    <Link to="/searchparams"><Button className="bottomBtn" variant="raised" style={{fontSize: 17}}
+                    color="primary">Next Step<ArrowForward/></Button></Link>
             </div>
         </div>
         )

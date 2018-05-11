@@ -54,14 +54,15 @@ class RecipeList extends Component {
                             <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
                         </div>
                         <div className="spinner">
+                            <h1>Fetching Recipes...</h1>
                             <RingLoader />
                         </div>
                         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                         <div className="buttonDiv">
-                            <Link to="/searchparams"><Button variant="raised" color="primary" className="bottomBtn">
-                                <ArrowBack/>Edit Search</Button></Link>
-                            <Link to="/selectedrecipe"><Button variant="raised" color="primary" className="bottomBtn">Recipe Details!</Button>
-                                </Link>
+                            <Link to="/searchparams"><Button variant="raised" color="primary" style={{fontSize: 17}}
+                                className="bottomBtn"> <ArrowBack/>Edit Search</Button></Link>
+                            <Link to="/selectedrecipe"><Button variant="raised" color="primary" style={{fontSize: 17}}
+                                className="bottomBtn">Recipe Details!</Button></Link>
                         </div>
                     </div>
                 </div>

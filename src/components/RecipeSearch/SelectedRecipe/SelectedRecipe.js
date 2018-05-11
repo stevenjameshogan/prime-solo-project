@@ -33,8 +33,10 @@ class SelectedRecipe extends Component {
                         <p>Ingredients:</p>
                         {ingredients}
                         <div className="buttonDiv">
-                            <Link to="/recipelist" onClick={this.props.handleClose}><Button variant="raised" color="primary" className="bottomBtn">Back to Results</Button></Link>
-                            <Button variant="raised" color="primary" className="bottomBtn"><a href={recipe.source.sourceRecipeUrl}>Go to Recipe!</a></Button>
+                            <Link to="/recipelist" onClick={this.props.handleClose}><Button variant="raised" style={{fontSize: 17}}
+                                color="primary" className="bottomBtn">Back to Results</Button></Link>
+                            <Button variant="raised" color="primary" className="bottomBtn" style={{fontSize: 17}}>
+                                <a href={recipe.source.sourceRecipeUrl}>Go to Recipe!</a></Button>
                         </div>
                     </div>
                 </div>

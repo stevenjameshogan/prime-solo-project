@@ -94,11 +94,6 @@ class KitchenHome extends Component {
           <div id="bottomDiv">
           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
-          {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
-          <div className="buttonDiv">
-               <Link to="/addfood"><Button variant="raised" color="primary" className="bottomBtn">Add Food<Kitchen /></Button></Link>
-              <Link to="/itemselect"><Button variant="raised" color="primary" className="bottomBtn">Find Recipes<Search /></Button></Link>
-          </div>
         </div>
       );
     } 
@@ -148,8 +143,10 @@ class KitchenHome extends Component {
           </div>
           {/* Navigational links to Add Foot items to this Kitchen or Find recipes based on items in Kitchen */}
           <div className="buttonDiv">
-            <Link to="/addfood"><Button variant="raised" color="primary" className="bottomBtn">Add Food<Kitchen /></Button></Link>
-            <Link to="/itemselect"><Button variant="raised" color="primary" className="bottomBtn">Find Recipes<Search /></Button></Link>
+            <Link to="/addfood"><Button variant="raised" color="primary" style={{fontSize: 17}}
+              className="bottomBtn">Add Food<Kitchen /></Button></Link>
+            <Link to="/itemselect"><Button variant="raised" color="primary" style={{fontSize: 17}} 
+            className="bottomBtn">Find Recipes<Search /></Button></Link>
           </div>
         </div>
       );
