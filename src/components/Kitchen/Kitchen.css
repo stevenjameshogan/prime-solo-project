@@ -12,6 +12,17 @@
     background-image: url('./images/Herbs.jpg')
 }
 
+.kitchenNavDiv {
+    background-color: #43a047;
+    padding: 8px 5px 8px 5px;
+}
+
+.kitchenHeader {
+    padding-left: 62px;
+    color: beige;
+    font-size: 26px;
+}
+
 .logout {
     float: right;
 }

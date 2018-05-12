@@ -78,8 +78,10 @@ class KitchenHome extends Component {
     if (this.props.reduxState.expDateReducer.length && this.props.reduxState.expTrackerReducer === false) {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Kitchen style={{fontSize: 40}} onClick={this.clearSearch}/></Link>
-          <AccountBox className="logout" style={{fontSize: 40}} onClick={this.logout}/>
+          <div className="kitchenNavDiv">
+            <Link to="/kitchen"><Kitchen style={{fontSize: 40}} onClick={this.clearSearch}/></Link>
+            <AccountBox className="logout" style={{fontSize: 40}} onClick={this.logout}/>
+          </div>
           <Dialog open={this.state.open} onClose={this.handleClose}>
             <DialogTitle id="title"><Warning style={{fontSize: 40}}/><br/>{this.props.user.userName}, you have expiring food!</DialogTitle>
             <DialogContent className="expiringDiv">
@@ -101,9 +103,11 @@ class KitchenHome extends Component {
     else {
       return (
         <div className="kitchenDiv">
-          <Link to="/kitchen"><Kitchen style={{fontSize: 40}} onClick={this.clearSearch}/></Link>
-          <AccountBox style={{fontSize: 40}} className="logout" onClick={this.logout}/>
-          <h1>{this.props.user.userName}'s Kitchen</h1>
+          <div className="kitchenNavDiv">
+            <Link to="/kitchen"><Kitchen style={{fontSize: 40}} onClick={this.clearSearch}/></Link>
+            <span className="kitchenHeader">{this.props.user.userName}'s Kitchen</span>
+            <AccountBox className="logout" style={{fontSize: 40}} onClick={this.logout}/>
+          </div>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
            given user's food items stored in that location */}
           <div>
