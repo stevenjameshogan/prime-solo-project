@@ -73,6 +73,7 @@ class FridgeItem extends Component {
             open: false,
             editMode: false
         });
+        this.props.handleClick(this.props.item.name);
     };
 
     // Dispatch Fridge Item to a Redux Saga to delete this item from database and update DOM

@@ -4,7 +4,6 @@ import Dialog, { DialogContent, DialogTitle} from 'material-ui/Dialog';
 import { Edit, Delete, Save, ArrowBack} from 'material-ui-icons';
 import Input, { InputLabel } from 'material-ui/Input';
 import Select from 'material-ui/Select';
-import Snackbar from 'material-ui/Snackbar';
 import { MenuItem } from 'material-ui/Menu';
 import Button from 'material-ui/Button';
 import moment from 'moment';
@@ -40,17 +39,6 @@ class FreezerItem extends Component {
     };
     handleClose = () => {
         this.setState({ open: false, editMode: false });
-    };
-
-    handleSnackClick = () => {
-        this.setState({ ...this.state,snackOpen: true });
-    };
-    
-    handleSnackClose = (event, reason) => {
-        if (reason === 'clickaway') {
-            return;
-        }
-        this.setState({ ...this.state, snackOpen: false });
     };
 
     // Toggle local state "editMode" value, this determines what is rendered on the DOM below
@@ -161,9 +149,6 @@ class FreezerItem extends Component {
                                 {/* Save any changed values to database by calling updateItem function */}
                                 <Button variant="raised" onClick={this.updateItem}>Save</Button>
                             </div>
-                            <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'right',}} open={this.state.snackOpen}
-                                    autoHideDuration={1000} onClose={this.handleSnackClose} 
-                                    message={<span id="message-id">Updated {this.props.item.name}!</span>} />
                         </DialogContent>
                     </Dialog>
                 </div>

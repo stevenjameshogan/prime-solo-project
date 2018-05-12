@@ -15,7 +15,6 @@ class Freezer extends Component {
     }
 
     handleClick = (food) => {
-        console.log('in snack click', food);
         this.setState({
             open: true,
             editedFood: food
@@ -23,7 +22,6 @@ class Freezer extends Component {
     }
 
     handleClose = (event, reason) => {
-        console.log('in snack close');
         if (reason === 'clickaway') {
             return;
         }
