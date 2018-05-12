@@ -95,8 +95,10 @@ class AddFoodForm extends Component {
     render() {
         return (
         <div className="addFoodDiv">
-            <Link to="/kitchen" onClick={this.clearSearch} ><Kitchen style={{fontSize: 40}}/></Link>
-            <AccountBox className="logout" onClick={this.logout} className="logout" style={{fontSize: 40}} />
+            <div className="kitchenNavDiv">
+                <Link to="/kitchen" onClick={this.clearSearch} ><Kitchen style={{fontSize: 40}}/></Link>
+                <AccountBox className="logout" onClick={this.logout} className="logout" style={{fontSize: 40}} />
+            </div>
             {/* New food submission form */}
             <form onSubmit={this.addFood} className="addFoodForm">
                 <h3>Enter Food</h3>

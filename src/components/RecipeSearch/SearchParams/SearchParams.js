@@ -100,8 +100,10 @@ class SearchParams extends Component {
         } 
         return (
             <div className="pageDiv">
-                <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
-                <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
+                <div className="kitchenNavDiv">
+                    <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
+                    <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
+                </div>
                 <div className="params">
                     <div className="paramsDiv">
                         <h2>Add Keywords</h2>

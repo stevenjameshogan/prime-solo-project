@@ -93,6 +93,13 @@
     color: beige;
 }
 
+.kitchenNavDiv {
+    background-color: #43a047;
+    padding: 8px 5px 8px 5px;
+    color: beige;
+    opacity: .85;
+}
+
 
 button {
     border: .25px solid black;

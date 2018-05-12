@@ -104,7 +104,7 @@ class KitchenHome extends Component {
       return (
         <div className="kitchenDiv">
           <div className="kitchenNavDiv">
-            <Link to="/kitchen"><Kitchen style={{fontSize: 40}} onClick={this.clearSearch}/></Link>
+            <Link to="/kitchen"><Kitchen style={{fontSize: 40}}onClick={this.clearSearch}/></Link>
             <span className="kitchenHeader">{this.props.user.userName}'s Kitchen</span>
             <AccountBox className="logout" style={{fontSize: 40}} onClick={this.logout}/>
           </div>

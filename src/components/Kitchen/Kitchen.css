@@ -1,25 +1,25 @@
 .kitchenDiv {
-    background-image: url('./images/Herbs2.jpg');
+    background-image: url('./images/Kitchen2.jpg');
     padding-bottom: 50px;
 }
 
 .addFoodDiv {
-    background-image: url('./images/Herbs.jpg');
-    padding-bottom: 200px;
+    background-image: url('./images/Kitchen copy.jpg');
+    /* padding-bottom: 200px; */
 }
 
 #bottomDiv {
-    background-image: url('./images/Herbs.jpg')
+    background-image: url('./images/Kitchen2.jpg')
 }
 
 .kitchenNavDiv {
     background-color: #43a047;
     padding: 8px 5px 8px 5px;
+    color: beige;
 }
 
 .kitchenHeader {
     padding-left: 62px;
-    color: beige;
     font-size: 26px;
 }
 
