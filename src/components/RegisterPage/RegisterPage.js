@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Button from 'material-ui/Button';
+import './Register.css';
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -70,13 +72,13 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div>
+      <div id="registerDiv">
         {this.renderAlert()}
-        <form onSubmit={this.registerUser}>
-          <h1>Register User</h1>
+        <form onSubmit={this.registerUser} id="registerForm">
+          <h2 className="header">Register User</h2>
           <div>
             <label htmlFor="username">
-              Username:
+              Choose Username:
               <input
                 type="text"
                 name="username"
@@ -87,7 +89,7 @@ class RegisterPage extends Component {
           </div>
           <div>
             <label htmlFor="password">
-              Password:
+              Choose Password:
               <input
                 type="password"
                 name="password"
@@ -96,13 +98,11 @@ class RegisterPage extends Component {
               />
             </label>
           </div>
-          <div>
-            <input
-              type="submit"
-              name="submit"
-              value="Register"
-            />
-            <Link to="/home">Cancel</Link>
+          <div id="buttonDiv">
+            <Link to="/home"><Button type="submit" variant="raised" 
+              color="primary" className="button" style={{margin: 10}}>Cancel</Button></Link>
+            <Button type="submit" variant="raised" color="primary" 
+              className="button" style={{margin: 20}}>Register</Button>
           </div>
         </form>
       </div>
