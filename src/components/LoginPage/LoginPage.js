@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { triggerLogin, formError, clearError } from '../../redux/actions/loginActions';
+import Button from 'material-ui/Button';
+import './Login.css';
 
 
 const mapStateToProps = state => ({
@@ -60,10 +62,10 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div>
+      <div id="loginDiv">
         { this.renderAlert() }
-        <form onSubmit={this.login}>
-          <h1>Welcome to Food Salvagion</h1>
+        <form onSubmit={this.login} id="loginForm">
+          <h2 className="header">Welcome to NutriSaver</h2>
           <div>
             <label htmlFor="username">
               Username:
@@ -86,13 +88,12 @@ class LoginPage extends Component {
               />
             </label>
           </div>
-          <div>
-            <input
-              type="submit"
-              name="submit"
-              value="Log In"
-            />
-            <Link to="/register">Register</Link>
+          <div id="buttonDiv">
+            <Link to="/register"><Button type="submit" variant="raised" 
+              color="primary" className="button" style={{margin: 10}}>Sign Up</Button></Link>
+            <Button type="submit" variant="raised" color="primary" 
+              className="button" style={{margin: 20}}>Log In</Button>
+            {/* <input type="submit" name="submit" value="Log In"/> */}
           </div>
         </form>
       </div>
