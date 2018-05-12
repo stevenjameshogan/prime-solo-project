@@ -12,7 +12,7 @@ import Fridge from './Fridge/Fridge';
 import Freezer from './Freezer/Freezer';
 import Pantry from './Pantry/Pantry';
 import moment from 'moment';
-import { Home, AccountBox, Kitchen, Search, Warning } from 'material-ui-icons';
+import { Home, AccountBox, Kitchen, Search, Warning, ExpandMore } from 'material-ui-icons';
 import './Kitchen.css';
 
 // This component is a virtual representation of a given user's Kitchen and all food items currently held by the user.
@@ -109,7 +109,7 @@ class KitchenHome extends Component {
           <div>
             {/* Freezer Panel */}
             <ExpansionPanel>
-                <ExpansionPanelSummary>
+                <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography>Freezer</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
@@ -119,7 +119,7 @@ class KitchenHome extends Component {
             </ExpansionPanel>
             {/* Fridge Panel */}
             <ExpansionPanel>
-                <ExpansionPanelSummary>
+                <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography>Fridge</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
@@ -129,7 +129,7 @@ class KitchenHome extends Component {
             </ExpansionPanel >
             {/* Pantry Panel */}
             <ExpansionPanel>
-                <ExpansionPanelSummary>
+                <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography>Pantry</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>

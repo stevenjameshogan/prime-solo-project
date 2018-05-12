@@ -8,6 +8,7 @@ import { MenuItem } from 'material-ui/Menu';
 import Button from 'material-ui/Button';
 import moment from 'moment';
 
+
 // This component references a specific food item currently stored in the user's Freezer.
 // This was created in the parent component (Freezer) via the Map funtion and passed it's unique data
 
