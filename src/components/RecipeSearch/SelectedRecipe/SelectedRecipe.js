@@ -20,7 +20,7 @@ class SelectedRecipe extends Component {
         if (recipe.images) {
             return (
                 <div className="pageDiv">
-                    <div>
+                    <div className="kitchenNavDiv">
                         <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
                         <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
                     </div>

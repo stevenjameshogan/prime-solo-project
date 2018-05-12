@@ -16,7 +16,7 @@
   }
 
   .params {
-      padding-bottom: 150px;
+      padding-bottom: 50px;
   }
 
   .resultsDiv {
@@ -29,7 +29,7 @@
   }
 
   .pageDiv {
-    background-image: url('./FoodList/images/Herbs.jpg');
+    background-image: url('./FoodList/images/Table.jpg');
   }
 
 .ingredientItem {
@@ -126,8 +126,9 @@ a {
     color: black;
 }
 
-h2 {
+h1, h2 {
     text-align: center; 
+    color: beige ;
 }
 
 #selectedRecipe {
@@ -140,5 +141,5 @@ h2 {
 }
 
 .spinner {
-    padding: 150px;
+    padding: 120px;
 }

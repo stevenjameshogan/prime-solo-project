@@ -29,8 +29,10 @@ class RecipeList extends Component {
                 <div className="pageDiv">
                     <div className="resultsDiv">
                         <div>
-                            <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
-                            <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
+                            <div className="kitchenNavDiv">
+                                <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
+                                <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
+                            </div> 
                             <h1>Select Recipe!</h1>
                             {/* Display recipes on DOM by referencing our aliased components variable, recipeList */}
                             {recipeList}
@@ -49,10 +51,10 @@ class RecipeList extends Component {
                 <div>
                     <div className="pageDiv">
                     <div className="resultsDiv">
-                        <div>
+                        <div className="kitchenNavDiv">
                             <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
                             <AccountBox className="logout" onClick={this.logout} style={{fontSize: 40}}/>
-                        </div>
+                        </div> 
                         <div className="spinner">
                             <h1>Fetching Recipes...</h1>
                             <RingLoader />

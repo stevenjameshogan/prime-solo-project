@@ -1,11 +1,11 @@
 .kitchenDiv {
-    background-image: url('./images/Kitchen2.jpg');
-    padding-bottom: 50px;
+    background-image: url('./images/Kitchen3.jpg');
+    padding-bottom: 70px;
 }
 
 .addFoodDiv {
     background-image: url('./images/Kitchen copy.jpg');
-    /* padding-bottom: 200px; */
+    padding-bottom: 70px;
 }
 
 #bottomDiv {
@@ -65,15 +65,15 @@
     position: fixed;
     bottom: 0;
     width: 80%;
+    opacity: .95;
 }
 .buttonDivDialog {
     padding-top: 75px;
 }
 
 .bottomBtn {
-    height: 80px;
+    height: 60px;
     outline: .5px beige;
-    
 }
 
 

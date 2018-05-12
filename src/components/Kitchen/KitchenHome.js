@@ -105,7 +105,7 @@ class KitchenHome extends Component {
         <div className="kitchenDiv">
           <div className="kitchenNavDiv">
             <Link to="/kitchen"><Kitchen style={{fontSize: 40}}onClick={this.clearSearch}/></Link>
-            <span className="kitchenHeader">{this.props.user.userName}'s Kitchen</span>
+            {/* <span className="kitchenHeader">{this.props.user.userName}'s Kitchen</span> */}
             <AccountBox className="logout" style={{fontSize: 40}} onClick={this.logout}/>
           </div>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the

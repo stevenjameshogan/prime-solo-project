@@ -53,7 +53,7 @@ class FoodList extends Component {
                 <Link to="/kitchen" onClick={this.clearSearch}><Kitchen style={{fontSize: 40}}/></Link>
                 <AccountBox style={{fontSize: 40}} className="logout" onClick={this.logout}/>
             </div>
-            <h2>Select Ingredients</h2>
+            <h2>Pick Ingredients</h2>
             <div className="ingredientDiv">
                 {/* Display all food items on DOM by referencing our aliased components variable, foodItems */}
                 {foodItems}
