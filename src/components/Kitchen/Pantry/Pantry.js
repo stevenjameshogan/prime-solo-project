@@ -10,14 +10,16 @@ class Pantry extends Component {
         super(props);
         this.state = {
             open: false,
-            editedFood : ''
+            editedFood : '',
+            deletedFood: ''
         }
     }
 
     handleClick = (food) => {
         this.setState({
             open: true,
-            editedFood: food
+            editedFood: food,
+            deletedFood: food
         });
     }
 
@@ -46,6 +48,9 @@ class Pantry extends Component {
                 <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'left',}} open={this.state.open}
                             autoHideDuration={1000} onClose={this.handleClose}
                             message={<span id="message-id">Updated {this.state.editedFood}!</span>} />
+                <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'left',}} open={this.state.open}
+                            autoHideDuration={1000} onClose={this.handleClose}
+                            message={<span id="message-id">Updated {this.state.deletedFood}!</span>} />
             </div>
         )
     }

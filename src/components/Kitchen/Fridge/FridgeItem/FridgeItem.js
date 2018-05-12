@@ -82,6 +82,7 @@ class FridgeItem extends Component {
             type: 'DELETE_ITEM',
             payload: this.props.item
         })
+        this.props.handleClick(this.props.item.name);
     }
     
     render() {

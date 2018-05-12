@@ -74,7 +74,7 @@ class FreezerItem extends Component {
             editMode: false,
         });
         
-        this.props.handleClick(this.props.item.name);
+        this.props.editSnack(this.props.item.name);
     }
 
     // Dispatch Freezer Item to a Redux Saga to delete this item from database and update DOM
@@ -83,6 +83,7 @@ class FreezerItem extends Component {
             type: 'DELETE_ITEM',
             payload: this.props.item
         })
+        this.props.deleteSnack(this.props.item.name);
     }
     
     render() {
