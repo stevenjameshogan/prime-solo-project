@@ -9,16 +9,23 @@ class Pantry extends Component {
     constructor(props){
         super(props);
         this.state = {
-            open: false,
+            editOpen: false,
+            deleteOpen: false,
             editedFood : '',
             deletedFood: ''
         }
     }
 
-    handleClick = (food) => {
+    editSnack = (food) => {
         this.setState({
-            open: true,
-            editedFood: food,
+            editOpen: true,
+            editedFood: food
+        });
+    }
+
+    deleteSnack = (food) => {
+        this.setState({
+            deleteOpen: true,
             deletedFood: food
         });
     }
@@ -27,7 +34,7 @@ class Pantry extends Component {
         if (reason === 'clickaway') {
             return;
         }
-        this.setState({ open: false });
+        this.setState({ editOpen: false, deleteOpen: false });
     };
 
     render() {
@@ -38,19 +45,19 @@ class Pantry extends Component {
         // Map over freezerList to create new "PantryItem" component instances for each item. Pass each item it's unique props.
         // Alias all instances as a value of a single variable (pantryItems) for clarity below
         let pantryItems = pantryList.map((item) => {
-            return(<PantryItem key={item.id} item={item} handleClick={this.handleClick}  />)
+            return(<PantryItem key={item.id} item={item} editSnack={this.editSnack}  deleteSnack={this.deleteSnack}  />)
         })
         
         return(
             // Display all Pantry items on DOM by referencing our aliased components variable, freezerItems
             <div>
                 {pantryItems}
-                <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'left',}} open={this.state.open}
+                <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'left',}} open={this.state.editOpen}
                             autoHideDuration={1000} onClose={this.handleClose}
                             message={<span id="message-id">Updated {this.state.editedFood}!</span>} />
-                <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'left',}} open={this.state.open}
+                <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'left',}} open={this.state.deleteOpen}
                             autoHideDuration={1000} onClose={this.handleClose}
-                            message={<span id="message-id">Updated {this.state.deletedFood}!</span>} />
+                            message={<span id="message-id">Removed {this.state.deletedFood}!</span>} />
             </div>
         )
     }
