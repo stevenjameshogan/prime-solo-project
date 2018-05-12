@@ -73,6 +73,7 @@ class PantryItem extends Component {
             open: false,
             editMode: false
         });
+        this.props.editSnack(this.props.item.name);
     };
 
     // Dispatch Pantry Item to a Redux Saga to delete this item from database and update DOM
@@ -81,6 +82,7 @@ class PantryItem extends Component {
             type: 'DELETE_ITEM',
             payload: this.props.item
         })
+        this.props.deleteSnack(this.props.item.name);
     }
     
     render() {
