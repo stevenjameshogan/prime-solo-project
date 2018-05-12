@@ -26,7 +26,8 @@ class AddFoodForm extends Component {
                 category: '',
                 location: '',
                 notes: ''
-            }
+            },
+            lastFood: ''
         })
     };
 
@@ -48,6 +49,9 @@ class AddFoodForm extends Component {
     // Dispatch our new food item via action to a Redux Saga in order to add to database and display on DOM
     addFood = (event) => {
         event.preventDefault();
+        this.setState({
+            lastFood: this.state.newFood.name
+        })
         this.props.dispatch({
             type: 'POST_ITEM',
             payload: this.state.newFood
@@ -78,8 +82,6 @@ class AddFoodForm extends Component {
     }
 
     handleClick = () => {
-        console.log('opening');
-        
         this.setState({ open: true });
     };
     
@@ -121,7 +123,7 @@ class AddFoodForm extends Component {
                 <br/><br/>
                 <Button variant="fab" color="primary" type="submit" style={{float:"right"}} onClick={this.handleClick}>< Add/></Button>
                 <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'left',}} open={this.state.open}
-                    autoHideDuration={1000} onClose={this.handleClose} message={<span id="message-id">Food added!</span>} />
+                    autoHideDuration={1000} onClose={this.handleClose} message={<span id="message-id">Added {this.state.lastFood}!</span>} />
             </form>
             <br/>
             <div className="buttonDiv">
