@@ -97,7 +97,7 @@ class FreezerItem extends Component {
                         <img className="smallItemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food" />
                         <p className="foodName">{this.props.item.name}</p>
                     </div>
-                    <Dialog open={this.state.open} onClose={this.handleClose}>
+                    <Dialog open={this.state.open} onClose={this.handleClose} >
                         <DialogTitle>{this.props.item.name}</DialogTitle>
                         <DialogContent className="foodItemDialog" style={{padding:"24px 24px 24px 24px"}} >
                                 <img className="itemImg" src={require(`../../images/${this.props.item.image_url}`)} alt="food" />

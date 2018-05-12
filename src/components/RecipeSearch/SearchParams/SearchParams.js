@@ -109,13 +109,13 @@ class SearchParams extends Component {
                         <h3>Add Keywords</h3>
                         <p>(Up to 3)</p>
                         <Input value={this.state.keyword} placeholder="ex. pasta, spicy, etc" onChange={this.handleInput("keyword")}/>
-                        <Button variant="fab" onClick={this.addKeyword}><Add/></Button><br/>
+                        <Button variant="fab" color="primary" onClick={this.addKeyword}><Add/></Button><br/>
                         {keywords}
                         <br/><br/>
                         <h3>Exclude Foods</h3>
                         <p>(Up to 3)</p>
                         <Input value={this.state.excludedFood} placeholder="ex. dairy, peanuts, etc" onChange={this.handleInput("excludedFood")}/>
-                        <Button variant="fab" onClick={this.addExcludedFood}><Add/></Button><br/>
+                        <Button variant="fab" color="primary" onClick={this.addExcludedFood}><Add/></Button><br/>
                         {excludedFoods}
                     </div>
                 </div>

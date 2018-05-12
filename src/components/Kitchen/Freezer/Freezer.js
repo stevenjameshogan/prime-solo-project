@@ -50,7 +50,7 @@ class Freezer extends Component {
 
         return(
             // Display all Freezer items on DOM by referencing our aliased components variable, freezerItems
-            <div>
+            <div >
                 {freezerItems}
                 <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'left',}} open={this.state.editOpen}
                             autoHideDuration={1000} onClose={this.handleClose}

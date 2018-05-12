@@ -13,6 +13,7 @@ import Freezer from './Freezer/Freezer';
 import Pantry from './Pantry/Pantry';
 import moment from 'moment';
 import { Home, AccountBox, Kitchen, Search, Warning, ExpandMore } from 'material-ui-icons';
+import Snackbar from 'material-ui/Snackbar';
 import './Kitchen.css';
 
 // This component is a virtual representation of a given user's Kitchen and all food items currently held by the user.
@@ -22,7 +23,8 @@ class KitchenHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: true
+      open: true,
+      snackOpen: true
     }
   }
 
@@ -110,9 +112,9 @@ class KitchenHome extends Component {
           </div>
           {/* Categorize food items based on stored location. On click, each panel will open to reveal the
            given user's food items stored in that location */}
-          <div>
+          <div >
             {/* Freezer Panel */}
-            <ExpansionPanel>
+            <ExpansionPanel style={{backgroundColor: "beige"}}>
                 <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography>Freezer</Typography>
                 </ExpansionPanelSummary>
@@ -122,7 +124,7 @@ class KitchenHome extends Component {
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             {/* Fridge Panel */}
-            <ExpansionPanel>
+            <ExpansionPanel style={{backgroundColor: "beige"}}>
                 <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography>Fridge</Typography>
                 </ExpansionPanelSummary>
@@ -132,7 +134,7 @@ class KitchenHome extends Component {
                 </ExpansionPanelDetails>
             </ExpansionPanel >
             {/* Pantry Panel */}
-            <ExpansionPanel>
+            <ExpansionPanel style={{backgroundColor: "beige"}}>
                 <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Typography>Pantry</Typography>
                 </ExpansionPanelSummary>
