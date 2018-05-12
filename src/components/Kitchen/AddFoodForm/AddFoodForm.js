@@ -27,7 +27,7 @@ class AddFoodForm extends Component {
                 location: '',
                 notes: ''
             },
-            lastFood: ''
+            lastFood: {}
         })
     };
 
@@ -50,7 +50,10 @@ class AddFoodForm extends Component {
     addFood = (event) => {
         event.preventDefault();
         this.setState({
-            lastFood: this.state.newFood.name
+            lastFood: {
+                name: this.state.newFood.name,
+                location: this.state.newFood.location
+            }
         })
         this.props.dispatch({
             type: 'POST_ITEM',
@@ -124,7 +127,8 @@ class AddFoodForm extends Component {
                 <br/><br/>
                 <Button variant="fab" color="primary" type="submit" style={{float:"right"}} onClick={this.handleClick}>< Add/></Button>
                 <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'left',}} open={this.state.open}
-                    autoHideDuration={1000} onClose={this.handleClose} message={<span id="message-id">Added {this.state.lastFood}!</span>} />
+                    autoHideDuration={1000} onClose={this.handleClose} 
+                    message={<span id="message-id">Added {this.state.lastFood.name} to {this.state.lastFood.location}!</span>} />
             </form>
             <br/>
             <div className="buttonDiv">
