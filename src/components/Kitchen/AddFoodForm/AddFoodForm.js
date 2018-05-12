@@ -89,7 +89,6 @@ class AddFoodForm extends Component {
         if (reason === 'clickaway') {
             return;
         }
-
         this.setState({ open: false });
     };
 
