@@ -4,4 +4,4 @@ NutriSaver is a full-stack, multi-featured mobile application which aims to redu
 
 Since the nature of this app is highly personal in nature, all users are first required to sign in using their unique username and password.
 
-![Login Page](screenshots/1 Login.png)
+![Login Page](screenshots/Login.png)
