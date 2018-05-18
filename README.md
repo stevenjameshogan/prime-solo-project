@@ -8,4 +8,4 @@ Since the nature of this app is highly personal in nature, all users are first r
 
 Upon login, the user will be brought to their virtual "Kitchen", where they can view all current food items in their Freezer, Fridge, and Pantry.
 
-![Landing Page](screenshots/Landing Page.png)
+![Landing Page](screenshots/LandingPage.png)
