@@ -5,3 +5,7 @@ NutriSaver is a full-stack, multi-featured mobile application which aims to redu
 Since the nature of this app is highly personal in nature, all users are first required to sign in using their unique username and password.
 
 ![Login Page](screenshots/Login.png)
+
+Upon login, the user will be brought to their virtual "Kitchen", where they can view all current food items in their Freezer, Fridge, and Pantry.
+
+![Landing Page](screenshots/Landing Page.png)
