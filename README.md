@@ -13,28 +13,16 @@ If a user clicks the "Add Food" button at the bottom-left, they are brought to t
 
 ![Add Food](screenshots/AddFood.png)
 
-If a user has any food about to expire, a modal will popup immediately upon login to alert the user of their expiring items.
+If a user has any food about to expire, a modal will popup immediately upon login to alert the user of their expiring items. If a user clicks the "Find Recipes" button at the bottom-right, they are brought to the second feature of the app, the Recipe Builder. First, the user can select any of their current food items to include in their search. Any expiring items are highlighted as another reminder to the user. Next, a user can add additional search parameters, such as keywords and any excluded foods (allergies, aversions, etc).
 
 ![Expiring Alert](screenshots/ExpiringAlert.png)
-
-If a user clicks the "Find Recipes" button at the bottom-right, they are brought to the second feature of the app, the Recipe Builder. First, the user can select any of their current food items to include in their search. Any expiring items are highlighted as another reminder to the user.
-
 ![Expiring Items](screenshots/ExpiringItems.png)
-
-Next, a user can add additional search parameters, such as keywords and any excluded foods (allergies, aversions, etc).
-
 ![Search Parameters](screenshots/SearchParameters.png)
 
-Upon pushing the "Find Recipes" button from this page, the app will generate a list of recipes from the Yummly API based on their unique search terms and food items.
+Upon pushing the "Find Recipes" button from this page, the app will generate a list of recipes from the Yummly API based on their unique search terms and food items. A user can then select a recipe from the list and get more details about the recipe by clicking the "Recipe Details" button in the bottom-right. Finally, if a user wants to make this recipe, they can click the "Go To Recipe" button in the bottom-right. This will take them to the recipe source URL, where they can view all necessary ingredients and the recipe instructions. This is the ideal end-point for this app.
 
 ![Recipe Results](screenshots/RecipeResults.png)
-
-A user can then select a recipe from the list and get more details about the recipe by clicking the "Recipe Details" button in the bottom-right.
-
 ![Recipe Details](screenshots/RecipeDetails.png)
-
-Finally, if a user wants to make this recipe, they can click the "Go To Recipe" button in the bottom-right. This will take them to the recipe source URL, where they can view all necessary ingredients and the recipe instructions. This is the ideal end-point for this app.
-
 ![Recipe Source](screenshots/RecipeSource.png)
 
 
