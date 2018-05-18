@@ -2,17 +2,11 @@
 
 NutriSaver is a full-stack, multi-featured mobile application which aims to reduce individual food waste, save users time and money. This app provides users with a virtual “snapshot” of their current food supply, including detailed information regarding food item quantities, where they are physically stored (fridge, freezer, pantry) and their estimated expiration dates. It also allows them to quickly find recipes built around ingredients on-hand via the Yummly API. I built this application in only 2 Weeks as part of my Prime Academy Solo Project, using ReactJS, Redux, Node, Express, PostgreSQL, and more.
 
-Since the nature of this app is highly personal in nature, all users are first required to sign in using their unique username and password.
+Since the nature of this app is highly personal in nature, all users are first required to sign in using their unique username and password. Upon login, the user will be brought to their virtual "Kitchen", where they can view all current food items (via an expanding panel) in their Freezer, Fridge, and Pantry by clicking on each location. If a user clicks an individual food item, a popup modal will display more details about that item. From here, a user can make in-line edits to that item, or remove that item.
 
 ![Login Page](screenshots/Login.png)
-
-Upon login, the user will be brought to their virtual "Kitchen", where they can view all current food items (via an expanding panel) in their Freezer, Fridge, and Pantry by clicking on each location.
-
 ![Landing Page](screenshots/LandingPage.png)
 ![Expanded Pandel](screenshots/ExpandedPanel.png)
-
-If a user clicks an individual food item, a popup modal will display more details about that item. From here, a user can make in-line edits to that item, or remove that item.
-
 ![Food Details](screenshots/FoodDetails.png)
 
 If a user clicks the "Add Food" button at the bottom-left, they are brought to the Add Food form and can add food items to their kitchen.
