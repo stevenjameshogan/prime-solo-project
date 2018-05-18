@@ -9,12 +9,9 @@ Since the nature of this app is highly personal in nature, all users are first r
 ![Expanded Pandel](screenshots/ExpandedPanel.png)
 ![Food Details](screenshots/FoodDetails.png)
 
-If a user clicks the "Add Food" button at the bottom-left, they are brought to the Add Food form and can add food items to their kitchen.
+If a user clicks the "Add Food" button at the bottom-left, they are brought to the Add Food form and can add food items to their kitchen. If a user has any food about to expire, a modal will popup immediately upon login to alert the user of their expiring items. If a user clicks the "Find Recipes" button at the bottom-right, they are brought to the second feature of the app, the Recipe Builder. First, the user can select any of their current food items to include in their search. Any expiring items are highlighted as another reminder to the user. Next, a user can add additional search parameters, such as keywords and any excluded foods (allergies, aversions, etc).
 
 ![Add Food](screenshots/AddFood.png)
-
-If a user has any food about to expire, a modal will popup immediately upon login to alert the user of their expiring items. If a user clicks the "Find Recipes" button at the bottom-right, they are brought to the second feature of the app, the Recipe Builder. First, the user can select any of their current food items to include in their search. Any expiring items are highlighted as another reminder to the user. Next, a user can add additional search parameters, such as keywords and any excluded foods (allergies, aversions, etc).
-
 ![Expiring Alert](screenshots/ExpiringAlert.png)
 ![Expiring Items](screenshots/ExpiringItems.png)
 ![Search Parameters](screenshots/SearchParameters.png)
@@ -27,22 +24,28 @@ Upon pushing the "Find Recipes" button from this page, the app will generate a l
 
 
 ## This application is built with: 
-- ReactJS/React Redux
+- ReactJS
+- React Redux
 - Node.js
 - Express
 - Material UI
 - PostgreSQL
+- pg
 - Moment.js
 - Yummly API
 
 ### Database Setup - PostgreSQL
 
 ``` 
+// Create user table
+
 CREATE TABLE person (
     id SERIAL PRIMARY KEY,
     username VARCHAR (80) UNIQUE NOT NULL,
     password VARCHAR (1000) NOT NULL
 );
+
+// Create food items table
 
 CREATE TABLE foodItems (
 	id SERIAL PRIMARY KEY,
@@ -56,6 +59,8 @@ CREATE TABLE foodItems (
 	notes VARCHAR(500),
 	image_url VARCHAR (200)
 );
+
+// Create initial dummy data
 
 INSERT INTO foodItems (name, quantity, category, location, notes) VALUES ('Ice Cream','1','Dairy','Freezer', 'Delicious!'), 
 ('Jalapeno','5', 'Vegetables', 'Fridge', 'Use in chili?');
